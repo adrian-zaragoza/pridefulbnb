@@ -364,3 +364,156 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 270ms (Views: 15.8ms | ActiveRecord: 32.7ms)
 
 
+Started POST "/api/users?user[email]=test@gmail.com&user[password]=[FILTERED]&user[first_name]=John&user[last_name]=Smith&user[birth_date]=04/20/2000&user[current_location]=New%20York,%20NY&user[phone_number]=8888888888&user[gender]=male&user[identity]=lgbtq" for ::1 at 2021-04-05 21:01:54 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "first_name"=>"John", "last_name"=>"Smith", "birth_date"=>"04/20/2000", "current_location"=>"New York, NY", "phone_number"=>"8888888888", "gender"=>"male", "identity"=>"lgbtq"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (7.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KE5_pOnyoyQDXfXL0xKUbA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 404 Not Found in 224ms (Views: 0.2ms | ActiveRecord: 9.6ms)
+
+
+Started POST "/api/users?user[email]=test@gmail.com&user[password]=[FILTERED]&user[first_name]=John&user[last_name]=Smith&user[birth_date]=2000/03/25&user[current_location]=New%20York,%20NY&user[phone_number]=8888888888&user[gender]=male&user[identity]=lgbtq" for ::1 at 2021-04-05 21:02:54 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "first_name"=>"John", "last_name"=>"Smith", "birth_date"=>"2000/03/25", "current_location"=>"New York, NY", "phone_number"=>"8888888888", "gender"=>"male", "identity"=>"lgbtq"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FXfJfY1DanS5af8zXbfMVA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (11.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "test@gmail.com"], ["password_digest", "$2a$12$Dco8MVJKKIhJBUW2k842DOmCXfLS3ThCYt8usk5j9DcwrNOXbp8rW"], ["session_token", "FXfJfY1DanS5af8zXbfMVA"], ["first_name", "John"], ["last_name", "Smith"], ["birth_date", "2000-03-25"], ["current_location", "New York, NY"], ["gender", "male"], ["identity", "lgbtq"], ["created_at", "2021-04-06 04:02:54.878585"], ["updated_at", "2021-04-06 04:02:54.878585"], ["phone_number", "8888888888"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Ue-chkvJKjmZ0gNTg9FY4A"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ue-chkvJKjmZ0gNTg9FY4A"], ["updated_at", "2021-04-06 04:02:54.911117"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 246ms (Views: 3.3ms | ActiveRecord: 21.3ms)
+
+
+Started POST "/api/session?user[email]=test@gmail.com&user[password]=[FILTERED]" for ::1 at 2021-04-05 21:13:03 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 25.2ms)
+
+
+
+NoMethodError - undefined method `is_password?' for #<Class:0x00007fe860061b98>:
+  app/models/user.rb:13:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:3:in `create'
+
+Started POST "/api/session?user[email]=test@gmail.com&user[password]=[FILTERED]" for ::1 at 2021-04-05 21:14:51 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 30.3ms)
+
+
+
+NoMethodError - undefined method `is_password?' for #<Class:0x00007fffd9978700>:
+  app/models/user.rb:13:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:3:in `create'
+
+Started POST "/api/session?user[email]=test@gmail.com&user[password]=[FILTERED]" for ::1 at 2021-04-05 21:16:31 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "vQ0v8VS5eJhG1r60I0aXzw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vQ0v8VS5eJhG1r60I0aXzw"], ["updated_at", "2021-04-06 04:16:31.572472"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 267ms (Views: 3.9ms | ActiveRecord: 15.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-05 21:17:25 -0700
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hi@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "t-dMjyWawMnhoyqhaB6bKQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "t-dMjyWawMnhoyqhaB6bKQ"], ["updated_at", "2021-04-06 04:17:25.183493"], ["id", 1]]
+  ↳ app/models/user.rb:31
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+No template found for Api::SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 80ms (ActiveRecord: 7.3ms)
+
+
+Started POST "/api/session?user[email]=test@gmail.com&user[password]=[FILTERED]" for ::1 at 2021-04-05 21:20:30 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "byziBIlRJaMZpfMvc2Fwyw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "byziBIlRJaMZpfMvc2Fwyw"], ["updated_at", "2021-04-06 04:20:30.831027"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 233ms (Views: 3.9ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-05 21:20:45 -0700
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hi2@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "EUXCNQzvj21RI94Zu4s_6w"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (5.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "EUXCNQzvj21RI94Zu4s_6w"], ["updated_at", "2021-04-06 04:20:45.777587"], ["id", 2]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 8.4ms)
+
+
