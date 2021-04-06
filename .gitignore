@@ -2,3 +2,5 @@ node_modules
 bundle.js
 bundle.js.map
 master.key
+/public/assets
+bundle.js*

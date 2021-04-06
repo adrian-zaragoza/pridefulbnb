@@ -203,7 +203,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  x86_64-linux
+  ruby
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -234,4 +234,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   2.2.5
+   2.1.4
