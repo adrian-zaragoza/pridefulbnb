@@ -535,3 +535,10 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1584ms (Views: 1574.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-04-06 10:53:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
