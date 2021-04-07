@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpModal from '../modal/modal';
+
 
 class Signup extends React.Component{
   constructor(props){
@@ -43,7 +43,6 @@ class Signup extends React.Component{
 
   render(){
     return(
-      <SignUpModal available={this.state.modal} modalClose={() => this.modalClose()}>
         <div className="signup-form">
           <h2>Enjoy the full experience of LGBTQ hospitality</h2>
           <p>1 million LGBTQ-friendly accommodations in 200 countries.</p>
@@ -80,11 +79,10 @@ class Signup extends React.Component{
               <input type="radio" name="identity" value="lgbtq+" onChange={this.update('identity')} />LGBTQ+
               <input type="radio" name="identity" value="lgbtq+ Ally" onChange={this.update('identity')} />LGBTQ+ Ally
             </label>
-            <button onClick={this.handleSubmit}>Sign Up</button>
+            <button onClick={this.handleSubmit}>SIGN UP</button>
           </form>
 
         </div>
-      </SignUpModal>
     );
   }
 };
