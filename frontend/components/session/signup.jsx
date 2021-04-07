@@ -24,6 +24,12 @@ class Signup extends React.Component{
     }
   };
 
+  handleRadioChange(field, value){
+    return()=>{
+      this.setState({[field]: value});
+    }
+  };
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state).then(this.props.history.push('/'))
@@ -59,14 +65,14 @@ class Signup extends React.Component{
             <input type="text" value={this.state.phoneNumber} onChange={this.update('phoneNumber')} />
           </label>
           <label>Please select your gender
-            <input type="radio" name="gender" value={this.state.gender} onChange={this.update('gender')} />Male
-            <input type="radio" name="gender" value={this.state.gender} onChange={this.update('gender')} />Female
-            <input type="radio" name="gender" value={this.state.gender} onChange={this.update('gender')} />Transgender
-            <input type="radio" name="gender" value={this.state.gender} onChange={this.update('gender')} />Other
+            <input type="radio" name="gender" value="male" onChange={this.update('gender')} />Male
+            <input type="radio" name="gender" value="female" onChange={this.update('gender')} />Female
+            <input type="radio" name="gender" value="trans" onChange={this.update('gender')} />Trans
+            <input type="radio" name="gender" value="other" onChange={this.update('gender')} />Other
           </label>
           <label>What do you identify as?
-            <input type="radio" name="identity" value={this.state.identity} onChange={this.update('identity')} />LGBTQ+
-            <input type="radio" name="identity" value={this.state.identity} onChange={this.update('identity')} />LGBTQ+ Ally
+            <input type="radio" name="identity" value="lgbtq+" onChange={this.update('identity')} />LGBTQ+
+            <input type="radio" name="identity" value="lgbtq+ Ally" onChange={this.update('identity')} />LGBTQ+ Ally
           </label>
           <button onClick={this.handleSubmit}>Sign Up</button>
         </form>

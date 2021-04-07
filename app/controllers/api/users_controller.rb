@@ -1,4 +1,6 @@
 class Api::UsersController < ApplicationController
+  before_action :underscore_params!
+
   def create
     @user = User.new(user_params)
 

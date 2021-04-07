@@ -9,7 +9,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
 
   window.store = store;
-  ReactDOM.render(<h1>React is working</h1>, root);
+  ReactDOM.render(< Root store={store} />, root);
 })
-
-  // < Root store = { store } />

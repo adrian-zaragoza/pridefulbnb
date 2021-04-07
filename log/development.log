@@ -698,3 +698,137 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 492ms (Views: 486.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-04-06 19:50:27 -0700
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (5.4ms)
+Completed 200 OK in 1654ms (Views: 1646.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-06 19:50:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 274ms (Views: 272.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-04-06 19:52:23 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"mary@gmail.com", "password"=>"[FILTERED]", "firstName"=>"Mary", "lastName"=>"Poppins", "birthDate"=>"1960-08-20", "currentLocation"=>"Wonderland", "phoneNumber"=>"5465345", "gender"=>"", "identity"=>""}}
+Unpermitted parameters: :firstName, :lastName, :birthDate, :currentLocation, :phoneNumber
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (13.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mary@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zcXYTYagfdWfsAXEJZgLSA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 404 Not Found in 333ms (Views: 0.1ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/" for ::1 at 2021-04-06 20:10:29 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.1ms)
+Completed 200 OK in 937ms (Views: 933.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-04-06 20:11:13 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"mary@gmail.com", "password"=>"[FILTERED]", "firstName"=>"Mary", "lastName"=>"Poppins", "birthDate"=>"1960-08-20", "currentLocation"=>"Wonderland", "phoneNumber"=>"5465456456", "gender"=>"", "identity"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mary@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uGfgXue1h0pbKz5-lHJ6Cg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 404 Not Found in 215ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/users" for ::1 at 2021-04-06 20:47:05 -0700
+Started GET "/" for ::1 at 2021-04-06 20:47:05 -0700
+Started POST "/api/users" for ::1 at 2021-04-06 20:47:05 -0700
+Started GET "/" for ::1 at 2021-04-06 20:47:05 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"mary@gmail.com", "password"=>"[FILTERED]", "firstName"=>"Mary", "lastName"=>"Poppins", "birthDate"=>"1960-08-20", "currentLocation"=>"Wonderland", "phoneNumber"=>"54565456", "gender"=>"", "identity"=>""}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mary@gmail.com"], ["LIMIT", 1]]
+Processing by StaticPagesController#root as HTML
+  ↳ app/controllers/api/users_controller.rb:7
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Exists (4.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Akb6-UBOlguXbP4iw11vtw"], ["LIMIT", 1]]
+Processing by Api::UsersController#create as JSON
+  Rendering static_pages/root.html within layouts/application
+  ↳ app/controllers/api/users_controller.rb:7
+  Parameters: {"user"=>{"email"=>"mary@gmail.com", "password"=>"[FILTERED]", "firstName"=>"Mary", "lastName"=>"Poppins", "birthDate"=>"1960-12-06", "currentLocation"=>"Wonderland", "phoneNumber"=>"465545", "gender"=>"", "identity"=>""}}
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[35m (197.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 404 Not Found in 411ms (Views: 0.1ms | ActiveRecord: 204.5ms)
+
+
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.0ms)
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mary@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SLhuE_d-mS2YJlwft-WfXw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 404 Not Found in 212ms (Views: 0.1ms | ActiveRecord: 4.5ms)
+
+
+Completed 200 OK in 605ms (Views: 599.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 636ms (Views: 632.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-06 20:47:51 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.8ms)
+Completed 200 OK in 800ms (Views: 797.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-04-06 20:48:55 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"mary@gmail.com", "password"=>"[FILTERED]", "firstName"=>"Mary", "lastName"=>"Poppins", "birthDate"=>"1960-08-20", "currentLocation"=>"Wonderland", "phoneNumber"=>"5465545", "gender"=>"trans", "identity"=>"lgbtq+ Ally"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mary@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6OXNUeq02RHrqFbkVdGXHg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Create (16.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "mary@gmail.com"], ["password_digest", "$2a$12$M44wPDV52aMJEF.RzIMLxOHuqX1gTEQ.DB/Pko9vlXgQZa3D.UFnm"], ["session_token", "6OXNUeq02RHrqFbkVdGXHg"], ["first_name", "Mary"], ["last_name", "Poppins"], ["birth_date", "1960-08-20"], ["current_location", "Wonderland"], ["gender", "trans"], ["identity", "lgbtq+ Ally"], ["created_at", "2021-04-07 03:48:55.747946"], ["updated_at", "2021-04-07 03:48:55.747946"], ["phone_number", "5465545"]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mary@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "-CZrUkjIHYjj5eSNN62F9A"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "-CZrUkjIHYjj5eSNN62F9A"], ["updated_at", "2021-04-07 03:48:55.779958"], ["id", 4]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 252ms (Views: 8.4ms | ActiveRecord: 26.8ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
