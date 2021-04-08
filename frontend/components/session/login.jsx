@@ -44,8 +44,9 @@ class LogIn extends React.Component{
           <label>Password
             <input type="password" value={this.state.password} onChange={this.update('password')} />
           </label>
-          <button onClick={this.handleSubmit}>LOG IN</button>
+          <button onClick={this.handleSubmit} className="form-button">LOG IN</button>
         </form>
+        <button onClick={this.props.demoUser} className="form-button">DEMO LOG IN</button>
       </div>
     )
 
