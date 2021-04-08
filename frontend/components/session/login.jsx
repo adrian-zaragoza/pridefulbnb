@@ -16,10 +16,19 @@ class LogIn extends React.Component{
     }
   };
 
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state).then(this.props.history.push('/'))
+  }
+
+  showErrors(){
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>{error}</li>
+        ))}
+      </ul>
+    )
   }
 
   render(){
@@ -27,7 +36,7 @@ class LogIn extends React.Component{
     return(
       <div className="login-form">
         <h2>Log in</h2>
-
+        {this.showErrors()}
         <form>
           <label>E-mail
             <input type="text" value={this.state.email} onChange={this.update('email')} />

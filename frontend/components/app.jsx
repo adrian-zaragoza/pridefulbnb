@@ -7,12 +7,13 @@ import Home from './home/home';
 
 const App = () => (
   <div className="app">
-    <Switch>
+    {/* <Switch> */}
+
+      <Route exact path="/" component={NavBarContainer}/>
+      <Route exact path="/" component={Home} />
       <Route path="/signup" component={SignupContainer} />
       <Route path="/login" component={LoginContainer} />
-      <Route path="/" component={NavBarContainer}/>
-      <Route path="/" component={Home} />
-    </Switch>
+    {/* </Switch> */}
   </div>
 );
 

@@ -13,4 +13,3 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
 
-//reducer for modal and action for modal to keep track of the state if its open or close.
