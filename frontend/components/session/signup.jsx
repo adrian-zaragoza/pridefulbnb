@@ -45,6 +45,8 @@ class Signup extends React.Component{
     return(
         <div className="signup-form">
           <h1>Enjoy the full experience of LGBTQ hospitality</h1>
+        <img src={prideBannerIcon} alt="pride banner icon"/>
+        <br/>
           <p>1 million LGBTQ-friendly accommodations in 200 countries.</p>
 
           <form className="signup-form">
