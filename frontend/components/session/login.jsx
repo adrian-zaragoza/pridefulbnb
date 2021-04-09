@@ -10,6 +10,14 @@ class LogIn extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    document.body.classList.add('login-page')
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove('login-page')
+  }
+
   update(field) {
     return(e) => {
       this.setState({[field]: e.target.value});
@@ -35,15 +43,16 @@ class LogIn extends React.Component{
 
     return(
       <div className="login-form">
-        <h2>Log in</h2>
+        <h1>Log in</h1>
         {this.showErrors()}
-        <form>
+        <form className="login-form">
           <label>E-mail
             <input type="text" value={this.state.email} onChange={this.update('email')} />
           </label>
           <label>Password
             <input type="password" value={this.state.password} onChange={this.update('password')} />
           </label>
+          <br/>
           <button onClick={this.handleSubmit} className="form-button">LOG IN</button>
         </form>
         <button onClick={this.props.demoUser} className="form-button">DEMO LOG IN</button>

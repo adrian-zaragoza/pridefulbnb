@@ -1,7 +1,7 @@
-.signup-form{
+.login-form{
   background-color: white;
   height: auto;
-  width: 500px;
+  width: 600px;
   font-family: "Work Sans", Arial, Helvetica, sans-serif;
   color: #006f85;
   display: flex;
@@ -57,9 +57,16 @@
     background-color: rgb(49, 223, 223);
     color: white;
   }
+
+}
+
+.login-form + button{
+  margin-top: 0;
 }
 
 
-.signup-page{
+
+
+.login-page{
   background-color: #006f85;
 }
