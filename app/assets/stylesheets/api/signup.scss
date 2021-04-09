@@ -1,0 +1,43 @@
+.signup-form{
+  background-color: white;
+  height: auto;
+  width: 500px;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  color: #006f85;
+  display: flex;
+  flex-wrap: wrap;
+  //align-content: flex-start;
+
+  h1{
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+  }
+  p{
+    color: black;
+  }
+  input{
+    //display: inline-flex;
+  }
+
+  input[type=radio]{
+    //display: inline-flex;
+    // text-align: end;
+  }
+  
+  button{
+    height: 20px;
+    margin-top: 25px;
+    width: 120px;
+    margin-left: 180px;
+    background-color: pink;
+  }
+
+
+  
+}
+
+
+.signup-page{
+  background-color: #006f85;
+}
