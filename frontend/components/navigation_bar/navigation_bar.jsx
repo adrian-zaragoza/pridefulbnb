@@ -2,29 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = ({ currentUser, logout, demoUser}) => {
-  // let demoUser = new FormData();
-  // demoUser.append("email", "demouser@demo.com");
-  // demoUser.append("password", "thisisfordemo123");
   
   let display = (
-    <div className="nav-bar">
-      <Link className="btn" to="/signup">Sign Up</Link>
-      <Link className="btn" to="/login">Log In</Link>
-      <button onClick={demoUser}>Demo Log In</button>
+    <div className="nav-bar-links">
+      <Link className="nav-button" to="/signup">Sign Up</Link>
+      <Link className="nav-button" to="/login">Log In</Link>
+      <button onClick={demoUser} className="nav-button">Demo Log In</button>
     </div>
   )
 
   if(currentUser){
     display = (
-      <div className ="nav-bar">
-        <p>{currentUser.firstName}</p>
-        <button onClick={logout}>Logout</button>
+      <div className ="nav-bar-links">
+        {console.log({currentUser})}
+        <p>{`Hi, ${currentUser.firstName}`}</p>
+        <button onClick={logout} className="nav-button">Logout</button>
       </div>
     )
   }
 
   return (
     <div className="nav-bar">
+      <div className="logo">
+        <h1>{"pridefulb&b"}</h1>
+      </div>
       {display}
     </div>
   );
