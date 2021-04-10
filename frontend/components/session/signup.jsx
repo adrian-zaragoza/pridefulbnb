@@ -16,7 +16,7 @@ class Signup extends React.Component{
       gender: '',
       identity: ''
     };
-
+    this.componentWillUnmount = this.componentWillUnmount.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,6 +26,7 @@ class Signup extends React.Component{
 
   componentWillUnmount(){
     document.body.classList.remove('signup-page')
+    this.props.clearErrors()
   }
 
   update(field) {
@@ -37,8 +38,20 @@ class Signup extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state).then(this.props.history.push('/'))
+    this.props.createNewUser(this.state)
   };
+
+  showErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>{error}</li>
+        ))}
+      </ul>
+    )
+  }
+
+
 
 
   render(){
@@ -48,7 +61,7 @@ class Signup extends React.Component{
         <img src={prideBannerIcon} alt="pride banner icon"/>
         <br/>
           <p>1 million LGBTQ-friendly accommodations in 200 countries.</p>
-
+           {this.showErrors()}
           <form className="signup-form">
             <label>First name
               <br/>

@@ -8,6 +8,7 @@ class LogIn extends React.Component{
       password: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.componentWillUnmount = this.componentWillUnmount.bind(this)
   }
 
   componentDidMount() {
@@ -16,6 +17,7 @@ class LogIn extends React.Component{
 
   componentWillUnmount() {
     document.body.classList.remove('login-page')
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -26,7 +28,8 @@ class LogIn extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
+    this.props.login(this.state);
+    
   }
 
   showErrors(){

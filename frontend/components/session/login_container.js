@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { login } from '../../actions/session';
+import { login, clearErrors } from '../../actions/session';
 import LogIn from './login';
+import sessionErrorsReducer from '../../reducers/session_errors_reducer';
 
 const mapStateToProps = ({errors}) => {
   return {
@@ -12,6 +13,7 @@ const mapStateToProps = ({errors}) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (user) => dispatch(login(user)),
+    clearErrors: () => dispatch(clearErrors()),
     demoUser: () => dispatch(login({ email: "demouser@demo.com", password:"thisisfordemo123"}))
   };
 };
