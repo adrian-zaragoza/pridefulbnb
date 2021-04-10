@@ -14,8 +14,7 @@ const NavigationBar = ({ currentUser, logout, demoUser}) => {
   if(currentUser){
     display = (
       <div className ="nav-bar-links">
-        {console.log({currentUser})}
-        <p>{`Hi, ${currentUser.firstName}`}</p>
+        <p className ="user-name">{`Hi, ${currentUser.firstName}`}</p>
         <button onClick={logout} className="nav-button">Logout</button>
       </div>
     )
