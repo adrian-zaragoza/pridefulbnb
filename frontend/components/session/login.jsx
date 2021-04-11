@@ -47,8 +47,10 @@ class LogIn extends React.Component{
 
     return(
       <div className="login-form">
-        <h1>Log in</h1>
-        {this.showErrors()}
+        <div className="title-errors">
+          <h1>Log in</h1>
+          {this.showErrors()}
+        </div>
         <form className="login-form">
           <label>E-mail
             <input type="text" value={this.state.email} onChange={this.update('email')} />

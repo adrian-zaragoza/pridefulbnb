@@ -21,6 +21,7 @@
     text-align: center;
     margin-top: 10px;
     margin-bottom: 5px;
+    position: relative;
   }
   p{
     color: black;
@@ -68,13 +69,20 @@
     margin-right: 10px;
   }
 
+  ul > li{
+    color: red;
+  }
+
 }
 
 .login-form + button{
   margin-top: 0;
 }
 
-
+.title-errors{
+  display: flex;
+  flex-direction: column;
+}
 
 
 .login-page{
