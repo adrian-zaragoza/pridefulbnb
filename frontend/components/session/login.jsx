@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LogIn extends React.Component{
   constructor(props){
@@ -59,7 +60,14 @@ class LogIn extends React.Component{
           <button onClick={this.handleSubmit} className="form-button">LOG IN</button>
         </form>
         <button onClick={this.props.demoUser} className="form-button">DEMO LOG IN</button>
+        <div className="signup-redirec-data">
+          <p>Don't have an account?</p>
+          <Link className="signup-redirec" to="/signup">Sign up</Link>
+        </div>
+      
       </div>
+
+      
     )
 
 

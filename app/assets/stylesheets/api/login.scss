@@ -58,6 +58,16 @@
     color: white;
   }
 
+    .signup-redirec-data{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .signup-redirec-data > p, .signup-redirec-data > a{
+    margin-right: 10px;
+  }
+
 }
 
 .login-form + button{
