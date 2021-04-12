@@ -12,7 +12,7 @@ const App = withRouter(({location}) =>{
   return(
   <div className="app">
     {
-      location.pathname != '/login' && location.pathname != '/signup' && <NavBarContainer />
+      location.pathname != '/login' && location.pathname != '/signup' && <NavBarContainer props={location} />
     }
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />

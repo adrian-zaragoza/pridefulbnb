@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavigationBar = ({ currentUser, logout, demoUser}) => {
+const NavigationBar = ({ currentUser, logout, demoUser, props}) => {
+  let homeButton = undefined;
+  if(props.pathname != "/"){
+    homeButton = (
+      <Link className="nav-button" to="/">Home</Link>
+    )
+  }
   
   let display = (
     <div className="nav-bar-links">
+      {homeButton}
       <Link className="nav-button" to="/signup">Sign Up</Link>
       <Link className="nav-button" to="/login">Log In</Link>
       <button onClick={demoUser} className="nav-button">Demo Log In</button>
@@ -14,6 +21,7 @@ const NavigationBar = ({ currentUser, logout, demoUser}) => {
   if(currentUser){
     display = (
       <div className ="nav-bar-links">
+        {homeButton}
         <p className ="user-name">{`Hi, ${currentUser.firstName}`}</p>
         <button onClick={logout} className="nav-button">Logout</button>
       </div>
