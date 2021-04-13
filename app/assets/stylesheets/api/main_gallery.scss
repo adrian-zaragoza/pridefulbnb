@@ -1,0 +1,23 @@
+.main-gallery {
+  height: 450px;
+  display: flex;
+
+  background-color: pink;
+  height: 450px;
+
+  
+  
+}
+
+.main-gallery > .image-container {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-shrink: 1;
+  
+  
+}
+
+.image-container > img{
+  width: 100%
+}

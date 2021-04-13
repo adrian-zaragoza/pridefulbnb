@@ -1,7 +1,9 @@
 import React from 'react';
+import MainGallery from './main_gallery'
 
 export default () => (
   <div className="home">
+    <MainGallery />
     <div className="icon-bar">
 
       <div className="icon">

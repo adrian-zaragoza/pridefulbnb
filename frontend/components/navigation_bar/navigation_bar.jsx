@@ -30,8 +30,8 @@ const NavigationBar = ({ currentUser, logout, demoUser, props}) => {
 
   return (
     <div className="nav-bar">
-      <div className="logo">
-        <h1>{"pridefulb&b"}</h1>
+      <div>
+        <Link className="logo" to="/"><h1>{"pridefulb&b"}</h1></Link>
       </div>
       {display}
     </div>
