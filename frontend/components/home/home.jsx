@@ -1,5 +1,6 @@
 import React from 'react';
 import MainGallery from './main_gallery'
+import Accomodations from './accomodations';
 
 export default () => (
   <div className="home">
@@ -29,8 +30,14 @@ export default () => (
     </div>
 
     <div className="trustpilot-rating">
-      
+      <span className="trustpilot-reviews">
+        Rated <b>Excellent </b>
+      <img src={window.starsTrustpilotRating} alt="trustpilot rating stars" className="trustpilot-stars"/>
+        Based on <b> 1,700+ reviews </b> on
+      <img src={window.trustpilotLogo} alt="trustpilot logo"/>
+      </span>
     </div>
 
+    <Accomodations />
   </div>
 )
