@@ -37,6 +37,7 @@
     text-align: center;
     font-weight: 600;
     color: white;
+    margin-top: 15px;
   }
 
   h2{
@@ -72,6 +73,7 @@
     width: 400px;
     height: 75px;
     border-radius: 4px;
+    margin-bottom: 10px;
     
   }
 
@@ -82,15 +84,31 @@
     font-family: "Work Sans", Arial, Helvetica, sans-serif;
     font-size: 18px;
     margin-left: 30px;
+    outline: none
     
   }
 
   p{
     margin-bottom: 2px;
+    margin-left: 10px;
   }
 
   button{
+    margin-top: 10px;
+    width: 400px;
+    background: #f9b825;
+    height: 50px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: white;
+    font-size: 20px;
+    transition: all 0.2s linear;
+  }
 
+  button:hover{
+    background: white;
+    color: #f9b825;
+    cursor: pointer;
   }
 }
 

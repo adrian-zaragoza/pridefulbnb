@@ -28,5 +28,9 @@ export default () => (
       
     </div>
 
+    <div className="trustpilot-rating">
+      
+    </div>
+
   </div>
 )
