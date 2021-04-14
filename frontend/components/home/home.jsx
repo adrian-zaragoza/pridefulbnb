@@ -1,6 +1,7 @@
 import React from 'react';
-import MainGallery from './main_gallery'
+import MainGallery from './main_gallery';
 import Accomodations from './accomodations';
+import PhoneApp from './phone_app';
 
 export default () => (
   <div className="home">
@@ -39,5 +40,7 @@ export default () => (
     </div>
 
     <Accomodations />
+    <PhoneApp />
+    
   </div>
 )

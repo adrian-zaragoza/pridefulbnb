@@ -1,0 +1,42 @@
+.phone-app > figure > img{
+  width: 300px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.phone-app{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  justify-content: center;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+
+
+
+}
+
+.phone-app-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #006f85;
+
+  h1{
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 22px;
+    
+  }
+
+  h2{
+    font-size: 24px;
+  }
+
+}
+
+.phone-app-buttons{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+}
