@@ -1,0 +1,49 @@
+.become-a-host > figure > img{
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+}
+
+.become-a-host{
+  display: flex;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  color:#006f85;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  justify-content: center;
+
+
+  h1{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  h2{
+    font-size: 22px;
+    color: #2f2f2f;
+    margin-top: 40px;
+  }
+
+  .hosting-description{
+    width: 650px;
+    height: auto;
+  }
+}
+
+.quote > h3{
+  color: #7c9a9c;
+  font-size: 22px;
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+.quote{
+  display: flex;
+  flex-direction: column;
+  :last-child{
+    align-self:flex-end;
+    font-size: 17px;
+    margin-top: 25px;
+  }
+}

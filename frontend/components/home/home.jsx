@@ -3,6 +3,7 @@ import MainGallery from './main_gallery';
 import Accomodations from './accomodations';
 import PhoneApp from './phone_app';
 import Blogs from './blogs';
+import Host from './host';
 
 export default () => (
   <div className="home">
@@ -43,6 +44,7 @@ export default () => (
     <Accomodations />
     <PhoneApp />
     <Blogs />
+    <Host />
 
   </div>
 )
