@@ -1,7 +1,13 @@
 import React from 'react';
+import MainGallery from './main_gallery';
+import Accomodations from './accomodations';
+import PhoneApp from './phone_app';
+import Blogs from './blogs';
+import Host from './host';
 
 export default () => (
   <div className="home">
+    <MainGallery />
     <div className="icon-bar">
 
       <div className="icon">
@@ -25,6 +31,20 @@ export default () => (
       </div>
       
     </div>
+
+    <div className="trustpilot-rating">
+      <span className="trustpilot-reviews">
+        Rated <b>Excellent </b>
+      <img src={window.starsTrustpilotRating} alt="trustpilot rating stars" className="trustpilot-stars"/>
+        Based on <b> 1,700+ reviews </b> on
+      <img src={window.trustpilotLogo} alt="trustpilot logo"/>
+      </span>
+    </div>
+
+    <Accomodations />
+    <PhoneApp />
+    <Blogs />
+    <Host />
 
   </div>
 )

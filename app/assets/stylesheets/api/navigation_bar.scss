@@ -31,13 +31,15 @@
   -webkit-text-fill-color: transparent;
   font-family: 'Hind Madurai', sans-serif;
   font-weight: 800;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .logo{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
+    text-decoration: none;
 }
 
 .nav-bar {
@@ -50,7 +52,7 @@
   justify-content: flex-end;
   width: 100%;
 
-  // 
+  
 
 }
 
