@@ -33698,3 +33698,839 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 211ms (Views: 3.3ms | ActiveRecord: 6.1ms)
 
 
+Started GET "/" for ::1 at 2021-04-14 10:55:28 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (13.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 3202ms (Views: 3189.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 10:55:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 10:55:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 10:55:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:32:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 784ms (Views: 764.7ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:32:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:46:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 68ms (Views: 63.0ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 13:46:09 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "P7Vf1zP2zipCfvHZ5MuZLw"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "P7Vf1zP2zipCfvHZ5MuZLw"], ["updated_at", "2021-04-14 20:46:09.251534"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.5ms)
+Completed 200 OK in 245ms (Views: 4.2ms | ActiveRecord: 21.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-14 13:46:10 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "P7Vf1zP2zipCfvHZ5MuZLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "STFI0mFManedyxRf2qAOWQ"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (3.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "STFI0mFManedyxRf2qAOWQ"], ["updated_at", "2021-04-14 20:46:10.308018"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 13:46:13 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "O_GvZ04Pi8r9MU0iE-pQBg"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "O_GvZ04Pi8r9MU0iE-pQBg"], ["updated_at", "2021-04-14 20:46:14.062132"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 213ms (Views: 3.6ms | ActiveRecord: 6.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-14 13:46:14 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "O_GvZ04Pi8r9MU0iE-pQBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "27763n2lih3QSSmJNxG2DA"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "27763n2lih3QSSmJNxG2DA"], ["updated_at", "2021-04-14 20:46:14.523871"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:46:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:46:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:46:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 82ms (Views: 80.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 13:46:19 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "as4djzlwYlTko3rdDSRwBA"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "as4djzlwYlTko3rdDSRwBA"], ["updated_at", "2021-04-14 20:46:19.686527"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 248ms (Views: 4.6ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-14 13:46:20 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "as4djzlwYlTko3rdDSRwBA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "sqsRalqMAHOIbrJH1n-YbA"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sqsRalqMAHOIbrJH1n-YbA"], ["updated_at", "2021-04-14 20:46:20.746693"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 13:46:25 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "WeW-zzjpIgR-A2s0bc4EaQ"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WeW-zzjpIgR-A2s0bc4EaQ"], ["updated_at", "2021-04-14 20:46:25.550075"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.5ms)
+Completed 200 OK in 233ms (Views: 4.5ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-14 13:46:27 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WeW-zzjpIgR-A2s0bc4EaQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "TrcHEElgYbTffFR4kgcVgg"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TrcHEElgYbTffFR4kgcVgg"], ["updated_at", "2021-04-14 20:46:27.068924"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 13:47:41 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "5Kz7HuWc8X-nFj2MlCZBFg"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "5Kz7HuWc8X-nFj2MlCZBFg"], ["updated_at", "2021-04-14 20:47:41.508905"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.5ms)
+Completed 200 OK in 222ms (Views: 4.2ms | ActiveRecord: 7.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-14 13:47:42 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5Kz7HuWc8X-nFj2MlCZBFg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Qg_5lJwqzGorkf9lJN7IsQ"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Qg_5lJwqzGorkf9lJN7IsQ"], ["updated_at", "2021-04-14 20:47:42.697314"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:48:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 13:48:06 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "BB35SVhqjc-QSaHwR9UQyA"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BB35SVhqjc-QSaHwR9UQyA"], ["updated_at", "2021-04-14 20:48:06.316678"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 244ms (Views: 11.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 13:48:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BB35SVhqjc-QSaHwR9UQyA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-14 13:48:30 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BB35SVhqjc-QSaHwR9UQyA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "k5BFJIs1K16aGwQkbLxgRw"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "k5BFJIs1K16aGwQkbLxgRw"], ["updated_at", "2021-04-14 20:48:30.467329"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2021-04-14 14:47:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (21.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 87ms (Views: 61.4ms | ActiveRecord: 23.8ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-14 14:47:04 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demouser@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demouser@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "30yaMYHdgkBfl-x5FT6Ohw"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "30yaMYHdgkBfl-x5FT6Ohw"], ["updated_at", "2021-04-14 21:47:05.212272"], ["id", 15]]
+  ↳ app/models/user.rb:35
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.6ms)
+Completed 200 OK in 295ms (Views: 11.4ms | ActiveRecord: 24.0ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (21.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPlace Destroy (17.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kkrvkCUodlQLTTMSkvYQig"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (16.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "demouser@demo.com"], ["password_digest", "$2a$12$CJ.wCqPy3XxUxILHw190W.s.lukE/jW6GPB6SJ57bVSVo5EQetqk6"], ["session_token", "kkrvkCUodlQLTTMSkvYQig"], ["first_name", "Demo"], ["last_name", "User"], ["birth_date", "1999-05-20"], ["current_location", "San Francisco, CA"], ["gender", "trans"], ["identity", "lgbtq+"], ["created_at", "2021-04-14 22:04:10.770318"], ["updated_at", "2021-04-14 22:04:10.770318"], ["phone_number", "555-555-5555"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "imawizard@hogwarts.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WUWnl5NWSOFTZnxc6GlO4g"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "imawizard@hogwarts.com"], ["password_digest", "$2a$12$.AtzOuO5pli58CtkC4L/peCvLRLxq1zFU/MtsToqgieI.CdQY08je"], ["session_token", "WUWnl5NWSOFTZnxc6GlO4g"], ["first_name", "Harry"], ["last_name", "Potter"], ["birth_date", "1980-07-31"], ["current_location", "New York, NY"], ["gender", "male"], ["identity", "lgbtq+ ally"], ["created_at", "2021-04-14 22:04:10.983984"], ["updated_at", "2021-04-14 22:04:10.983984"], ["phone_number", "555-555-5555"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lisa@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3JaWoPodW5p2LIlsDggyuA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "lisa@yahoo.com"], ["password_digest", "$2a$12$iKoyTgiAn7xm72uTj/Am3uchMAQoXveVlD4czzFSh4ML9CoDYucTq"], ["session_token", "3JaWoPodW5p2LIlsDggyuA"], ["first_name", "Lisa"], ["last_name", "Simpson"], ["birth_date", "1995-12-19"], ["current_location", "Springfield, NY"], ["gender", "female"], ["identity", "lgbtq+ ally"], ["created_at", "2021-04-14 22:04:11.185617"], ["updated_at", "2021-04-14 22:04:11.185617"], ["phone_number", "555-555-5555"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mPlace Create (5.9ms)[0m  [1m[32mINSERT INTO "places" ("title", "location", "type_of_place", "max_guests", "num_of_bedrooms", "num_of_bathrooms", "num_of_beds", "about", "nearby_attractions", "rules", "price_per_day", "cancellation_policy", "check_in_from", "check_out_before", "owner_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["title", "Sunny Apartment Near Beach"], ["location", "Honolulu, Hawaii"], ["type_of_place", "Entire Place"], ["max_guests", 4], ["num_of_bedrooms", 2], ["num_of_bathrooms", 2], ["num_of_beds", 3], ["about", "If you are visiting from out of state please review travel restrictions prior to booking. We are set up for working from home, and social distancing all while enjoying the Hawaii sun!\n                Spacious private apartment with a full kitchen. Pool and Patio areas are very private from the street and neighbors.\n                The small garden area in the back is enclosed and private for you to enjoy the garden how ever you like to! Ample street parking available for free.\n                Walking distance to Kahala beach and a short drive or uber ride to nearby to Waikiki."], ["nearby_attractions", "Waikiki, Ala Moana Shopping Center, Diamond Head, Kahala Mall, Kahala Hotel, Kahala Beach, Hulas Bar and Lei Stand, Wang Chung's Karaoke Bar, Baccus, InBetween, Scarlet."], ["rules", "Please no smoking and no pets."], ["price_per_day", 150], ["cancellation_policy", "Flexible: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in.\n                Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in.\n                If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable."], ["check_in_from", "from 1pm to 9pm"], ["check_out_before", "10am"], ["owner_id", 16], ["created_at", "2021-04-14 22:04:11.235349"], ["updated_at", "2021-04-14 22:04:11.235349"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (20.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPlace Destroy (13.8ms)[0m  [1m[31mDELETE FROM "places"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bX-kM3X2kAuXd79jpxVktQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "demouser@demo.com"], ["password_digest", "$2a$12$WQ/n33ALs1CZ3jo44asTe.zmq/VCj9Ys.WnBz83J11G/GqpECevSO"], ["session_token", "bX-kM3X2kAuXd79jpxVktQ"], ["first_name", "Demo"], ["last_name", "User"], ["birth_date", "1999-05-20"], ["current_location", "San Francisco, CA"], ["gender", "trans"], ["identity", "lgbtq+"], ["created_at", "2021-04-14 22:08:04.602062"], ["updated_at", "2021-04-14 22:08:04.602062"], ["phone_number", "555-555-5555"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "imawizard@hogwarts.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7X4XBUfuMv80la5OpCrmiw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "imawizard@hogwarts.com"], ["password_digest", "$2a$12$sfwUo15/YHgOZ2rqPnYds.ARwlWTj5IoYfdRMFJUWPTpyNOFwpRAu"], ["session_token", "7X4XBUfuMv80la5OpCrmiw"], ["first_name", "Harry"], ["last_name", "Potter"], ["birth_date", "1980-07-31"], ["current_location", "New York, NY"], ["gender", "male"], ["identity", "lgbtq+ ally"], ["created_at", "2021-04-14 22:08:04.793470"], ["updated_at", "2021-04-14 22:08:04.793470"], ["phone_number", "555-555-5555"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lisa@yahoo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PepxsS_K1VVmwkXO4VF-Jg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "birth_date", "current_location", "gender", "identity", "created_at", "updated_at", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "lisa@yahoo.com"], ["password_digest", "$2a$12$wtEFNTSojIzO4eq1ZcaMKOvWu7a3VyS9/UH2ELHp3hKTKrYryZ85q"], ["session_token", "PepxsS_K1VVmwkXO4VF-Jg"], ["first_name", "Lisa"], ["last_name", "Simpson"], ["birth_date", "1995-12-19"], ["current_location", "Springfield, NY"], ["gender", "female"], ["identity", "lgbtq+ ally"], ["created_at", "2021-04-14 22:08:04.988889"], ["updated_at", "2021-04-14 22:08:04.988889"], ["phone_number", "555-555-5555"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mPlace Create (0.4ms)[0m  [1m[32mINSERT INTO "places" ("title", "location", "type_of_place", "max_guests", "num_of_bedrooms", "num_of_bathrooms", "num_of_beds", "about", "nearby_attractions", "rules", "price_per_day", "cancellation_policy", "check_in_from", "check_out_before", "owner_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["title", "Sunny Apartment Near Beach"], ["location", "Honolulu, Hawaii"], ["type_of_place", "Entire Place"], ["max_guests", 4], ["num_of_bedrooms", 2], ["num_of_bathrooms", 2], ["num_of_beds", 3], ["about", "If you are visiting from out of state please review travel restrictions prior to booking. We are set up for working from home, and social distancing all while enjoying the Hawaii sun!\n                Spacious private apartment with a full kitchen. Pool and Patio areas are very private from the street and neighbors.\n                The small garden area in the back is enclosed and private for you to enjoy the garden how ever you like to! Ample street parking available for free.\n                Walking distance to Kahala beach and a short drive or uber ride to nearby to Waikiki."], ["nearby_attractions", "Waikiki, Ala Moana Shopping Center, Diamond Head, Kahala Mall, Kahala Hotel, Kahala Beach, Hulas Bar and Lei Stand, Wang Chung's Karaoke Bar, Baccus, InBetween, Scarlet."], ["rules", "Please no smoking and no pets."], ["price_per_day", 150], ["cancellation_policy", "Flexible: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in.\n                Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in.\n                If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable."], ["check_in_from", "from 1pm to 9pm"], ["check_out_before", "10am"], ["owner_id", 19], ["created_at", "2021-04-14 22:08:05.004255"], ["updated_at", "2021-04-14 22:08:05.004255"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mPlace Create (0.2ms)[0m  [1m[32mINSERT INTO "places" ("title", "location", "type_of_place", "max_guests", "num_of_bedrooms", "num_of_bathrooms", "num_of_beds", "about", "nearby_attractions", "rules", "price_per_day", "cancellation_policy", "check_in_from", "check_out_before", "owner_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["title", "Bright 1 BR in Weho"], ["location", "West Hollywood, CA"], ["type_of_place", "Private room"], ["max_guests", 2], ["num_of_bedrooms", 1], ["num_of_bathrooms", 1], ["num_of_beds", 1], ["about", "The apartment is a lovely private apartment in a small building near the vibrant street of Santa Monica Blvd.Apartment is approximately 1000 sq.ft.Living room dining room combo, full use galley - style kitchen, private bathroom and\n          balcony at your disposal should you need.The bedroom is comprised of an upgraded memory foam queen size bed, large closet, dresser, desk, storage, linens, towels etc.The bathroom is spacious and available directly adjacent to the room with a split\n          floor plan for privacy.Extra storage is available if needed fan provided, a / c available per request and full use of the closets in the bedroom.There is complimentary coffee, tea, water and snacks available as your desire no additional charge.Make yourself at home."], ["nearby_attractions", ""], ["rules", "Rules are pretty standard, respect the space and keep it presentable and clean."], ["price_per_day", 89], ["cancellation_policy", "Strict cancellation policy means: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes misterb&b service fee paid by the guest and by the host. \n          If the stay is interrupted, the guest will have no right to receive a refund."], ["check_in_from", "from 3pm to 11pm"], ["check_out_before", "11am"], ["owner_id", 21], ["created_at", "2021-04-14 22:08:05.007075"], ["updated_at", "2021-04-14 22:08:05.007075"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+Started GET "/api/places/1" for ::1 at 2021-04-14 15:08:54 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Api::PlacesController::Places:
+  app/controllers/api/places_controller.rb:9:in `show'
+
+Started GET "/api/place/1" for ::1 at 2021-04-14 15:10:15 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/place/1"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/places/1" for ::1 at 2021-04-14 15:11:06 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Api::PlacesController::Places:
+  app/controllers/api/places_controller.rb:9:in `show'
+
+Started GET "/api/places/1" for ::1 at 2021-04-14 15:16:22 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlace Load (21.4ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:9
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (1.8ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 23.9ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/places/show.json.jbuilder:1:in `_app_views_api_places_show_json_jbuilder___2198916147773695516_70289913273640'
+  app/controllers/api/places_controller.rb:11:in `show'
+
+  [1m[36mPlace Load (0.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+Started GET "/api/places/4" for ::1 at 2021-04-14 15:17:15 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:9
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (0.7ms)
+Completed 200 OK in 18ms (Views: 3.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/places/3" for ::1 at 2021-04-14 15:18:05 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:9
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (0.8ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places/1" for ::1 at 2021-04-14 15:20:28 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:9
+Completed 404 Not Found in 8ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/places" for ::1 at 2021-04-14 15:21:22 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (15.6ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/places" for ::1 at 2021-04-14 15:22:50 -0700
+Processing by Api::PlacesController#create as JSON
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: place:
+  app/controllers/api/places_controller.rb:55:in `place_params'
+  app/controllers/api/places_controller.rb:18:in `create'
+
+Started POST "/api/places" for ::1 at 2021-04-14 15:23:15 -0700
+Processing by Api::PlacesController#create as JSON
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: place:
+  app/controllers/api/places_controller.rb:55:in `place_params'
+  app/controllers/api/places_controller.rb:18:in `create'
+
+Started POST "/api/places?place[title]" for ::1 at 2021-04-14 15:23:48 -0700
+Processing by Api::PlacesController#create as JSON
+  Parameters: {"place"=>{"title"=>nil}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/places_controller.rb:20
+Completed 404 Not Found in 115ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/places?place[title]=Cabin%20in%20Big%20Sur&place[location]=Big%20Sur,%20CA&place[type_of_place]=Entire%20Place&place[max_guests]=3&place[num_of_bedrooms]=1&place[num_of_bathrooms]=1&place[num_of_beds]=2&place[about]=Modern%20cabin%20in%20Big%20Sur%20within%20walking%20distance%20to%20the%20beach.%20Kitchen%20is%20fully%20stocked%20with%20everything%20you%20need%20to%20cook.%20Restaurants%20are%20a%20short%20drive%20away.%20There%20are%20plenty%20of%20hiking%20trails%20around%20the%20property.&place[nearby_attractions]=Beach,%20Hiking%20Trails&place[rules]=no%20parties.%20pets%20ok.%20no%20loud%20music%20after%2010pm.%20Please%20follow%20the%20check%20in/out%20times.&place[price_per_day]=93&place[cancellation_policy]=strict&place[check_in_from]=2pm&place[check_out_before]=11am&place[owner_id]=20" for ::1 at 2021-04-14 15:38:03 -0700
+Processing by Api::PlacesController#create as JSON
+  Parameters: {"place"=>{"title"=>"Cabin in Big Sur", "location"=>"Big Sur, CA", "type_of_place"=>"Entire Place", "max_guests"=>"3", "num_of_bedrooms"=>"1", "num_of_bathrooms"=>"1", "num_of_beds"=>"2", "about"=>"Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property.", "nearby_attractions"=>"Beach, Hiking Trails", "rules"=>"no parties. pets ok. no loud music after 10pm. Please follow the check in/out times.", "price_per_day"=>"93", "cancellation_policy"=>"strict", "check_in_from"=>"2pm", "check_out_before"=>"11am", "owner_id"=>"20"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[36mPlace Create (0.6ms)[0m  [1m[32mINSERT INTO "places" ("title", "location", "type_of_place", "max_guests", "num_of_bedrooms", "num_of_bathrooms", "num_of_beds", "about", "nearby_attractions", "rules", "price_per_day", "cancellation_policy", "check_in_from", "check_out_before", "owner_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["title", "Cabin in Big Sur"], ["location", "Big Sur, CA"], ["type_of_place", "Entire Place"], ["max_guests", 3], ["num_of_bedrooms", 1], ["num_of_bathrooms", 1], ["num_of_beds", 2], ["about", "Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property."], ["nearby_attractions", "Beach, Hiking Trails"], ["rules", "no parties. pets ok. no loud music after 10pm. Please follow the check in/out times."], ["price_per_day", 93], ["cancellation_policy", "strict"], ["check_in_from", "2pm"], ["check_out_before", "11am"], ["owner_id", 20], ["created_at", "2021-04-14 22:38:03.708925"], ["updated_at", "2021-04-14 22:38:03.708925"]]
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/places_controller.rb:20
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (0.8ms)
+Completed 200 OK in 59ms (Views: 5.1ms | ActiveRecord: 17.4ms)
+
+
+  [1m[36mPlace Load (0.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+Started POST "/api/places?place[title]=Cabin%20in%20Big%20Sur&place[location]=Big%20Sur,%20CA&place[type_of_place]=Entire%20Place&place[max_guests]=3&place[num_of_bedrooms]=1&place[num_of_bathrooms]=1&place[num_of_beds]=2&place[about]=Modern%20cabin%20in%20Big%20Sur%20within%20walking%20distance%20to%20the%20beach.%20Kitchen%20is%20fully%20stocked%20with%20everything%20you%20need%20to%20cook.%20Restaurants%20are%20a%20short%20drive%20away.%20There%20are%20plenty%20of%20hiking%20trails%20around%20the%20property.&place[rules]=no%20parties.%20pets%20ok.%20no%20loud%20music%20after%2010pm.%20Please%20follow%20the%20check%20in/out%20times.&place[price_per_day]=93&place[cancellation_policy]=strict&place[check_in_from]=2pm&place[check_out_before]=11am&place[owner_id]=20" for ::1 at 2021-04-14 15:39:46 -0700
+Processing by Api::PlacesController#create as JSON
+  Parameters: {"place"=>{"title"=>"Cabin in Big Sur", "location"=>"Big Sur, CA", "type_of_place"=>"Entire Place", "max_guests"=>"3", "num_of_bedrooms"=>"1", "num_of_bathrooms"=>"1", "num_of_beds"=>"2", "about"=>"Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property.", "rules"=>"no parties. pets ok. no loud music after 10pm. Please follow the check in/out times.", "price_per_day"=>"93", "cancellation_policy"=>"strict", "check_in_from"=>"2pm", "check_out_before"=>"11am", "owner_id"=>"20"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[36mPlace Create (1.9ms)[0m  [1m[32mINSERT INTO "places" ("title", "location", "type_of_place", "max_guests", "num_of_bedrooms", "num_of_bathrooms", "num_of_beds", "about", "rules", "price_per_day", "cancellation_policy", "check_in_from", "check_out_before", "owner_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["title", "Cabin in Big Sur"], ["location", "Big Sur, CA"], ["type_of_place", "Entire Place"], ["max_guests", 3], ["num_of_bedrooms", 1], ["num_of_bathrooms", 1], ["num_of_beds", 2], ["about", "Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property."], ["rules", "no parties. pets ok. no loud music after 10pm. Please follow the check in/out times."], ["price_per_day", 93], ["cancellation_policy", "strict"], ["check_in_from", "2pm"], ["check_out_before", "11am"], ["owner_id", 20], ["created_at", "2021-04-14 22:39:46.952242"], ["updated_at", "2021-04-14 22:39:46.952242"]]
+  ↳ app/controllers/api/places_controller.rb:20
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/places_controller.rb:20
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (0.7ms)
+Completed 200 OK in 27ms (Views: 10.7ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mPlace Load (13.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+Started PATCH "/api/places?place[title]=Best%20Cabin%20in%20the%20Woods&place[location]=Big%20Sur,%20CA&place[type_of_place]=Entire%20Place&place[max_guests]=3&place[num_of_bedrooms]=1&place[num_of_bathrooms]=1&place[num_of_beds]=2&place[about]=Modern%20cabin%20in%20Big%20Sur%20within%20walking%20distance%20to%20the%20beach.%20Kitchen%20is%20fully%20stocked%20with%20everything%20you%20need%20to%20cook.%20Restaurants%20are%20a%20short%20drive%20away.%20There%20are%20plenty%20of%20hiking%20trails%20around%20the%20property.&place[rules]=no%20parties.%20pets%20ok.%20no%20loud%20music%20after%2010pm.%20Please%20follow%20the%20check%20in/out%20times.&place[price_per_day]=93&place[cancellation_policy]=strict&place[check_in_from]=2pm&place[check_out_before]=11am&place[owner_id]=20" for ::1 at 2021-04-14 16:01:30 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/places"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+Started PATCH "/api/places/5?place[title]=Best%20Cabin%20in%20the%20Woods&place[location]=Big%20Sur,%20CA&place[type_of_place]=Entire%20Place&place[max_guests]=3&place[num_of_bedrooms]=1&place[num_of_bathrooms]=1&place[num_of_beds]=2&place[about]=Modern%20cabin%20in%20Big%20Sur%20within%20walking%20distance%20to%20the%20beach.%20Kitchen%20is%20fully%20stocked%20with%20everything%20you%20need%20to%20cook.%20Restaurants%20are%20a%20short%20drive%20away.%20There%20are%20plenty%20of%20hiking%20trails%20around%20the%20property.&place[rules]=no%20parties.%20pets%20ok.%20no%20loud%20music%20after%2010pm.%20Please%20follow%20the%20check%20in/out%20times.&place[price_per_day]=93&place[cancellation_policy]=strict&place[check_in_from]=2pm&place[check_out_before]=11am&place[owner_id]=20" for ::1 at 2021-04-14 16:10:59 -0700
+Processing by Api::PlacesController#update as JSON
+  Parameters: {"place"=>{"title"=>"Best Cabin in the Woods", "location"=>"Big Sur, CA", "type_of_place"=>"Entire Place", "max_guests"=>"3", "num_of_bedrooms"=>"1", "num_of_bathrooms"=>"1", "num_of_beds"=>"2", "about"=>"Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property.", "rules"=>"no parties. pets ok. no loud music after 10pm. Please follow the check in/out times.", "price_per_day"=>"93", "cancellation_policy"=>"strict", "check_in_from"=>"2pm", "check_out_before"=>"11am", "owner_id"=>"20"}, "id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:33
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/controllers/api/places_controller.rb:35:in `update'
+
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+Started PATCH "/api/places/5?place[title]=Best%20Cabin%20in%20the%20Woods&place[location]=Big%20Sur,%20CA&place[type_of_place]=Entire%20Place&place[max_guests]=3&place[num_of_bedrooms]=1&place[num_of_bathrooms]=1&place[num_of_beds]=2&place[about]=Modern%20cabin%20in%20Big%20Sur%20within%20walking%20distance%20to%20the%20beach.%20Kitchen%20is%20fully%20stocked%20with%20everything%20you%20need%20to%20cook.%20Restaurants%20are%20a%20short%20drive%20away.%20There%20are%20plenty%20of%20hiking%20trails%20around%20the%20property.&place[rules]=no%20parties.%20pets%20ok.%20no%20loud%20music%20after%2010pm.%20Please%20follow%20the%20check%20in/out%20times.&place[price_per_day]=93&place[cancellation_policy]=strict&place[check_in_from]=2pm&place[check_out_before]=11am&place[owner_id]=20" for ::1 at 2021-04-14 16:13:54 -0700
+Processing by Api::PlacesController#update as JSON
+  Parameters: {"place"=>{"title"=>"Best Cabin in the Woods", "location"=>"Big Sur, CA", "type_of_place"=>"Entire Place", "max_guests"=>"3", "num_of_bedrooms"=>"1", "num_of_bathrooms"=>"1", "num_of_beds"=>"2", "about"=>"Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property.", "rules"=>"no parties. pets ok. no loud music after 10pm. Please follow the check in/out times.", "price_per_day"=>"93", "cancellation_policy"=>"strict", "check_in_from"=>"2pm", "check_out_before"=>"11am", "owner_id"=>"20"}, "id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:34
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 126800ms (ActiveRecord: 12.0ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/controllers/api/places_controller.rb:36:in `update'
+
+Started PATCH "/api/places/5?place[title]=Best%20Cabin%20in%20the%20Woods&place[location]=Big%20Sur,%20CA&place[type_of_place]=Entire%20Place&place[max_guests]=3&place[num_of_bedrooms]=1&place[num_of_bathrooms]=1&place[num_of_beds]=2&place[about]=Modern%20cabin%20in%20Big%20Sur%20within%20walking%20distance%20to%20the%20beach.%20Kitchen%20is%20fully%20stocked%20with%20everything%20you%20need%20to%20cook.%20Restaurants%20are%20a%20short%20drive%20away.%20There%20are%20plenty%20of%20hiking%20trails%20around%20the%20property.&place[rules]=no%20parties.%20pets%20ok.%20no%20loud%20music%20after%2010pm.%20Please%20follow%20the%20check%20in/out%20times.&place[price_per_day]=93&place[cancellation_policy]=strict&place[check_in_from]=2pm&place[check_out_before]=11am&place[owner_id]=20" for ::1 at 2021-04-14 16:17:21 -0700
+Processing by Api::PlacesController#update as JSON
+  Parameters: {"place"=>{"title"=>"Best Cabin in the Woods", "location"=>"Big Sur, CA", "type_of_place"=>"Entire Place", "max_guests"=>"3", "num_of_bedrooms"=>"1", "num_of_bathrooms"=>"1", "num_of_beds"=>"2", "about"=>"Modern cabin in Big Sur within walking distance to the beach. Kitchen is fully stocked with everything you need to cook. Restaurants are a short drive away. There are plenty of hiking trails around the property.", "rules"=>"no parties. pets ok. no loud music after 10pm. Please follow the check in/out times.", "price_per_day"=>"93", "cancellation_policy"=>"strict", "check_in_from"=>"2pm", "check_out_before"=>"11am", "owner_id"=>"20"}, "id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (0.7ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/places_controller.rb:36
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:36
+  [1m[36mPlace Update (0.6ms)[0m  [1m[33mUPDATE "places" SET "title" = $1, "updated_at" = $2 WHERE "places"."id" = $3[0m  [["title", "Best Cabin in the Woods"], ["updated_at", "2021-04-14 23:17:42.864473"], ["id", 5]]
+  ↳ app/controllers/api/places_controller.rb:36
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/places_controller.rb:36
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (0.7ms)
+Completed 200 OK in 44212ms (Views: 6.4ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-04-14 16:18:58 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.0ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (5.8ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/places/5" for ::1 at 2021-04-14 16:36:13 -0700
+Processing by Api::PlacesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (5.6ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:43
+  [1m[36mPlace Destroy (10.7ms)[0m  [1m[31mDELETE FROM "places" WHERE "places"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/api/places_controller.rb:45
+  Rendering api/places/index.json.jbuilder
+  Rendered api/places/index.json.jbuilder (3.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 22.3ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/api/places/index.json.jbuilder:1:in `_app_views_api_places_index_json_jbuilder___3955422523167735487_70289914774160'
+  app/controllers/api/places_controller.rb:47:in `destroy'
+
+Started GET "/api/places" for ::1 at 2021-04-14 16:49:58 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (6.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (9.2ms)
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/places" for ::1 at 2021-04-14 16:50:01 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (2.2ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-04-14 16:50:44 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (2.3ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places/3" for ::1 at 2021-04-14 16:50:57 -0700
+Processing by Api::PlacesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:9
+  Rendering api/places/show.json.jbuilder
+  Rendered api/places/show.json.jbuilder (1.1ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/places" for ::1 at 2021-04-14 16:51:24 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (4.3ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/places/5" for ::1 at 2021-04-14 16:53:59 -0700
+Processing by Api::PlacesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (0.2ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:43
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.2ms)
+
+
+
+NoMethodError - undefined method `delete' for nil:NilClass:
+  app/controllers/api/places_controller.rb:45:in `destroy'
+
+Started DELETE "/api/places/5" for ::1 at 2021-04-14 16:55:01 -0700
+Processing by Api::PlacesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:43
+Completed 500 Internal Server Error in 148944ms (ActiveRecord: 1.5ms)
+
+
+Started DELETE "/api/places/5" for ::1 at 2021-04-14 16:57:30 -0700
+
+NoMethodError - undefined method `delete' for nil:NilClass:
+  app/controllers/api/places_controller.rb:45:in `destroy'
+
+Processing by Api::PlacesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (1.1ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:43
+Completed 500 Internal Server Error in 2446ms (ActiveRecord: 1.3ms)
+
+
+
+NoMethodError - undefined method `delete' for nil:NilClass:
+  app/controllers/api/places_controller.rb:45:in `destroy'
+
+Started DELETE "/api/places/5" for ::1 at 2021-04-14 16:57:37 -0700
+Processing by Api::PlacesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/places_controller.rb:43
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 6.0ms)
+
+

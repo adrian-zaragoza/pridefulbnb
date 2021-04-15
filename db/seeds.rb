@@ -18,6 +18,28 @@ user1 = User.create!(email: "demouser@demo.com",
             phone_number: "555-555-5555"
           )
 
+user2 = User.create!(email: "imawizard@hogwarts.com",
+            password: "imagryffindor", 
+            first_name: "Harry",
+            last_name: "Potter",
+            birth_date: "1980/07/31",
+            current_location: "New York, NY",
+            gender: "male",
+            identity: "lgbtq+ ally",
+            phone_number: "555-555-5555"
+          )
+
+user3 = User.create!(email: "lisa@yahoo.com",
+            password: "imasimpson", 
+            first_name: "Lisa",
+            last_name: "Simpson",
+            birth_date: "1995/12/19",
+            current_location: "Springfield, NY",
+            gender: "female",
+            identity: "lgbtq+ ally",
+            phone_number: "555-555-5555"
+          )
+
 place1 = Place.create!(title: "Sunny Apartment Near Beach",
               location: "Honolulu, Hawaii",
               type_of_place: "Entire Place",
@@ -38,4 +60,24 @@ place1 = Place.create!(title: "Sunny Apartment Near Beach",
               check_in_from: "from 1pm to 9pm",
               check_out_before: "10am",
               owner_id: user1.id
+)
+
+place2 = Place.create!(title: "Bright 1 BR in Weho",
+        type_of_place: "Private room",
+        location: "West Hollywood, CA",
+        max_guests: 2,
+        num_of_bedrooms: 1,
+        num_of_bathrooms: 1,
+        num_of_beds: 1,
+        about: "The apartment is a lovely private apartment in a small building near the vibrant street of Santa Monica Blvd.Apartment is approximately 1000 sq.ft.Living room dining room combo, full use galley - style kitchen, private bathroom and
+          balcony at your disposal should you need.The bedroom is comprised of an upgraded memory foam queen size bed, large closet, dresser, desk, storage, linens, towels etc.The bathroom is spacious and available directly adjacent to the room with a split
+          floor plan for privacy.Extra storage is available if needed fan provided, a / c available per request and full use of the closets in the bedroom.There is complimentary coffee, tea, water and snacks available as your desire no additional charge.Make yourself at home.",
+        nearby_attractions: "",
+        rules: "Rules are pretty standard, respect the space and keep it presentable and clean.",
+        price_per_day: 89,
+        cancellation_policy: "Strict cancellation policy means: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes misterb&b service fee paid by the guest and by the host. 
+          If the stay is interrupted, the guest will have no right to receive a refund.",
+        check_in_from: "from 3pm to 11pm",
+        check_out_before: "11am",
+        owner_id: user3.id
 )
