@@ -11,12 +11,14 @@ class PlaceShowings extends React.Component{
 
   render(){
     let placesArr = Object.values(this.props.places)
+    
     return(
       <div className="places-listings">
         {
         placesArr.map((place) => {
         return(
           <ul key={place.id} className="place">
+            <img src={place.imageUrl} alt={place.title}/>
             <li>{place.title}</li>
             <li>{place.pricePerDay}</li>
             <li>{place.typeOfPlace}</li>

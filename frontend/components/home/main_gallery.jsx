@@ -14,7 +14,7 @@ export default () => (
      
       <form className="search-form">
         <label><p> <img src={window.prideBannerIcon} alt="pride banner" />Where do you want to go?</p>
-            <input type="text"  />
+          <input type="text" defaultValue="Under Construction" />
         </label>
         <button className="search-button">SEARCH</button>
       </form>

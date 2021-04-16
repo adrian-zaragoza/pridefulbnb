@@ -64,6 +64,11 @@ place1 = Place.create!(title: "Sunny Apartment Near Beach",
               owner_id: user1.id
 )
 
+file1 = URI.open('https://pridefulbnb-seeds.s3-us-west-1.amazonaws.com/hawaiihome.jpg')
+file2 = URI.open('https://pridefulbnb-seeds.s3-us-west-1.amazonaws.com/hawaiihome2.jpg')
+place1.images.attach(io: file1, filename: 'hawaii_home.jpg')
+place1.images.attach(io: file2, filename: 'hawaii_home2.jpg')
+
 place2 = Place.create!(title: "Bright 1 BR in Weho",
         type_of_place: "Private room",
         location: "West Hollywood, CA",
@@ -83,3 +88,6 @@ place2 = Place.create!(title: "Bright 1 BR in Weho",
         check_out_before: "11am",
         owner_id: user3.id
 )
+
+file3 = URI.open('https://pridefulbnb-seeds.s3-us-west-1.amazonaws.com/weho_apartment.jpg')
+place2.images.attach(io: file3, filename: 'weho_apartment.jpg')
