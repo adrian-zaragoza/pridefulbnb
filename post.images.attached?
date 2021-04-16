@@ -1,0 +1,26 @@
+=> [32m#<ActiveStorage::Attached::Many:0x00007ffdac0d7c88[0m
+ @dependent[32m=[0m[33m:purge_later[0m,
+ @name[32m=[0m[31m[1;31m"[0m[31mimages[1;31m"[0m[31m[0m,
+ @record[32m=[0m
+  [32m#<Place:0x00007ffdac1f4cd8[0m
+   id: [1;34m3[0m,
+   title: [31m[1;31m"[0m[31mSunny Apartment Near Beach[1;31m"[0m[31m[0m,
+   location: [31m[1;31m"[0m[31mHonolulu, Hawaii[1;31m"[0m[31m[0m,
+   type_of_place: [31m[1;31m"[0m[31mEntire Place[1;31m"[0m[31m[0m,
+   max_guests: [1;34m4[0m,
+   num_of_bedrooms: [1;34m2[0m,
+   num_of_bathrooms: [1;34m2[0m,
+   num_of_beds: [1;34m3[0m,
+   about:
+    [31m[1;31m"[0m[31mIf you are visiting from out of state please review travel restrictions prior to booking. We are set up for working from home, and social distancing all while enjoying the Hawaii sun![1;35m\n[0m[31m                Spacious private apartment with a full kitchen. Pool and Patio areas are very private from the street and neighbors.[1;35m\n[0m[31m                The small garden area in the back is enclosed and private for you to enjoy the garden how ever you like to! Ample street parking available for free.[1;35m\n[0m[31m                Walking distance to Kahala beach and a short drive or uber ride to nearby to Waikiki.[1;31m"[0m[31m[0m,
+   nearby_attractions:
+    [31m[1;31m"[0m[31mWaikiki, Ala Moana Shopping Center, Diamond Head, Kahala Mall, Kahala Hotel, Kahala Beach, Hulas Bar and Lei Stand, Wang Chung's Karaoke Bar, Baccus, InBetween, Scarlet.[1;31m"[0m[31m[0m,
+   rules: [31m[1;31m"[0m[31mPlease no smoking and no pets.[1;31m"[0m[31m[0m,
+   price_per_day: [1;34m150[0m,
+   cancellation_policy:
+    [31m[1;31m"[0m[31mFlexible: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in.[1;35m\n[0m[31m                Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in.[1;35m\n[0m[31m                If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable.[1;31m"[0m[31m[0m,
+   check_in_from: [31m[1;31m"[0m[31mfrom 1pm to 9pm[1;31m"[0m[31m[0m,
+   check_out_before: [31m[1;31m"[0m[31m10am[1;31m"[0m[31m[0m,
+   owner_id: [1;34m19[0m,
+   created_at: [1;34;4mWed[0m, [1;34m14[0m [1;34;4mApr[0m [1;34m2021[0m [1;34m22[0m:[1;34m08[0m:[1;34m05[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+   updated_at: [1;34;4mWed[0m, [1;34m14[0m [1;34;4mApr[0m [1;34m2021[0m [1;34m22[0m:[1;34m08[0m:[1;34m05[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m[32m>[0m
