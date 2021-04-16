@@ -14,6 +14,6 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     logout!
-    render json: ["user has logged out"]
+    render json: ["user has logged out"], status: 200
   end
 end
