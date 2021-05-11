@@ -19,10 +19,12 @@ class PlaceShowings extends React.Component{
         return(
           <ul key={place.id} className="place">
             <img src={place.imageUrl} alt={place.title}/>
-            <li>{place.title}</li>
-            <li>{place.pricePerDay}</li>
-            <li>{place.typeOfPlace}</li>
-            <li>{place.location}</li>
+            <li id="title">{place.title}</li>
+            <div class="place-details">
+              <li>{`${place.typeOfPlace} •`}</li>
+              <li>{`${place.location} •`}</li>
+              <li>{`${place.pricePerDay} per day`}</li>
+            </div>
           </ul>
         )
       } )

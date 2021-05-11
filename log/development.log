@@ -35644,3 +35644,1086 @@ Processing by Api::PlacesController#index as JSON
 Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/" for ::1 at 2021-05-11 10:42:06 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (6.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 2819ms (Views: 2808.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 10:43:55 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (232.4ms)
+Completed 200 OK in 265ms (Views: 225.8ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 10:43:55 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 10:43:55 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (48.8ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T174355Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=242b117d74873e129502d9bd9d741fa62343c46812745fd78c2475a454b134c3)[0m
+[36m  S3 Storage (63.0ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T174355Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7927950fc16f50cb3bc0cad259c105cf3ef453d5a3a11e5f213b67e2e50e1899)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T174355Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=242b117d74873e129502d9bd9d741fa62343c46812745fd78c2475a454b134c3
+Completed 302 Found in 74ms (ActiveRecord: 0.8ms)
+
+
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T174355Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7927950fc16f50cb3bc0cad259c105cf3ef453d5a3a11e5f213b67e2e50e1899
+Completed 302 Found in 76ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 10:46:12 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (17.7ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 10:47:50 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.0ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (21.7ms)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 11:13:52 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T181352Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1e5366d2d9051bd94035deccc9a6e16ed025c6d39addb74a233207d61ec29c46)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T181352Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1e5366d2d9051bd94035deccc9a6e16ed025c6d39addb74a233207d61ec29c46
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 11:14:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$worksans".:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___134851097781562997_70123850884240'
+
+Started POST "/__better_errors/e113c83bca81cec2/variables" for ::1 at 2021-05-11 11:14:28 -0700
+Started GET "/" for ::1 at 2021-05-11 11:16:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 126ms (Views: 123.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 11:16:50 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.9ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (20.4ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 11:16:50 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 11:16:50 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.7ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T181650Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=360d08d282efb8770019b71b909c0711bf8eeb677c36ec78325916c8b852b6b0)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T181650Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=360d08d282efb8770019b71b909c0711bf8eeb677c36ec78325916c8b852b6b0
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T181650Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1536f810b3855814f1f01c8d47f13a97c03c28169f024347afee401076261d7c)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T181650Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1536f810b3855814f1f01c8d47f13a97c03c28169f024347afee401076261d7c
+Completed 302 Found in 16ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 11:59:59 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.2ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T185959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b1a96f2b58e2268ba77421ba2d07e7cd3f7a6938692760772c48c5cd963e1e6f)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T185959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b1a96f2b58e2268ba77421ba2d07e7cd3f7a6938692760772c48c5cd963e1e6f
+Completed 302 Found in 11ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:01:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 112ms (Views: 110.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:01:35 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (2.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (31.1ms)
+Completed 200 OK in 42ms (Views: 34.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 12:01:35 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 12:01:35 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190135Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=31a68bce85bbc205dd26b1ef00cfb8b20b7c6f6e5ed85c88c7c10cef1296f902)[0m
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190135Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e97a469befcfbf4d9b0901176ffc1a71fa2ac1264108835f3ba750614527383d)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190135Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=31a68bce85bbc205dd26b1ef00cfb8b20b7c6f6e5ed85c88c7c10cef1296f902
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190135Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e97a469befcfbf4d9b0901176ffc1a71fa2ac1264108835f3ba750614527383d
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:01:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 73ms (Views: 70.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:01:41 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (4.9ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (33.5ms)
+Completed 200 OK in 41ms (Views: 31.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:02:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 110ms (Views: 108.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:02:17 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.7ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (19.7ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:02:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 66ms (Views: 63.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:02:26 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (23.2ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:02:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:02:27 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (16.5ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:05:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:05:08 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (25.6ms)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:06:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 105ms (Views: 103.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:06:44 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.7ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (25.2ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 12:06:44 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 12:06:44 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190644Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e1b3679891912175be4b4dbf107b2baedc5615795b1574946c7a7a4385c876c1)[0m
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190644Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e1b3679891912175be4b4dbf107b2baedc5615795b1574946c7a7a4385c876c1
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190644Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=074d60baadeefffef8f87ff3d3a50a89b6496b0b56bf79e85cba418c1704f522)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T190644Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=074d60baadeefffef8f87ff3d3a50a89b6496b0b56bf79e85cba418c1704f522
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:07:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 94ms (Views: 92.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:07:17 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.7ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (24.8ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:07:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:07:33 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (7.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (31.7ms)
+Completed 200 OK in 39ms (Views: 28.7ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:07:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 100ms (Views: 98.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:07:39 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (24.1ms)
+Completed 200 OK in 35ms (Views: 30.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:08:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 98ms (Views: 96.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:08:15 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (2.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (26.1ms)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:12:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 399ms (Views: 397.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:12:58 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.9ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (25.1ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 12:12:58 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 12:12:58 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191258Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d66faf153a6b296f5d8e1bbf801f772ba9cef061f3e38fb9374f9ad5af305818)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191258Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d66faf153a6b296f5d8e1bbf801f772ba9cef061f3e38fb9374f9ad5af305818
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.0ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191258Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=497da29b08b9e0850de3a3a44611e271298c2f77f99418b4e73017005f007df2)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191258Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=497da29b08b9e0850de3a3a44611e271298c2f77f99418b4e73017005f007df2
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:14:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 381ms (Views: 379.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:14:50 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (3.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (27.6ms)
+Completed 200 OK in 34ms (Views: 27.0ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:15:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 111ms (Views: 109.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:15:37 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (27.0ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:15:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 106ms (Views: 103.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:15:49 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (23.1ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:17:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 105ms (Views: 103.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:17:01 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.1ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (24.0ms)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:17:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 393ms (Views: 391.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:17:58 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (23.7ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 12:17:58 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 12:17:58 -0700
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.6ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191758Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c3ce820826200ca5a585ad4e581c989ac01251bd310afa83265de258124a79a1)[0m
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191758Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c3ce820826200ca5a585ad4e581c989ac01251bd310afa83265de258124a79a1
+Completed 302 Found in 11ms (ActiveRecord: 1.3ms)
+
+
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191758Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=550b9b587e9738896ef9623f7584938e013236ebd071acfd1bba1ebd5c48b7b6)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T191758Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=550b9b587e9738896ef9623f7584938e013236ebd071acfd1bba1ebd5c48b7b6
+Completed 302 Found in 19ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:18:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 114ms (Views: 112.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:18:49 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (25.5ms)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:19:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 128ms (Views: 127.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:19:39 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (23.7ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:20:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 145ms (Views: 143.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:20:39 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.0ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (28.0ms)
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:20:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 121ms (Views: 119.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:20:53 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (26.1ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:20:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 98ms (Views: 96.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:20:59 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (2.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (23.3ms)
+Completed 200 OK in 36ms (Views: 30.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:21:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 102ms (Views: 100.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:21:33 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (17.0ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:21:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 111ms (Views: 109.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:21:39 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (15.6ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:21:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 113ms (Views: 111.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:21:45 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (16.6ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:22:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:22:22 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (15.7ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:22:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 392ms (Views: 390.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:22:59 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.9ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (22.1ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b/hawaii_home.jpg" for ::1 at 2021-05-11 12:22:59 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88c65fd01b78ad91e3447cbc9b74688712d14b1b", "filename"=>"hawaii_home"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0/weho_apartment.jpg" for ::1 at 2021-05-11 12:22:59 -0700
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ActiveStorage::BlobsController#show as JPEG
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--582ab226c932b0bcf8deb69809045f8d1bdb3ec0", "filename"=>"weho_apartment"}
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: izpo62hD1TfqrCMb7w1mfArY (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T192259Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=82e19854eb22f9afab807fbee8e4ead4382034d6a25c46bb1f61f10770525352)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/izpo62hD1TfqrCMb7w1mfArY?response-content-disposition=inline%3B%20filename%3D%22hawaii_home.jpg%22%3B%20filename%2A%3DUTF-8%27%27hawaii_home.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T192259Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=82e19854eb22f9afab807fbee8e4ead4382034d6a25c46bb1f61f10770525352
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/adrian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: vmQR9cEunABnmVKPmXi468Q7 (https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T192259Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c569de81c561d8c1d816b2d0c754b6c1223ebd453140d1fbab1000586a3ed375)[0m
+Redirected to https://pridefulbnb-dev.s3.us-west-1.amazonaws.com/vmQR9cEunABnmVKPmXi468Q7?response-content-disposition=inline%3B%20filename%3D%22weho_apartment.jpg%22%3B%20filename%2A%3DUTF-8%27%27weho_apartment.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3OXQ3PK5I7AOKZ67%2F20210511%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210511T192259Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c569de81c561d8c1d816b2d0c754b6c1223ebd453140d1fbab1000586a3ed375
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:23:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 405ms (Views: 403.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:23:15 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (3.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (20.5ms)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:23:40 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (13.3ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:23:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:23:42 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (18.3ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:23:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:23:44 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (15.4ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 12:23:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 112ms (Views: 110.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/places" for ::1 at 2021-05-11 12:23:59 -0700
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.1ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Place"], ["name", "images"]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/places/index.json.jbuilder:4
+  Rendered api/places/index.json.jbuilder (20.2ms)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 2.8ms)
+
+
