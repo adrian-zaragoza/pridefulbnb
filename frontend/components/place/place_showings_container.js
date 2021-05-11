@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { fetchAllPlaces } from '../../actions/place_actions';
+import { fetchAllPlaces, fetchPlace } from '../../actions/place_actions';
 import PlaceShowings from './place_showings';
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllPlaces: () => dispatch(fetchAllPlaces())
+    fetchAllPlaces: () => dispatch(fetchAllPlaces()),
+    fetchPlace: (placeId) => dispatch(fetchPlace(placeId))
   };
 };
 
