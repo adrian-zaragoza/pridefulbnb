@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaceShow from './place_show';
+import { withRouter } from 'react-router-dom';
 
 class PlaceShowings extends React.Component{
   constructor(props){
@@ -8,12 +8,16 @@ class PlaceShowings extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchAllPlaces();
+    console.log(this.props.places)
+    if(Object.keys(this.props.places).length === 0){
+      this.props.fetchAllPlaces();
+    }
   }
 
-  handleClickShow(id){
-    return(<PlaceShow props={this.props.fetchPlace(id)}/>)
-    
+  handleClickShow(placeId, e){
+    e.preventDefault();
+    // this.props.fetchPlace(placeId)
+    this.props.history.push(`/places/${placeId}`)
   }
 
   render(){
@@ -26,7 +30,7 @@ class PlaceShowings extends React.Component{
         return(
           <ul key={place.id} className="place">
             <img src={place.imageUrl} alt={place.title}/>
-            <li id="title" onClick={(e) => this.handleClickShow(place.id, e)}>{place.title}</li>
+            <li id="title" onClick={(e)=>{ this.handleClickShow(place.id, e)}}>{place.title}</li>
             <div className="place-details">
               <li>{`${place.typeOfPlace} •`}</li>
               <li>{`${place.location} •`}</li>
@@ -42,4 +46,4 @@ class PlaceShowings extends React.Component{
   
 }
 
-export default PlaceShowings;
+export default withRouter(PlaceShowings);

@@ -8,6 +8,7 @@ import Error from './error/error';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import {withRouter} from 'react-router-dom';
 import PlaceShowings from './place/place_showings_container';
+import PlaceShowContainer from './place_show/place_show_container';
 
 const App = withRouter(({location}) =>{ 
   return(
@@ -18,6 +19,7 @@ const App = withRouter(({location}) =>{
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
+      <Route path="/places/:placeId" component={PlaceShowContainer} />
       <Route path="/places" component={PlaceShowings} />
       <Route  exact path="/" component={Home} />
       <Route  path="/error" component={Error} />
