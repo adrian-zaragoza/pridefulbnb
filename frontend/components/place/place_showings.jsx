@@ -8,10 +8,7 @@ class PlaceShowings extends React.Component{
   }
 
   componentDidMount(){
-    console.log(this.props.places)
-    if(Object.keys(this.props.places).length === 0){
-      this.props.fetchAllPlaces();
-    }
+    this.props.fetchAllPlaces();
   }
 
   handleClickShow(placeId, e){
