@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { IoPersonOutline } from 'react-icons/io5';
-import {BiDoorOpen, BiBath, IoBedOutline} from 'react-icons/all'
+import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all'
 
 class PlaceShow extends React.Component {
   constructor(props){
@@ -33,7 +33,7 @@ class PlaceShow extends React.Component {
       placeHeader = (
         <div className="place-header">
           <h1>{placeObj.title}</h1>
-          <h2>{placeObj.location}</h2>
+          <h2><p><GoLocation/></p>{placeObj.location}</h2>
         </div>
       )
 
@@ -49,9 +49,9 @@ class PlaceShow extends React.Component {
 
       images = place[this.props.placeId].imageUrl.map((image, i) => {
         return(
-            <figure  key={i}>
-              <img src={image} alt="place" />
-            </figure>
+           
+              <img key={i} src={image} alt="place" />
+            
           )
       })
 
@@ -83,15 +83,19 @@ class PlaceShow extends React.Component {
     return(
       <div className ="place-show">
         <div className="place-images-container">
-          {images}
+          <figure>
+            {images}
+          </figure>
         </div>
-        {placeHeader}
-        <div className="place-specs">
-          {placeSpecs}
+        <div className="place-show-details">
+          {placeHeader}
+          <div className="place-specs">
+            {placeSpecs}
+          </div>
+          {about}
+          {propertyRules}
+          {nearbyAttractions}
         </div>
-        {about}
-        {propertyRules}
-        {nearbyAttractions}
       </div>
     )
   }
