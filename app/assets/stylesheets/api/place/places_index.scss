@@ -1,0 +1,42 @@
+// Place all the styles related to the api/places controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.places-listings{
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-wrap: wrap;
+
+  .place{
+    margin-right: 15px;
+    margin-bottom: 25px;
+    img{
+      width: 300px;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    #title{
+      color: #006f85;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .place-details{
+      display: flex;
+      font-size: 13px;
+      color: #7c9a9c;
+
+      li:nth-child(2){
+        margin-left: 5px;
+      }
+
+      li:nth-child(3){
+        margin-left: 5px;
+      }
+    }
+  }
+
+}

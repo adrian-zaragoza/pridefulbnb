@@ -6,7 +6,8 @@ const mapStateToProps = (state, {match}) => {
   const placeId = match.params.placeId
   return{
     placeId: placeId,
-    places: state.entities.places
+    places: state.entities.places,
+    currentUser: state.session.currentUser.id
   }
 }
 

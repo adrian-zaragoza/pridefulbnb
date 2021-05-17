@@ -4,4 +4,4 @@ bundle.js.map
 master.key
 /public/assets
 bundle.js*
-tmp
+/tmp

@@ -1,22 +1,25 @@
 import React from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { IoPersonOutline } from 'react-icons/io5';
-import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all'
+import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all';
+import PlaceEditContainer from '../place/place_edit_container';
 
 class PlaceShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = { editPlaceForm: false}
+    this.togglePlaceEdit = this.togglePlaceEdit.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchPlace(this.props.placeId)
   }
 
-  componentDidUpdate(prevProps){
-    // if(this.props.places !== prevProps.places){
-    //   this.props.fetchPlace(this.props.placeId)
-    // }
+  togglePlaceEdit(e){
+    e.preventDefault();
+    this.setState({editPlaceForm: !this.state.editPlaceForm})
   }
+
 
   render(){
     let place = this.props.places;
@@ -26,6 +29,7 @@ class PlaceShow extends React.Component {
     let about;
     let propertyRules;
     let nearbyAttractions;
+    let editPlaceForm;
 
     if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
       let placeObj = place[this.props.placeId];
@@ -49,9 +53,7 @@ class PlaceShow extends React.Component {
 
       images = place[this.props.placeId].imageUrl.map((image, i) => {
         return(
-           
               <img key={i} src={image} alt="place" />
-            
           )
       })
 
@@ -78,6 +80,15 @@ class PlaceShow extends React.Component {
           <p>{placeObj.nearbyAttractions}</p>
         </div>
       )
+
+      if(this.props.currentUser === placeObj.ownerId){
+        editPlaceForm = (
+          <div className="edit-place-form">
+            <button className="edit-place-button" onClick={this.togglePlaceEdit}>Edit</button>
+            <PlaceEditContainer editPlaceForm={this.state.editPlaceForm} togglePlaceEdit={this.togglePlaceEdit} place={placeObj}/>
+          </div>
+        )
+      }
     }
 
     return(
@@ -89,6 +100,7 @@ class PlaceShow extends React.Component {
         </div>
         <div className="place-show-details">
           {placeHeader}
+          {editPlaceForm}
           <div className="place-specs">
             {placeSpecs}
           </div>
