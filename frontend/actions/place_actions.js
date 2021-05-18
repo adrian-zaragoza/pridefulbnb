@@ -3,6 +3,7 @@ import * as APIUtil from '../utils/place_utils';
 export const RECEIVE_ALL_PLACES = "RECEIVE_ALL_PLACES";
 export const RECEIVE_PLACE = "RECEIVE_PLACE";
 export const DELETE_PLACE = "DELETE_PLACE";
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 const receiveAllPlaces = (places) => ({
   type: RECEIVE_ALL_PLACES,

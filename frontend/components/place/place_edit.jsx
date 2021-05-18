@@ -4,23 +4,28 @@ class PlaceEdit extends React.Component{
   constructor(props){
     super(props)
     this.state = {
+      id: this.props.place.id,
+      ownerId: this.props.ownerId,
       title: this.props.place.title,
       about: this.props.place.about,
-      location: this.props.location,
-      typeOfPlace: this.props.typeOfPlace,
-      maxGuests: this.props.maxGuests,
-      numOfBedrooms: this.props.numOfBedrooms,
-      numOfBathrooms: this.props.numOfBathrooms,
-      numOfBeds: this.props.numOfBeds,
-      cancellationPolicy: this.props.cancellationPolicy,
-      rules: this.props.rules,
-      checkInFrom: this.props.checkInFrom,
-      checkOutBefore: this.props.checkOutBefore,
-      imageUrl: this.props.imageUrl,
-      nearbyAttractions: this.props.nearbyAttractions
+      location: this.props.place.location,
+      typeOfPlace: this.props.place.typeOfPlace,
+      maxGuests: this.props.place.maxGuests,
+      numOfBedrooms: this.props.place.numOfBedrooms,
+      numOfBathrooms: this.props.place.numOfBathrooms,
+      numOfBeds: this.props.place.numOfBeds,
+      cancellationPolicy: this.props.place.cancellationPolicy,
+      rules: this.props.place.rules,
+      checkInFrom: this.props.place.checkInFrom,
+      checkOutBefore: this.props.place.checkOutBefore,
+      imageUrl: this.props.place.imageUrl,
+      nearbyAttractions: this.props.place.nearbyAttractions,
+      pricePerDay: this.props.place.pricePerDay
     }
 
     this.updateText = this.updateText.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
   }
 
   updateText(field){
@@ -30,13 +35,60 @@ class PlaceEdit extends React.Component{
     });
   }
 
+  handleCloseClick(e){
+   e.preventDefault()
+    console.log("inside handle close click")
+    this.props.clearErrors();
+    this.props.togglePlaceEdit(e);        
+    this.setState({
+      id: this.props.place.id,
+      ownerId: this.props.ownerId,
+      title: this.props.place.title,
+      about: this.props.place.about,
+      location: this.props.place.location,
+      typeOfPlace: this.props.place.typeOfPlace,
+      maxGuests: this.props.place.maxGuests,
+      numOfBedrooms: this.props.place.numOfBedrooms,
+      numOfBathrooms: this.props.place.numOfBathrooms,
+      numOfBeds: this.props.place.numOfBeds,
+      cancellationPolicy: this.props.place.cancellationPolicy,
+      rules: this.props.place.rules,
+      checkInFrom: this.props.place.checkInFrom,
+      checkOutBefore: this.props.place.checkOutBefore,
+      imageUrl: this.props.place.imageUrl,
+      nearbyAttractions: this.props.place.nearbyAttractions,
+      pricePerDay: this.props.place.pricePerDay
+    });
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    this.props.clearErrors();
+    this.props.updatePlace(this.state);
+  }
+
+  showErrors(){
+    return(
+      <ul className="errors">
+        {this.props.errors.map((error, i) => (
+          <li key={i}>{error}</li>
+        ))}
+      </ul>
+    )
+  }
+
   render(){
 
     return(
       <div className={this.props.editPlaceForm ? 'place-info' : 'hidden' }>
-        <button className="close" onClick={this.props.togglePlaceEdit}>X</button>
+        <button className="close" onClick={this.handleCloseClick} >X</button>
+
         <div className="place-edit-form">
-          <h1>Edit Place</h1>
+          <div className="title-errors">
+            <h1>Edit Place</h1>
+            {this.showErrors()}
+          </div>
+          
           <label>Title
             <input type="text" value={this.state.title} onChange={this.updateText('title')} />
           </label>
@@ -48,6 +100,9 @@ class PlaceEdit extends React.Component{
               <option value="Private Room" onChange={this.updateText('typeOfPlace')}>Private Room</option>
               <option value="Entire Place" onChange={this.updateText('typeOfPlace')}>Entire Place</option>
             </select>
+          </label>
+          <label>Price Per Day
+            <input type="number" min="1" step="any" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
           </label>
           <label>Max Guests
             <input type="number" value={this.state.maxGuests} min="1" onChange={this.updateText('maxGuests')} />
@@ -77,11 +132,14 @@ class PlaceEdit extends React.Component{
             <input type="time" value={this.state.checkOutBefore} onChange={this.updateText('checkOutBefore')}/>
           </label>
           <p>Select the cancellation policy</p>
-          <input type="radio" id="strict" value="strict" name="policy"/>
+          <input type="radio" id="strict" value="strict" name="policy" onChange={this.updateText('cancellationPolicy')}/>
             <label htmlFor="strict">Strict Policy: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes pridefulb&b service fee paid by the guest and by the host. If the stay is interrupted, the guest will have no right to receive a refund.</label>
-          <input type="radio" id="flexible" value="flexible" name="policy" />
+          <br />
+          <input type="radio" id="flexible" value="flexible" name="policy" onChange={this.updateText('cancellationPolicy')} />
             <label htmlFor="flexible" value="flexible">Flexible Policy: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in. Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in. If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable.</label>
+          <input type="submit" value="Update" onClick={this.handleSubmit}/>
         </div>
+
       </div>
     )
   }

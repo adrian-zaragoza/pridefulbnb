@@ -81,7 +81,7 @@ class PlaceShow extends React.Component {
         </div>
       )
 
-      if(this.props.currentUser === placeObj.ownerId){
+      if(this.props.currentUser && this.props.currentUser.id === placeObj.ownerId){
         editPlaceForm = (
           <div className="edit-place-form">
             <button className="edit-place-button" onClick={this.togglePlaceEdit}>Edit</button>

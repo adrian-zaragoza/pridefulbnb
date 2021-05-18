@@ -1,4 +1,6 @@
 class Api::PlacesController < ApplicationController
+  before_action :underscore_params!
+  
   def index
     @places = Place.all
 

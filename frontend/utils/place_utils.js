@@ -25,12 +25,12 @@ export const deletePlace = (placeId) => {
   );
 };
 
-export const updatePlace = (placeData) => {
+export const updatePlace = (place) => {
   return(
     $.ajax({
       method: 'PATCH',
-      url: `/api/places/${placeData.id}`,
-      data: {placeData}
+      url: `/api/places/${place.id}`,
+      data: {place}
     })
   );
 };
