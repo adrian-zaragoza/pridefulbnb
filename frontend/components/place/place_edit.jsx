@@ -76,9 +76,11 @@ class PlaceEdit extends React.Component{
           <label>Check out before
             <input type="time" value={this.state.checkOutBefore} onChange={this.updateText('checkOutBefore')}/>
           </label>
-          <label>Cancellation Policy
-            
-          </label>
+          <p>Select the cancellation policy</p>
+          <input type="radio" id="strict" value="strict" name="policy"/>
+            <label htmlFor="strict">Strict Policy: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes pridefulb&b service fee paid by the guest and by the host. If the stay is interrupted, the guest will have no right to receive a refund.</label>
+          <input type="radio" id="flexible" value="flexible" name="policy" />
+            <label htmlFor="flexible" value="flexible">Flexible Policy: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in. Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in. If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable.</label>
         </div>
       </div>
     )
