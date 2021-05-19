@@ -4,7 +4,8 @@ import PlaceShowings from './place_showings';
 
 const mapStateToProps = (state) => {
   return {
-    places: state.entities.places
+    places: state.entities.places,
+    currentUser: state.session.currentUser
   };
 };
 
