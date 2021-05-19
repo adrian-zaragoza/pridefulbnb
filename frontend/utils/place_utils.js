@@ -29,8 +29,10 @@ export const updatePlace = (place) => {
   return(
     $.ajax({
       method: 'PATCH',
-      url: `/api/places/${place.id}`,
-      data: {place}
+      url: `/api/places/${place.get("place[id]")}`,
+      data: place,
+      contentType: false,
+      processData: false
     })
   );
 };

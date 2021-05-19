@@ -1,6 +1,6 @@
 class Api::PlacesController < ApplicationController
   before_action :underscore_params!
-  
+
   def index
     @places = Place.all
 
@@ -33,8 +33,12 @@ class Api::PlacesController < ApplicationController
 
   def update
     @place = Place.find_by(id: params[:id])
-
-    if @place && current_user.id == @place.owner_id && @place.update(place_params)   
+    if @place && current_user.id == @place.owner_id && @place.update(place_params.reject { |key| key["images"] })   
+      if place_params[:images].present?
+        place_params[:images].each do |image|
+          @place.images.attach(image)
+        end
+      end
       render :show
     else
       render json: @place.errors.full_messages, status: 404
@@ -54,7 +58,7 @@ class Api::PlacesController < ApplicationController
 
   private
   def place_params
-    params.require(:place).permit(:title, :location, :type_of_place, :max_guests, :num_of_bedrooms, 
+    params.require(:place).permit(:title, :location, :type_of_place, :max_guests, :num_of_bedrooms, :id,
                                   :num_of_bathrooms, :num_of_beds, :about, :nearby_attractions, :rules,
                                   :price_per_day, :cancellation_policy, :check_in_from, :check_out_before,
                                   :owner_id, images: []

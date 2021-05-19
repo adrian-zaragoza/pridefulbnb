@@ -70,7 +70,7 @@ class PlaceShow extends React.Component {
           <p>{placeObj.rules}</p>
           <p><b>Check-in:</b>{placeObj.checkInFrom}</p>
           <p><b>Checkout:</b>{placeObj.checkOutBefore}</p>
-          <p><b>Cancellation policy:</b>{placeObj.cancellationPolicy}</p>
+          <p><b>Cancellation policy:</b>{placeObj.cancellationPolicy === "strict" ? "Strict Policy: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes pridefulb&b service fee paid by the guest and by the host. If the stay is interrupted, the guest will have no right to receive a refund." : "Flexible Policy: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in. Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in. If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable."}</p>
         </div>
       )
 
