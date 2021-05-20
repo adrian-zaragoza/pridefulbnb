@@ -41,7 +41,7 @@ class PlaceShowings extends React.Component{
     
     return(
       <div className="place-index">
-        <button onClick={this.handleAddPlace}>+ Add Place</button>
+        <button className="add-place-button" onClick={this.handleAddPlace}>+ Add Place</button>
           {this.state.createPlaceForm ? <PlaceCreateContainer  createPlaceForm={this.state.createPlaceForm} togglePlaceCreate={this.togglePlaceCreate} currentUser={this.props.currentUser}/> : ""}
         <div className="places-listings">
           {
