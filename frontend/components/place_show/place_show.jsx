@@ -34,10 +34,20 @@ class PlaceShow extends React.Component {
     if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
       let placeObj = place[this.props.placeId];
 
+      if(this.props.currentUser && this.props.currentUser.id === placeObj.ownerId){
+        editPlaceForm = (
+          <div className="edit-place-form">
+            <button className="edit-place-button" onClick={this.togglePlaceEdit}>Edit</button>
+            <PlaceEditContainer editPlaceForm={this.state.editPlaceForm} togglePlaceEdit={this.togglePlaceEdit} place={placeObj}/>
+          </div>
+        )
+      }
+
       placeHeader = (
         <div className="place-header">
           <h1>{placeObj.title}</h1>
           <h2><p><GoLocation/></p>{placeObj.location}</h2>
+          {editPlaceForm}
         </div>
       )
 
@@ -81,14 +91,7 @@ class PlaceShow extends React.Component {
         </div>
       )
 
-      if(this.props.currentUser && this.props.currentUser.id === placeObj.ownerId){
-        editPlaceForm = (
-          <div className="edit-place-form">
-            <button className="edit-place-button" onClick={this.togglePlaceEdit}>Edit</button>
-            <PlaceEditContainer editPlaceForm={this.state.editPlaceForm} togglePlaceEdit={this.togglePlaceEdit} place={placeObj}/>
-          </div>
-        )
-      }
+
     }
 
     return(
@@ -100,7 +103,6 @@ class PlaceShow extends React.Component {
         </div>
         <div className="place-show-details">
           {placeHeader}
-          {editPlaceForm}
           <div className="place-specs">
             {placeSpecs}
           </div>

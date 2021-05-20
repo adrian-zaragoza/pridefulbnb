@@ -87,6 +87,25 @@
 .place-show-details{
   margin-left: 22%;
   margin-right: 22%;
+
+  .edit-place-form{
+    text-align: center;
+    .edit-place-button{
+      margin-top: 5px;
+      padding: 10px 10px 10px 10px;
+      color: #006f85;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    .edit-place-button:hover{
+      background-color: rgb(240, 239, 239);
+      font-weight: 600;
+    }
+
+  }
+
+
 }
 
 .place-about{
