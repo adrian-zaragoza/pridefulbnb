@@ -70,7 +70,6 @@ class PlaceCreate extends React.Component{
     this.props.clearErrors();
     
     const {ownerId, title, about, location, typeOfPlace, maxGuests, numOfBedrooms, numOfBathrooms, numOfBeds, cancellationPolicy, rules, checkInFrom, checkOutBefore, imageUrl, nearbyAttractions, pricePerDay} = this.state;
-    console.log("typeOfPlace", typeOfPlace)
     const placeData = new FormData();
 
     placeData.append("place[ownerId]", ownerId);
@@ -134,7 +133,7 @@ class PlaceCreate extends React.Component{
               </select>
             </label>
             <label>Price Per Day
-              <input type="number" min="1" step="any" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
+              <input type="number" min="1" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
             </label>
             <label>Max Guests
               <input type="number" value={this.state.maxGuests} min="1" onChange={this.updateText('maxGuests')} />

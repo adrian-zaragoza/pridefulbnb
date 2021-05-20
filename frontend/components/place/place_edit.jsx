@@ -18,7 +18,7 @@ class PlaceEdit extends React.Component{
       rules: this.props.place.rules,
       checkInFrom: this.props.place.checkInFrom,
       checkOutBefore: this.props.place.checkOutBefore,
-      imageUrl: this.props.place.imageUrl,
+      imageUrl: "",
       nearbyAttractions: this.props.place.nearbyAttractions,
       pricePerDay: this.props.place.pricePerDay
     }
@@ -59,7 +59,7 @@ class PlaceEdit extends React.Component{
       rules: this.props.place.rules,
       checkInFrom: this.props.place.checkInFrom,
       checkOutBefore: this.props.place.checkOutBefore,
-      imageUrl: this.props.place.imageUrl,
+      imageUrl: "",
       nearbyAttractions: this.props.place.nearbyAttractions,
       pricePerDay: this.props.place.pricePerDay
     });
@@ -133,7 +133,7 @@ class PlaceEdit extends React.Component{
               </select>
             </label>
             <label>Price Per Day
-              <input type="number" min="1" step="any" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
+              <input type="number" min="1" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
             </label>
             <label>Max Guests
               <input type="number" value={this.state.maxGuests} min="1" onChange={this.updateText('maxGuests')} />

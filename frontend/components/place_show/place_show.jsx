@@ -38,7 +38,6 @@ class PlaceShow extends React.Component {
     let propertyRules;
     let nearbyAttractions;
     let editPlaceForm;
-    let deletePlaceForm;
 
     if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
       let placeObj = place[this.props.placeId];
@@ -47,15 +46,8 @@ class PlaceShow extends React.Component {
         editPlaceForm = (
           <div className="edit-place-form">
             <button className="edit-place-button" onClick={this.togglePlaceEdit}>Edit</button>
-            <PlaceEditContainer editPlaceForm={this.state.editPlaceForm} togglePlaceEdit={this.togglePlaceEdit} place={placeObj}/>
-          </div>
-        )
-      }
-
-      if(this.props.currentUser && this.props.currentUser.id === placeObj.ownerId){
-        deletePlaceForm = (
-          <div className="edit-place-form">
             <button className="edit-place-button" onClick={this.handlePlaceDelete}>Delete</button>
+            <PlaceEditContainer editPlaceForm={this.state.editPlaceForm} togglePlaceEdit={this.togglePlaceEdit} place={placeObj}/>
           </div>
         )
       }
@@ -66,7 +58,6 @@ class PlaceShow extends React.Component {
           <h2><p><GoLocation/></p>{placeObj.location}</h2>
           <div>
             {editPlaceForm}
-            {deletePlaceForm}
           </div>
 
         </div>

@@ -38,6 +38,7 @@ class Api::PlacesController < ApplicationController
 
   def update
     @place = Place.find_by(id: params[:id])
+    
     if @place && current_user.id == @place.owner_id && @place.update(place_params.reject { |key| key["images"] })   
       if place_params[:images].present?
         place_params[:images].each do |image|
