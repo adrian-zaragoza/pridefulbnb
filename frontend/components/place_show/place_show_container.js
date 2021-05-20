@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { fetchPlace } from '../../actions/place_actions';
+import { fetchPlace, deletePlaceThunk } from '../../actions/place_actions';
 import PlaceShow from './place_show';
 import { clearErrors } from '../../actions/session';
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state, {match}) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchPlace: placeId => dispatch(fetchPlace(placeId))
+  fetchPlace: placeId => dispatch(fetchPlace(placeId)),
+  deletePlaceThunk: (placeId) => dispatch(deletePlaceThunk(placeId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaceShow);

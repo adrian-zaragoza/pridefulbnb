@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { AiOutlineHome } from 'react-icons/ai';
 import { IoPersonOutline } from 'react-icons/io5';
 import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all';
@@ -8,7 +9,8 @@ class PlaceShow extends React.Component {
   constructor(props){
     super(props);
     this.state = { editPlaceForm: false}
-    this.togglePlaceEdit = this.togglePlaceEdit.bind(this)
+    this.togglePlaceEdit = this.togglePlaceEdit.bind(this);
+    this.handlePlaceDelete = this.handlePlaceDelete.bind(this);
   }
 
   componentDidMount(){
@@ -18,6 +20,12 @@ class PlaceShow extends React.Component {
   togglePlaceEdit(e){
     e.preventDefault();
     this.setState({editPlaceForm: !this.state.editPlaceForm})
+  }
+
+  handlePlaceDelete(e){
+    e.preventDefault();
+    this.props.deletePlaceThunk(this.props.placeId);
+    this.props.history.push(`/places`);
   }
 
 
@@ -30,6 +38,7 @@ class PlaceShow extends React.Component {
     let propertyRules;
     let nearbyAttractions;
     let editPlaceForm;
+    let deletePlaceForm;
 
     if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
       let placeObj = place[this.props.placeId];
@@ -43,11 +52,23 @@ class PlaceShow extends React.Component {
         )
       }
 
+      if(this.props.currentUser && this.props.currentUser.id === placeObj.ownerId){
+        deletePlaceForm = (
+          <div className="edit-place-form">
+            <button className="edit-place-button" onClick={this.handlePlaceDelete}>Delete</button>
+          </div>
+        )
+      }
+
       placeHeader = (
         <div className="place-header">
           <h1>{placeObj.title}</h1>
           <h2><p><GoLocation/></p>{placeObj.location}</h2>
-          {editPlaceForm}
+          <div>
+            {editPlaceForm}
+            {deletePlaceForm}
+          </div>
+
         </div>
       )
 
@@ -115,4 +136,4 @@ class PlaceShow extends React.Component {
   }
 }
 
-export default PlaceShow;
+export default withRouter(PlaceShow);

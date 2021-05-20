@@ -53,10 +53,11 @@ class Api::PlacesController < ApplicationController
   def destroy
     @place = Place.find_by(id: params[:id])
     
-    if @place && current_user.id == @place.id
+    if @place && current_user.id == @place.owner_id
+      @place.images.purge
       @place.delete
     else
-      render json: ["You cannot delete this place"]
+      render json: ["You cannot delete this place"], status: 404
     end
 
   end
