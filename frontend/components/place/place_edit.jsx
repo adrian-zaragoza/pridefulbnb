@@ -112,60 +112,71 @@ class PlaceEdit extends React.Component{
       <div className={this.props.editPlaceForm ? 'place-info' : 'hidden' }>
         <button className="close" onClick={this.handleCloseClick} >X</button>
 
-        <div className="place-edit-form">
+        <div className="place-edit-form modal-content">
           <div className="title-errors">
             <h1>Edit Place</h1>
             {this.showErrors()}
           </div>
-          
-          <label>Title
-            <input type="text" value={this.state.title} onChange={this.updateText('title')} />
+          <div>
+            <label>Title
+              <input type="text" value={this.state.title} onChange={this.updateText('title')} />
+            </label>
+            <label>Location
+              <input type="text" value={this.state.location} onChange={this.updateText('location')} />
+            </label>
+          </div>
+          <div>
+            <label>Type of Place
+              <select defaultValue={this.state.typeOfPlace} onChange={this.updateText('typeOfPlace')}>
+                <option value="Private Room">Private Room</option>
+                <option value="Entire Place">Entire Place</option>
+              </select>
+            </label>
+            <label>Price Per Day
+              <input type="number" min="1" step="any" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
+            </label>
+            <label>Max Guests
+              <input type="number" value={this.state.maxGuests} min="1" onChange={this.updateText('maxGuests')} />
+            </label>
+          </div>
+          <div>
+            <label>Number of Bedrooms
+              <input type="number" value={this.state.numOfBedrooms} min="1" onChange={this.updateText('numOfBedrooms')} />
+            </label>
+            <label>Number of Beds
+              <input type="number" value={this.state.numOfBeds} min="1" onChange={this.updateText('numOfBeds')} />
+            </label>
+            <label>Number of Bathrooms
+              <input type="number" value={this.state.numOfBathrooms} min="1" onChange={this.updateText('numOfBathrooms')} />
           </label>
-          <label>Location
-            <input type="text" value={this.state.location} onChange={this.updateText('location')} />
+          </div>
+          <label className="form-textbox">About
+            <textarea cols="50" rows="5" value={this.state.about} onChange={this.updateText('about')}></textarea>
           </label>
-          <label>Type of Place
-            <select defaultValue={this.state.typeOfPlace}>
-              <option value="Private Room" onChange={this.updateText('typeOfPlace')}>Private Room</option>
-              <option value="Entire Place" onChange={this.updateText('typeOfPlace')}>Entire Place</option>
-            </select>
+          <label className="form-textbox">Nearby Attractions
+            <textarea cols="50" rows="5" value={this.state.nearbyAttractions} onChange={this.updateText('nearbyAttractions')}></textarea>
           </label>
-          <label>Price Per Day
-            <input type="number" min="1" step="any" value={this.state.pricePerDay} onChange={this.updateText('pricePerDay')}/>
+          <label className="form-textbox">Rules
+            <textarea cols="50" rows="5" value={this.state.rules} onChange={this.updateText('rules')}></textarea>
           </label>
-          <label>Max Guests
-            <input type="number" value={this.state.maxGuests} min="1" onChange={this.updateText('maxGuests')} />
-          </label>
-          <label>Number of Bedrooms
-            <input type="number" value={this.state.numOfBedrooms} min="1" onChange={this.updateText('numOfBedrooms')} />
-          </label>
-          <label>Number of Beds
-            <input type="number" value={this.state.numOfBeds} min="1" onChange={this.updateText('numOfBeds')} />
-          </label>
-          <label>Number of Bathrooms
-            <input type="number" value={this.state.numOfBathrooms} min="1" onChange={this.updateText('numOfBathrooms')} />
-          </label>
-          <label>About
-            <textarea cols="30" rows="10" value={this.state.about} onChange={this.updateText('about')}></textarea>
-          </label>
-          <label>Nearby Attractions
-            <textarea cols="30" rows="10" value={this.state.nearbyAttractions} onChange={this.updateText('nearbyAttractions')}></textarea>
-          </label>
-          <label>Rules
-            <textarea cols="30" rows="10" value={this.state.rules} onChange={this.updateText('rules')}></textarea>
-          </label>
-          <label>Check in from
-            <input type="time" value={this.state.checkInFrom} onChange={this.updateText('checkInFrom')}/>
-          </label>
-          <label>Check out before
-            <input type="time" value={this.state.checkOutBefore} onChange={this.updateText('checkOutBefore')}/>
-          </label>
+          <div>
+            <label>Check in from
+              <input type="time" value={this.state.checkInFrom} onChange={this.updateText('checkInFrom')}/>
+            </label>
+            <label>Check out before
+              <input type="time" value={this.state.checkOutBefore} onChange={this.updateText('checkOutBefore')}/>
+            </label>
+          </div>
           <p>Select the cancellation policy</p>
-          <input type="radio" id="strict" value="strict" name="policy" checked={this.state.cancellationPolicy === "strict" ? "checked" : ""} onChange={this.updateText('cancellationPolicy')}/>
-            <label htmlFor="strict">Strict Policy: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes pridefulb&b service fee paid by the guest and by the host. If the stay is interrupted, the guest will have no right to receive a refund.</label>
+          <div>
+            <input type="radio" id="strict" value="strict" name="policy" checked={this.state.cancellationPolicy === "strict" ? "checked" : ""} onChange={this.updateText('cancellationPolicy')}/>
+              <label htmlFor="strict">Strict Policy: 70% refund up to 14 days before confirmed arrival date, then 30% up to 1 day prior to the confirmed check-in date. In both cases, the refund excludes pridefulb&b service fee paid by the guest and by the host. If the stay is interrupted, the guest will have no right to receive a refund.</label>
+          </div>
           <br />
+          <div>
           <input type="radio" id="flexible" value="flexible" name="policy" checked={this.state.cancellationPolicy === "flexible" ? "checked" : ""} onChange={this.updateText('cancellationPolicy')} />
             <label htmlFor="flexible" value="flexible">Flexible Policy: Full refund up to 7 days prior to check-in if booked with prepayment at least 10 days before check-in. Full refund excludes cancellation fee if booking paid upfront or if booked 9 days or less before check-in and cancelled more than 7 days prior to check-in. If cancellation between 6 and 1 day prior to checkin, 50% refund (excluding cancellation fee). No refund if guests interrupt their stay. The cancellation insurance fee is non refundable.</label>
+          </div>
           <br />
           <input type="file" onChange={this.updateText('imageUrl')} multiple />
           <input type="submit" value="Update" onClick={this.handleSubmit}/>

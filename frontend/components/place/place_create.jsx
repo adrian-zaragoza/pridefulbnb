@@ -114,10 +114,7 @@ class PlaceCreate extends React.Component{
 
         <div className="place-edit-form modal-content">
           <div className="title-errors">
-            <div className="title">
-              <img src={prideBannerIcon} alt="pride banner icon"/>
-              <h1>Add Place</h1>
-            </div>
+            <h1>Add Place</h1>
             {this.showErrors()}
           </div>
           <div>
@@ -130,7 +127,8 @@ class PlaceCreate extends React.Component{
           </div>
           <div>
             <label>Type of Place
-              <select onChange={this.updateText('typeOfPlace')}>
+              <select defaultValue="" onChange={this.updateText('typeOfPlace')}>
+                <option value="" disabled hidden >Please Choose:</option>
                 <option value="Private Room" >Private Room</option>
                 <option value="Entire Place" >Entire Place</option>
               </select>

@@ -29,13 +29,18 @@
   border-radius: 4px;
 
   .title-erros {
-    
+    margin: 0px;
     .title{
-      display: inline-flex;
+      // width: auto;
+      margin: 0px;
+      // display: flex;
+      // flex-direction: row;
+    }
 
-      img{
-        // display: block;
-      }
+    .figure{
+      display: flex;
+      flex-direction: center;
+      margin: 0px;
     }
   }
 
@@ -43,6 +48,7 @@
     font-size: 27px;
     font-weight: 600;
     margin-bottom: 10px;
+    margin: 0px;
   }
 
   label, div, input{
@@ -60,6 +66,10 @@
     margin-left: 5px;
     font-size: 16px;
     font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  }
+
+  input[type=number]{
+    width: 100px;
   }
 
   input{
