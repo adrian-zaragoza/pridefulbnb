@@ -17,9 +17,14 @@ class Api::PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(place_params)
+    @place = Place.new(place_params.reject { |key| key["images"] })
 
     if @place && @place.save
+      if place_params[:images].present?
+        place_params[:images].each do |image|
+          @place.images.attach(image)
+        end
+      end
       render :show
     else
       render json: @place.errors.full_messages, status: 404

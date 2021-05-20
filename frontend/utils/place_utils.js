@@ -42,7 +42,9 @@ export const createPlace = (placeData) => {
     $.ajax({
       method: 'POST',
       url: '/api/places',
-      data: {placeData}
+      data: placeData,
+      contentType: false,
+      processData: false
     })
   );
 };

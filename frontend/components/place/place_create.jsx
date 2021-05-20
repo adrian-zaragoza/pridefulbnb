@@ -46,7 +46,7 @@ class PlaceCreate extends React.Component{
     this.props.togglePlaceCreate(e);
 
     this.setState({
-      ownerId: this.props.place.ownerId,
+      ownerId: this.props.currentUser.id,
       title: "",
       about: "",
       location: "",
@@ -70,6 +70,7 @@ class PlaceCreate extends React.Component{
     this.props.clearErrors();
     
     const {ownerId, title, about, location, typeOfPlace, maxGuests, numOfBedrooms, numOfBathrooms, numOfBeds, cancellationPolicy, rules, checkInFrom, checkOutBefore, imageUrl, nearbyAttractions, pricePerDay} = this.state;
+    console.log("typeOfPlace", typeOfPlace)
     const placeData = new FormData();
 
     placeData.append("place[ownerId]", ownerId);
@@ -124,9 +125,9 @@ class PlaceCreate extends React.Component{
             <input type="text" value={this.state.location} onChange={this.updateText('location')} />
           </label>
           <label>Type of Place
-            <select defaultValue={this.state.typeOfPlace}>
-              <option value="Private Room" onChange={this.updateText('typeOfPlace')}>Private Room</option>
-              <option value="Entire Place" onChange={this.updateText('typeOfPlace')}>Entire Place</option>
+            <select onChange={this.updateText('typeOfPlace')}>
+              <option value="Private Room" >Private Room</option>
+              <option value="Entire Place" >Entire Place</option>
             </select>
           </label>
           <label>Price Per Day
