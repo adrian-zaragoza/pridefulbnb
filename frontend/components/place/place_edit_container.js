@@ -4,7 +4,6 @@ import PlaceEdit from './place_edit';
 import { clearErrors } from '../../actions/session';
 
 const mapStateToProps = (state, ownProps) => {
-
   return{
     place: ownProps.place,
     editPlaceForm: ownProps.editPlaceForm,

@@ -1,9 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Search extends React.Component{
   constructor(props){
     super(props)
-
   }
 
   componentDidMount(){
@@ -13,11 +13,21 @@ class Search extends React.Component{
 
   }
 
-  render(){
-    let searchLocationLowercase = this.props.searchPlaceLocation.toLowerCase();
-    let valuesArr = Object.values(this.props.places);
-    let filteredArr = valuesArr.filter(placeObj => placeObj.location.toLowerCase().includes(searchLocationLowercase))
+  handleClickShow(placeId, e){
+    e.preventDefault();
+    // this.props.fetchPlace(placeId)
+    this.props.history.push(`/places/${placeId}`)
+  }
 
+  render(){
+    let searchLocationLowercase;
+    let valuesArr;
+    let filteredArr=[];
+    if(this.props.searchPlaceLocation &&  Object.values(this.props.places).length !== 0){
+      searchLocationLowercase = this.props.searchPlaceLocation.toLowerCase();
+      valuesArr = Object.values(this.props.places);
+      filteredArr = valuesArr.filter(placeObj => placeObj.location.toLowerCase().includes(searchLocationLowercase))
+    }
     return(
       <div className="search-results">
         <h1>{`Explore Gay Rooms & Rentals, ${filteredArr.length} places to stay`}</h1>

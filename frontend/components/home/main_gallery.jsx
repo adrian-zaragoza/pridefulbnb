@@ -6,8 +6,7 @@ class MainGallery extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      searchPlaceLocation: "",
-      search: false
+      searchPlaceLocation: ""
     }
 
     this.handleSearchInput = this.handleSearchInput.bind(this);
@@ -17,13 +16,12 @@ class MainGallery extends React.Component{
   handleSearchInput(e){
     e.preventDefault();
     this.setState({searchPlaceLocation: e.currentTarget.value})
-    console.log(this.state.searchPlaceLocation)
   }
 
   handleSearchSubmit(e){
     e.preventDefault();
-    this.setState({toggleSearch: true})
-    this.props.history.push(`/search`);
+    sessionStorage.setItem('searchPlaceLocation', this.state.searchPlaceLocation)
+    this.props.history.push({pathname: '/search', state: {searchPlaceLocation: this.state.searchPlaceLocation}});
   }
    
   render(){
@@ -41,7 +39,7 @@ class MainGallery extends React.Component{
               <input type="text" value={this.state.searchPlaceLocation} onChange={this.handleSearchInput}/>
             </label>
             <button className="search-button" onClick={this.handleSearchSubmit}>SEARCH</button>
-            <SearchContainer searchPlaceLocation={this.state.searchPlaceLocation} search={this.state.toggleSearch} />
+            {/* {this.state.toggleSearch ? <SearchContainer searchPlaceLocation={this.state.searchPlaceLocation} /> : ""} */}
           </form>
         </div>
 

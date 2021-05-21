@@ -11,6 +11,7 @@ import PlaceShowings from './place/place_showings_container';
 import PlaceShowContainer from './place_show/place_show_container';
 import SearchContainer from './search/search_container';
 
+
 const App = withRouter(({location}) =>{ 
   return(
   <div className="app">
