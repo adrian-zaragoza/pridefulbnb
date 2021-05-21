@@ -1,5 +1,5 @@
 import React from 'react';
-import MainGallery from './main_gallery';
+import MainGalleryContainer from './main_gallery_container';
 import Accomodations from './accomodations';
 import PhoneApp from './phone_app';
 import Blogs from './blogs';
@@ -7,7 +7,7 @@ import Host from './host';
 
 export default () => (
   <div className="home">
-    <MainGallery />
+    <MainGalleryContainer />
     <div className="icon-bar">
 
       <div className="icon">
