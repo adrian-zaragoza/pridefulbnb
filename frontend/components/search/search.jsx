@@ -30,7 +30,7 @@ class Search extends React.Component{
     }
     return(
       <div className="search-results">
-        <h1>{`Explore Gay Rooms & Rentals, ${filteredArr.length} places to stay`}</h1>
+        <h1><img src={window.prideBannerIcon} alt="pride banner" />{`Explore Gay Rooms & Rentals, ${filteredArr.length} places to stay`}</h1>
 
         <div className="places-listings">
           {

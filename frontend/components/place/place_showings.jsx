@@ -48,7 +48,7 @@ class PlaceShowings extends React.Component{
             placesArr.map((place) => {
             return(
               <ul key={place.id} className="place">
-                <img src={place.imageUrl} alt={place.title}/>
+                <img src={place.imageUrl} alt={place.title} onClick={(e)=>{ this.handleClickShow(place.id, e)}} />
                 <li id="title" onClick={(e)=>{ this.handleClickShow(place.id, e)}}>{place.title}</li>
                 <div className="place-details">
                   <li>{`${place.typeOfPlace} •`}</li>

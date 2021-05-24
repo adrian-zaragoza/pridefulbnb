@@ -11,17 +11,27 @@
   .place{
     margin-right: 15px;
     margin-bottom: 25px;
+
     img{
       width: 300px;
       height: auto;
       border-radius: 4px;
       margin-bottom: 10px;
     }
+
+    img:hover{
+      cursor: pointer;
+    }
+    
     #title{
       color: #006f85;
       font-weight: 600;
       font-size: 16px;
       margin-bottom: 15px;
+    }
+
+    #title:hover{
+      cursor: pointer;
     }
 
     .place-details{
