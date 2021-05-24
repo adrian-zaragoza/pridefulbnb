@@ -45,6 +45,16 @@
 .nav-bar {
   display: flex;
   height: 45px;
+
+  .logo-and-search{
+    display: flex;
+    flex-direction: row;
+
+    input[type=text]{
+      position: relative;
+      top: 10px;
+    }
+  }
 }
 
 .nav-bar-links{
