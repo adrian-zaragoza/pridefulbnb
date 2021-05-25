@@ -6,6 +6,10 @@ class Place < ApplicationRecord
   belongs_to :owner,
     foreign_key: :owner_id,
     class_name: "User"
+
+  has_many :bookings,
+    foreign_key: :place_id,
+    class_name: "Place"
   
   has_many_attached :images
   

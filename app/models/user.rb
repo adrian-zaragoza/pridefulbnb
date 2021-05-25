@@ -11,6 +11,10 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: "Place"
 
+  has_many :bookings,
+    foreign_key: :traveler_id,
+    class_name: "Booking"
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
 
