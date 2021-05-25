@@ -1,5 +1,6 @@
 class Api::BookingsController < ApplicationController
-
+  before_action :underscore_params!
+  
   def index
     @bookings = Booking.where(traveler_id: current_user.id)
     ids = @bookings.pluck(:place_id)
