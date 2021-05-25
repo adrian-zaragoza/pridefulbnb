@@ -14,7 +14,7 @@ class Booking < ApplicationRecord
     this_place = Booking.where(place_id: self.place_id)
     return if this_place.count == 0
 
-    overlap = this_place.where("end_stay > ? AND start_stay < ?", self.start_stay, self.end_stay)
+    overlap = this_place.where('end_stay > ? AND start_stay < ?', self.start_stay, self.end_stay)
 
     if overlap > 0
       errors[:session] << "There is a booking conflict. Please change your dates"
