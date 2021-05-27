@@ -2,6 +2,7 @@ import * as APIUtil from '../utils/booking_utils';
 
 export const RECEIVE_USER_BOOKINGS = "RECEIVE_USER_BOOKINGS";
 export const RECEIVE_BOOKING = "RECEIVE_BOOKING";
+export const DELETE_BOOKING = "DELETE_BOOKING";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 const receiveBooking = (booking) => ({
@@ -12,6 +13,11 @@ const receiveBooking = (booking) => ({
 const receiveUserBookings = (bookings) => ({
   type: RECEIVE_USER_BOOKINGS,
   bookings
+})
+
+const deleteBooking = (bookingId) =>({
+  type: DELETE_BOOKING,
+  bookingId
 })
 
 const receiveErrors = (errors) => ({
@@ -25,4 +31,8 @@ export const fetchUserBookings = (userId) => (dispatch) =>(
 
 export const createBooking = (booking) => (dispatch) =>(
   APIUtil.createBooking(booking).then(booking =>(dispatch(receiveBooking(booking))), errors => (dispatch(receiveErrors(errors.responseJSON))))
+);
+
+export const deleteBookingThunk = (bookingId) => (dispatch) => (
+  APIUtil.deleteBooking(bookingId).then(() => (dispatch(deleteBooking(bookingId))), errors => (dispatch(receiveErrors(errors.responseJSON))))
 );

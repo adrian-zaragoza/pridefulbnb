@@ -4,6 +4,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { IoPersonOutline } from 'react-icons/io5';
 import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all';
 import PlaceEditContainer from '../place/place_edit_container';
+import BookingContainer from '../booking/booking_container';
 
 class PlaceShow extends React.Component {
   constructor(props){
@@ -38,6 +39,7 @@ class PlaceShow extends React.Component {
     let propertyRules;
     let nearbyAttractions;
     let editPlaceForm;
+    let bookingContainer;
 
     if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
       let placeObj = place[this.props.placeId];
@@ -51,6 +53,10 @@ class PlaceShow extends React.Component {
           </div>
         )
       }
+
+      bookingContainer = (
+        <BookingContainer place={placeObj} />
+      )
 
       placeHeader = (
         <div className="place-header">
@@ -122,6 +128,7 @@ class PlaceShow extends React.Component {
           {propertyRules}
           {nearbyAttractions}
         </div>
+        {bookingContainer}
       </div>
     )
   }

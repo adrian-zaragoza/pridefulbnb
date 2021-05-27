@@ -16,3 +16,12 @@ export const createBooking = (bookingData) => {
     })
   );
 };
+
+export const deleteBooking = (bookingId) => {
+  return(
+    $.ajax({
+      method: 'DELETE',
+      url: `/api/bookings/${bookingId}`
+    })
+  );
+};
