@@ -5,6 +5,10 @@ class BookingIndex extends React.Component{
     super(props)
   }
 
+  componentDidMount(){
+    this.props.fetchUserBookings(this.props.currentUser.id)
+  }
+
   render(){
 
     return(

@@ -1,4 +1,4 @@
-bookings.set! do
+json.bookings do
   @bookings.each do |booking|
     json.set! booking.id do
       json.extract! booking, :id, :traveler_id, :place_id, :start_stay, :end_stay
@@ -6,7 +6,7 @@ bookings.set! do
   end
 end
 
-places.set! do
+json.places do
   @places.each do |place|
     json.set! place.id do
       json.extract! place, :id, :title, :type_of_place, :location
