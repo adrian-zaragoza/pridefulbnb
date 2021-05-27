@@ -2,7 +2,6 @@ class Api::BookingsController < ApplicationController
   before_action :underscore_params!
   
   def index
-    debugger
     @bookings = Booking.where(traveler_id: current_user.id)
     ids = @bookings.pluck(:place_id)
     @places = Place.with_attached_images.where('id IN (?)', ids)
