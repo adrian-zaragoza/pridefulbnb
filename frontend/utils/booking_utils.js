@@ -7,12 +7,12 @@ export const getUserBookings = (userId) => {
   );
 };
 
-export const createBooking = (bookingData) => {
+export const createBooking = (booking) => {
   return(
     $.ajax({
       method: 'POST',
-      url: `/api/places/${bookingData.placeId}/bookings`,
-      data: {bookingData}
+      url: `/api/places/${booking.placeId}/bookings`,
+      data: {booking}
     })
   );
 };

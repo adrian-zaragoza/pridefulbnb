@@ -2,22 +2,22 @@ import React from 'react';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
-import moment from 'moment';
+import { withRouter } from 'react-router-dom';
 
 class Booking extends React.Component{
   constructor(props){
     super(props)
-    console.log(props)
     this.state = {
       startStay: null,
       endStay: null,
       numGuests: 1,
       totalCost: 0,
-      travelerId: "",
       displayTotal: false
     }
 
     this.updateTotalCost = this.updateTotalCost.bind(this);
+    this.updateGuests = this.updateGuests.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
@@ -31,7 +31,6 @@ class Booking extends React.Component{
       let endDate = new Date(`${this.state.endStay}`)
       let diffTime = Math.abs(endDate - startDate);
       let numOfNights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      console.log("total cost", numOfNights * this.props.place.pricePerDay)
       this.setState({
         numOfNights: numOfNights,
         totalCost: numOfNights * this.props.place.pricePerDay,
@@ -41,9 +40,31 @@ class Booking extends React.Component{
     }
   }
 
+  updateGuests(e){
+    e.preventDefault();
+    this.setState({numGuests: e.currentTarget.value})
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+
+    if(!this.props.currentUser){
+      return this.props.history.push(`/login`)
+    }else{
+      let booking = {
+        startStay: this.state.startStay.format('YYYY-MM-DD'),
+        endStay: this.state.endStay.format('YYYY-MM-DD'),
+        travelerId: this.props.currentUser.id,
+        numGuests: this.state.numGuests,
+        totalCost: this.state.totalCost,
+        placeId: this.props.place.id
+      };
+
+      this.props.createBooking(booking);
 
 
-
+    }
+  }
 
 
 
@@ -54,7 +75,7 @@ class Booking extends React.Component{
       total = (
         <div className="total">
           <p>{`Total for ${this.state.numOfNights} ${this.state.numOfNights === 1 ? "night" : "nights"}`}</p> 
-          <p>{this.state.displayTotal ? this.state.totalCost : ""}</p>
+          <p>{`$${this.state.displayTotal ? this.state.totalCost : ""}`}</p>
         </div>
       )
     }
@@ -76,8 +97,8 @@ class Booking extends React.Component{
             onDatesChange={({ startDate, endDate }) => this.setState({ startStay: startDate, endStay: endDate })} // PropTypes.func.isRequired,
             focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
             onFocusChange={focusedInput => {this.setState({ focusedInput }, this.updateTotalCost)}} // PropTypes.func.isRequired,
-            startDatePlaceholderText="Add dates"
-            endDatePlaceholderText="Add dates"
+            startDatePlaceholderText="Check-in"
+            endDatePlaceholderText="Checkout"
             noBorder={false}
             hideKeyboardShortcutsPanel={false}
             anchorDirection="right"
@@ -87,16 +108,16 @@ class Booking extends React.Component{
             />
           </div>
           <div className="guest">
-            <select defaultValue="1">
+            <select onChange={this.updateGuests}>
               {guestOptions}
             </select>
           </div>
         </div>
         {total}
-        <button className="search-button">SEND REQUEST</button>
+        <button className="search-button" onClick={this.handleSubmit}>SEND REQUEST</button>
       </div>
     )
   }
 }
 
-export default Booking;
+export default withRouter(Booking);

@@ -9,7 +9,7 @@ class Api::BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-
+    debugger
     if @booking.save
       render json: ["Your booking was a sucess!"], status: 200
     else
@@ -29,7 +29,7 @@ class Api::BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit(:traveler_id, :start_stay, :end_stay, :num_guests, :total_cost)
+    params.require(:booking).permit(:traveler_id, :start_stay, :end_stay, :num_guests, :total_cost, :place_id)
   end
 
 end
