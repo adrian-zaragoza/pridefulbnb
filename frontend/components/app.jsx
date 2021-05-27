@@ -10,6 +10,7 @@ import {withRouter} from 'react-router-dom';
 import PlaceShowings from './place/place_showings_container';
 import PlaceShowContainer from './place_show/place_show_container';
 import SearchContainer from './search/search_container';
+import BookingIndexContainer from './booking/booking_index_container';
 
 
 const App = withRouter(({location}) =>{ 
@@ -22,6 +23,7 @@ const App = withRouter(({location}) =>{
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
       <Route path="/search" component={SearchContainer} />
+      <ProtectedRoute path="/users/:userId/travels" component={BookingIndexContainer} />
       <Route path="/places/:placeId" component={PlaceShowContainer} />
       <Route path="/places" component={PlaceShowings} />
       <Route  exact path="/" component={Home} />

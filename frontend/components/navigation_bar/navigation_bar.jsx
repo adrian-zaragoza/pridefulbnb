@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { AiOutlineDown } from 'react-icons/all';
 
 class NavigationBar extends React.Component{
   constructor(props){
@@ -65,12 +66,18 @@ class NavigationBar extends React.Component{
       <div className ="nav-bar-links">
         {homeButton}
         {placesButton}
-        <p className ="user-name">{`Hi, ${this.props.currentUser.firstName}`}</p>
+        <div className="user-name dropdown">
+          <button className="user-name dropbtn">{`Hi, ${this.props.currentUser.firstName}`} <AiOutlineDown /> </button>
+          <div className="dropdown-content">
+            <Link to={`/users/${this.props.currentUser.id}/travels`} >My Travels</Link>
+          </div>
+        </div>
+        {/* <p className ="user-name">{`Hi, ${this.props.currentUser.firstName}`}</p> */}
         <button onClick={this.props.logout} className="nav-button">Logout</button>
       </div>
     )
   }
-
+ 
   return (
     <div className="nav-bar">
       <div className="logo-and-search">

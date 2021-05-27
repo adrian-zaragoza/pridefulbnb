@@ -3,13 +3,13 @@ class Api::BookingsController < ApplicationController
   
   def index
     @bookings = Booking.where(traveler_id: current_user.id)
-    # ids = @bookings.pluck(:place_id)
-    # @places = Places.with_attached_images.where('id IN ?', ids)
+    ids = @bookings.pluck(:place_id)
+    @places = Places.with_attached_images.where('id IN ?', ids)
   end
 
   def create
     @booking = Booking.new(booking_params)
-    debugger
+
     if @booking.save
       render json: ["Your booking was a sucess!"], status: 200
     else

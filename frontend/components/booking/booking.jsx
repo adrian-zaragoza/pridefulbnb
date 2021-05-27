@@ -47,13 +47,13 @@ class Booking extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-
+    this.props.clearErrors()
     if(!this.props.currentUser){
       return this.props.history.push(`/login`)
     }else{
       let booking = {
-        startStay: this.state.startStay.format('YYYY-MM-DD'),
-        endStay: this.state.endStay.format('YYYY-MM-DD'),
+        startStay: !this.state.startStay ? null : this.state.startStay.format('YYYY-MM-DD'),
+        endStay: !this.state.endStay ? null : this.state.endStay.format('YYYY-MM-DD'),
         travelerId: this.props.currentUser.id,
         numGuests: this.state.numGuests,
         totalCost: this.state.totalCost,
@@ -66,7 +66,15 @@ class Booking extends React.Component{
     }
   }
 
-
+  showErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i} className="errors">{error}</li>
+        ))}
+      </ul>
+    )
+  }
 
 
   render(){
@@ -87,6 +95,7 @@ class Booking extends React.Component{
 
     return(
       <div className="booking-form">
+        {this.showErrors()}
         <div className="calendar-guest">
           <div className="calendar">
             <DateRangePicker

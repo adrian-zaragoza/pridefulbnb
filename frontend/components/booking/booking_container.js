@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     place: ownProps.place,
     currentUser: state.session.currentUser,
-    errors: errors.session
+    errors: state.errors.session
   });
 };
 
