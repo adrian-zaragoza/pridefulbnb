@@ -66,10 +66,10 @@ class NavigationBar extends React.Component{
       <div className ="nav-bar-links">
         {homeButton}
         {placesButton}
-        <div className="user-name dropdown">
-          <button className="user-name dropbtn">{`Hi, ${this.props.currentUser.firstName}`} <AiOutlineDown /> </button>
+        <div className="dropdown">
+          <button className="dropbtn">{`Hi, ${this.props.currentUser.firstName}`} <AiOutlineDown /> </button>
           <div className="dropdown-content">
-            <Link to={`/users/${this.props.currentUser.id}/travels`} >My Travels</Link>
+            <Link className="dropdown-item" to={`/users/${this.props.currentUser.id}/travels`} >My Travels</Link>
           </div>
         </div>
         {/* <p className ="user-name">{`Hi, ${this.props.currentUser.firstName}`}</p> */}

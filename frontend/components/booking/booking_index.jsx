@@ -60,9 +60,9 @@ class BookingIndex extends React.Component{
       
       upcomingTravels = (
         <div className="place-index">
-          <div className="upcoming-past-travels">
-            <button onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
-            <button onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
+          <div className="travels-buttons">
+            <button id="upcoming-button" onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
+            <button id="past-button" onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
           </div>
           <div className="places-listings">
             {
@@ -76,7 +76,7 @@ class BookingIndex extends React.Component{
                     <li>{`${place.typeOfPlace} •`}</li>
                     <li>{`${place.location}`}</li>
                   </div>
-                  <li>{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
+                  <li className="place-details">{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
                   <li>{moment(booking.startStay) > moment() ? <button onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
                 </ul>
               )
@@ -89,9 +89,9 @@ class BookingIndex extends React.Component{
       
       pastTravels = (
         <div className="place-index">
-          <div className="upcoming-past-travels">
-            <button onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
-            <button onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
+          <div className="travels-buttons">
+            <button id="upcoming-button" onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
+            <button id="past-button" onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
           </div>
           <div className="places-listings">
             {
@@ -105,7 +105,7 @@ class BookingIndex extends React.Component{
                     <li>{`${place.typeOfPlace} •`}</li>
                     <li>{`${place.location}`}</li>
                   </div>
-                  <li>{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
+                  <li className="place-details">{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
                   <li>{moment(booking.startStay) > moment() ? <button onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
                 </ul>
               )
