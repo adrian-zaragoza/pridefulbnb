@@ -2,7 +2,7 @@ import { RECEIVE_USER_BOOKINGS, RECEIVE_BOOKING, DELETE_BOOKING } from '../actio
 
 const bookingsReducer = ( oldState = {}, action) => {
   Object.freeze(oldState)
-  const nextState = Object.assign({}, oldState);
+  let nextState = Object.assign({}, oldState);
 
   switch(action.type){
     case RECEIVE_USER_BOOKINGS:
@@ -10,7 +10,8 @@ const bookingsReducer = ( oldState = {}, action) => {
     // case RECEIVE_BOOKING:
     //   return Object.assign({}, oldState, {[action.booking.booking.id]: action.booking.booking});
     case DELETE_BOOKING:
-      return delete nextState[action.bookingId]
+      delete nextState.bookings[action.bookingId];
+      return nextState;
     default: 
       return oldState;
   }

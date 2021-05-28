@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 
 class BookingIndex extends React.Component{
   constructor(props){
@@ -39,7 +40,13 @@ class BookingIndex extends React.Component{
                   <li>{`${place.typeOfPlace} •`}</li>
                   <li>{`${place.location}`}</li>
                 </div>
-                <li>{`Trip ${booking.startStay} to ${booking.endStay}`}</li>
+                <li>{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
+                {/* <li>{new Date(booking.startStay) > new Date() ? <button onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li> */}
+                <li>{moment(booking.startStay) > moment() ? <button onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
+                {/* {console.log("start Date", new Date(`${booking.startStay} 00:00`))}
+                {console.log(booking.startStay)}
+                {console.log("Today", new Date())} */}
+                {/* {console.log("result", new Date(`${booking.startStay} 00:00`) > new Date())} */}
               </ul>
             )
             } )
