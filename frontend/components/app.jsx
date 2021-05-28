@@ -11,6 +11,7 @@ import PlaceShowings from './place/place_showings_container';
 import PlaceShowContainer from './place_show/place_show_container';
 import SearchContainer from './search/search_container';
 import BookingIndexContainer from './booking/booking_index_container';
+import Footer from './footer/footer';
 
 
 const App = withRouter(({location}) =>{ 
@@ -19,6 +20,7 @@ const App = withRouter(({location}) =>{
     {
       location.pathname != '/login' && location.pathname != '/signup' && <NavBarContainer props={location} />
     }
+
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
@@ -30,6 +32,9 @@ const App = withRouter(({location}) =>{
       <Route  path="/error" component={Error} />
       <Redirect to="/error"/>
     </Switch>
+    {
+      location.pathname != '/login' && location.pathname != '/signup' && <Footer/>
+    }
   </div>
   );
 });
