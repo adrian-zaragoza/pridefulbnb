@@ -77,7 +77,7 @@ class BookingIndex extends React.Component{
                     <li>{`${place.location}`}</li>
                   </div>
                   <li className="place-details">{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
-                  <li>{moment(booking.startStay) > moment() ? <button onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
+                  <li id="cancel-button-container">{moment(booking.startStay) > moment() ? <button className="cancel-reservation-button" onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
                 </ul>
               )
               } )
@@ -106,7 +106,6 @@ class BookingIndex extends React.Component{
                     <li>{`${place.location}`}</li>
                   </div>
                   <li className="place-details">{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
-                  <li>{moment(booking.startStay) > moment() ? <button onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
                 </ul>
               )
               } )

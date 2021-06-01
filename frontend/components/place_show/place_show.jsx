@@ -119,16 +119,18 @@ class PlaceShow extends React.Component {
             {images}
           </figure>
         </div>
-        <div className="place-show-details">
-          {placeHeader}
-          <div className="place-specs">
-            {placeSpecs}
+        <div className="place-details-booking">
+          <div className="place-show-details">
+            {placeHeader}
+            <div className="place-specs">
+              {placeSpecs}
+            </div>
+            {about}
+            {propertyRules}
+            {nearbyAttractions}
           </div>
-          {about}
-          {propertyRules}
-          {nearbyAttractions}
+          {bookingContainer}
         </div>
-        {bookingContainer}
       </div>
     )
   }

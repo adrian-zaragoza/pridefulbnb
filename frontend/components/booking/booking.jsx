@@ -2,6 +2,7 @@ import React from 'react';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import './booking_calendar_styling.css';
 import { withRouter } from 'react-router-dom';
 
 class Booking extends React.Component{
@@ -18,6 +19,10 @@ class Booking extends React.Component{
     this.updateTotalCost = this.updateTotalCost.bind(this);
     this.updateGuests = this.updateGuests.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount(){
+    this.props.clearErrors();
   }
 
 
@@ -68,7 +73,7 @@ class Booking extends React.Component{
 
   showErrors() {
     return (
-      <ul>
+      <ul className="errors-container">
         {this.props.errors.map((error, i) => (
           <li key={i} className="errors">{error}</li>
         ))}
@@ -79,11 +84,22 @@ class Booking extends React.Component{
 
   render(){
     let total;
-    if(this.state.displayTotal){
+    let formHeader = (
+      <div id="booking-form-header">
+        <p><b>Add dates for prices</b></p>
+      </div>
+    )
+    if(this.state.displayTotal && this.state.startStay && this.state.endStay){
       total = (
         <div className="total">
           <p>{`Total for ${this.state.numOfNights} ${this.state.numOfNights === 1 ? "night" : "nights"}`}</p> 
           <p>{`$${this.state.displayTotal ? this.state.totalCost : ""}`}</p>
+        </div>
+      )
+
+      formHeader = (
+        <div id="booking-form-header-after">
+          <p><b>${this.props.place.pricePerDay}</b> per night</p>
         </div>
       )
     }
@@ -95,35 +111,39 @@ class Booking extends React.Component{
 
     return(
       <div className="booking-form">
-        {this.showErrors()}
-        <div className="calendar-guest">
-          <div className="calendar">
-            <DateRangePicker
-            startDate={this.state.startStay} // momentPropTypes.momentObj or null,
-            startDateId="search_start"
-            endDate={this.state.endStay} // momentPropTypes.momentObj or null,
-            endDateId="search_end"
-            onDatesChange={({ startDate, endDate }) => this.setState({ startStay: startDate, endStay: endDate })} // PropTypes.func.isRequired,
-            focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-            onFocusChange={focusedInput => {this.setState({ focusedInput }, this.updateTotalCost)}} // PropTypes.func.isRequired,
-            startDatePlaceholderText="Check-in"
-            endDatePlaceholderText="Checkout"
-            noBorder={false}
-            hideKeyboardShortcutsPanel={false}
-            anchorDirection="right"
-            block
-            readOnly
-            daySize={50}
-            />
+        
+        <div className="booking-form-container">
+          {this.showErrors()}
+          {formHeader}
+          <div className="calendar-guest">
+            <div className="calendar">
+              <DateRangePicker
+              startDate={this.state.startStay} // momentPropTypes.momentObj or null,
+              startDateId="search_start"
+              endDate={this.state.endStay} // momentPropTypes.momentObj or null,
+              endDateId="search_end"
+              onDatesChange={({ startDate, endDate }) => this.setState({ startStay: startDate, endStay: endDate })} // PropTypes.func.isRequired,
+              focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+              onFocusChange={focusedInput => {this.setState({ focusedInput }, this.updateTotalCost)}} // PropTypes.func.isRequired,
+              startDatePlaceholderText="Check-in"
+              endDatePlaceholderText="Checkout"
+              noBorder={false}
+              hideKeyboardShortcutsPanel={false}
+              anchorDirection="right"
+              block
+              readOnly
+              daySize={50}
+              />
+            </div>
+            <div className="guest">
+              <select onChange={this.updateGuests} id="guest-select">
+                {guestOptions}
+              </select>
+            </div>
           </div>
-          <div className="guest">
-            <select onChange={this.updateGuests}>
-              {guestOptions}
-            </select>
-          </div>
+          {total}
+          <button className="booking-button" onClick={this.handleSubmit}>SEND REQUEST</button>
         </div>
-        {total}
-        <button className="search-button" onClick={this.handleSubmit}>SEND REQUEST</button>
       </div>
     )
   }

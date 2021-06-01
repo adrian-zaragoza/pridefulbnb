@@ -25,3 +25,26 @@
   }
 
 }
+
+#cancel-button-container{
+  display: flex;
+  justify-content: center;
+}
+
+.cancel-reservation-button{
+  align-self: center;
+  align-content: center;
+  font-weight: 600;
+  height: 40px;
+  margin-top: 5px;
+  width: 175px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-reservation-button:hover{
+  background-color: rgb(49, 223, 223);
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,57 @@
+.DateInput_input{
+    font-size: 14px;  
+    /* padding: 22px 11px 0px; */
+    /* border-radius: 4px; */
+    /* margin-left: 5px; */
+  }
+
+
+#search_start{
+  /* border-right: 1px solid black;
+  height: 20px;
+  margin-top: 6px;
+  z-index: -50; */
+  border-bottom: none;
+  border-right: 1px solid rgb(192, 189, 189);
+  /* font-size: 55px; */
+  color: #006f85;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#search_end{
+  /* height: 20px;
+  align-self: center;
+  margin-top: 6px; */
+  border-bottom: none;
+  color: #006f85;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+
+}
+
+#search_end::placeholder{
+  color: #006f85;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#search_start::placeholder{
+  color: #006f85;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.DateRangePickerInput{
+  /* border-radius: 5px; */
+  /* height: 50px; */
+}
+
+.DateInput_input:hover{
+  background: #ffff;
+
+}
+
+.DateRangePicker{
+  width: 310px;
+}
