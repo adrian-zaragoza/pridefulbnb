@@ -1,0 +1,45 @@
+footer{
+  background-color: #006f85;
+  height: 300px;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+}
+
+.footer-items-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.footer-item{
+  align-self: center;
+  margin-top: 20px;
+
+  h1{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+  }
+
+  a:hover{
+    color: rgb(49, 223, 223);
+    cursor: pointer;
+  }
+
+  li{
+    margin-top: 10px;
+  }
+
+
+}
+
+.copyright{
+  align-self: center;
+  margin-top: 35px;
+}

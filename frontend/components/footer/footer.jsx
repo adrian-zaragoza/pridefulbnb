@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillLinkedin, AiFillGithub, FaAngellist, GrPersonalComputer, AiOutlineCopyright } from 'react-icons/all';
+import { AiFillLinkedin, AiFillGithub, FaAngellist, BsPersonSquare, AiOutlineCopyright } from 'react-icons/all';
 
 export default () => {
   return (
@@ -16,7 +16,7 @@ export default () => {
               <a href="https://angel.co/u/adrian-zaragoza" target="_blank"><FaAngellist />AngelList</a>
             </li>
             <li>
-              <a href="" target="_blank"><GrPersonalComputer />Personal Site</a>
+              <a href="www.linkedin.com" target="_blank"><BsPersonSquare />Personal Site</a>
             </li>
             <li>
               <a href="https://github.com/adrian-zaragoza" target="_blank"><AiFillGithub />Github</a>
