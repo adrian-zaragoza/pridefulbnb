@@ -147,7 +147,7 @@
 
 .booking-form{
   margin-right: 25%;
-
+  margin-top: -100px;
 }
 
 .booking-form-container{
@@ -157,12 +157,14 @@
   padding-right: 30px;
   padding-bottom: 15px;
   padding-top: 5px;
+  position: sticky;
+  top: 10px;
+  background-color: white;
 }
 
 .calendar-guest{
   display: flex;
   flex-direction: row;
-  
 }
 
 #guest-select{
@@ -239,7 +241,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-  
+
   .errors{
     color: red;
     align-self: center;
