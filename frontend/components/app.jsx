@@ -17,6 +17,7 @@ import Footer from './footer/footer';
 const App = withRouter(({location}) =>{ 
   return(
   <div className="app">
+    <div className="content-wrap">
     {
       location.pathname != '/login' && location.pathname != '/signup' && <NavBarContainer props={location} />
     }
@@ -32,6 +33,7 @@ const App = withRouter(({location}) =>{
       <Route  path="/error" component={Error} />
       <Redirect to="/error"/>
     </Switch>
+    </div>
     {
       location.pathname != '/login' && location.pathname != '/signup' && <Footer/>
     }
