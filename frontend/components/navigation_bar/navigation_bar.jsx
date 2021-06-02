@@ -18,11 +18,14 @@ class NavigationBar extends React.Component{
     this.setState({searchPlaceLocation: e.currentTarget.value})
   }
 
+  componentWillUnmount(){
+    this.setState({searchPlaceLocation: ""});
+  }
+
   handleSearchSubmit(e){
     e.preventDefault();
     sessionStorage.setItem('searchPlaceLocation', this.state.searchPlaceLocation);
-    this.setState({searchPlaceLocation: ""});
-    this.props.history.push({pathname: '/search', state: {searchPlaceLocation: this.state.searchPlaceLocation}});
+    this.props.history.replace({pathname: '/search', state: {searchPlaceLocation: this.state.searchPlaceLocation}});
   }
 
 
