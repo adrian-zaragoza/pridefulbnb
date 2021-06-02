@@ -80,9 +80,18 @@ class PlaceShow extends React.Component {
       )
 
       images = place[this.props.placeId].imageUrl.map((image, i) => {
-        return(
-              <img key={i} src={image} alt="place" />
+        if(i === 4){
+          return(
+          <div key={i}>
+            <img className="fifth" src={image} alt="place" />
+          </div>
           )
+        }else{
+          return(
+                <img key={i} src={image} alt="place" />
+          )
+        }
+
       })
 
       about = (
@@ -115,7 +124,7 @@ class PlaceShow extends React.Component {
     return(
       <div className ="place-show">
         <div className="place-images-container">
-          <figure>
+          <figure className={`pictures-${images ? images.length.toString() : "0"}`}>
             {images}
           </figure>
         </div>

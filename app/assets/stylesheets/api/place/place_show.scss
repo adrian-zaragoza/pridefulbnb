@@ -5,15 +5,82 @@
 
 .place-images-container{
   display: inline-flex;
+  img:hover{
+    
+  }
+  .pictures-1{
+    // width: 100%;
+    // height: auto;
 
-  figure{
-    display: inline-flex;
     img{
-      width:50%;
-      min-width: 300px;
+      width: 100%;
+      height: auto;
       max-height: 500px;
     }
   }
+
+  .pictures-2{
+    display: flex;
+
+    img{
+      width: 50%;
+      max-height: 500px;
+    }
+  }
+
+  .pictures-3{
+    display: flex;
+
+    img{
+      width: 33.33%;
+      max-height: 500px;
+    }
+  }
+
+  .pictures-4{
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 500px;
+    img{
+      width: 50%;
+      height: 50%;
+      // max-height: 200px;
+    }
+  }
+
+  .pictures-5{
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 500px;
+    width: 100%;
+
+    img{
+      width: 25%;
+      height: 50%;
+    }
+
+    div{
+      width: 50%;
+      height: auto;
+      
+      .fifth{
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+        max-height: 500px;
+      }
+    }
+    
+
+  }
+  // figure{
+  //   display: inline-flex;
+  //   img{
+  //     width:50%;
+  //     min-width: 300px;
+  //     max-height: 500px;
+  //   }
+  // }
 }
 
 .place-header{

@@ -19,13 +19,24 @@ class Api::PlacesController < ApplicationController
   def create
     @place = Place.new(place_params.reject { |key| key["images"] })
 
-    if @place && @place.save
-      if place_params[:images].present?
+    if place_params[:images].present? && place_params[:images].length > 5
+      @place.errors.add(:base, "Maximum of 5 images can be uploaded") 
+    end
+
+    if @place
+      if place_params[:images].present? && place_params[:images].length <= 5 && @place.save
         place_params[:images].each do |image|
           @place.images.attach(image)
         end
+        render :show
+
+      elsif !place_params[:images].present? && @place.save
+        render :show
+      
+      else
+        render json: @place.errors.full_messages, status: 404
       end
-      render :show
+
     else
       render json: @place.errors.full_messages, status: 404
     end
