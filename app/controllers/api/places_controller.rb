@@ -23,6 +23,10 @@ class Api::PlacesController < ApplicationController
       @place.errors.add(:base, "Maximum of 5 images can be uploaded") 
     end
 
+    if !place_params[:images].present?
+      @place.errors.add(:base, "Please attach at least 1 image") 
+    end
+
     if @place
       if place_params[:images].present? && place_params[:images].length <= 5 && @place.save
         place_params[:images].each do |image|
@@ -30,7 +34,7 @@ class Api::PlacesController < ApplicationController
         end
         render :show
 
-      elsif !place_params[:images].present? && @place.save
+      elsif place_params[:images].present? && @place.save
         render :show
       
       else
@@ -52,8 +56,10 @@ class Api::PlacesController < ApplicationController
     
     if @place && current_user.id == @place.owner_id && @place.update(place_params.reject { |key| key["images"] })   
       if place_params[:images].present?
-        place_params[:images].each do |image|
-          @place.images.attach(image)
+        i = 0
+        while @place.images.length < 5
+           @place.images.attach(place_params[:images][i])
+           i += 1
         end
       end
       render :show

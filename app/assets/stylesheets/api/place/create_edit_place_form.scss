@@ -116,3 +116,24 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.hidden{
+  display: none;
+}
+
+.loading {
+        margin: 0 auto;
+        border: 20px solid #f3f3f3; /* Light grey */
+        border-top: 20px solid #006f85; /* Blue */
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        animation: spin 2s linear infinite;
+      }
+
+@keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }

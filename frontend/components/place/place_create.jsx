@@ -3,7 +3,6 @@ import React from 'react';
 class PlaceCreate extends React.Component{
   constructor(props){
     super(props)
-    console.log(this.props)
     this.state = {
       ownerId: this.props.currentUser.id,
       title: "",
@@ -20,7 +19,8 @@ class PlaceCreate extends React.Component{
       checkOutBefore: "",
       imageUrl: "",
       nearbyAttractions: "",
-      pricePerDay: ""
+      pricePerDay: "",
+      loading: false
     }
 
     this.updateText = this.updateText.bind(this);
@@ -42,7 +42,10 @@ class PlaceCreate extends React.Component{
 
   handleCloseClick(e){
    e.preventDefault()
-    this.props.clearErrors();
+    if(this.props.errors.length !== 0){
+      this.props.clearErrors();
+    }
+
     this.props.togglePlaceCreate(e);
 
     this.setState({
@@ -67,7 +70,10 @@ class PlaceCreate extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    this.props.clearErrors();
+    if(this.props.errors.length !== 0){
+      this.props.clearErrors();
+    }
+    
     
     const {ownerId, title, about, location, typeOfPlace, maxGuests, numOfBedrooms, numOfBathrooms, numOfBeds, cancellationPolicy, rules, checkInFrom, checkOutBefore, imageUrl, nearbyAttractions, pricePerDay} = this.state;
     const placeData = new FormData();
@@ -92,7 +98,21 @@ class PlaceCreate extends React.Component{
       placeData.append("place[images][]", imageUrl[i]);
     }
 
-    this.props.createPlace(placeData);
+    this.setState({loading: true});
+
+    console.log(this.props.createPlace(placeData))
+    this.props.createPlace(placeData).then(()=> {this.setState({loading: false})
+                                      this.props.togglePlaceCreate(e)})
+    
+
+  //   try{
+  //     this.props.createPlace(placeData).then(()=> {this.setState({loading: false})
+  //                                                 this.props.togglePlaceCreate(e)})
+  //   }
+  //   catch(e){
+  //     this.setState({loading: false})
+  //   }
+
   }
 
   showErrors(){
@@ -179,7 +199,8 @@ class PlaceCreate extends React.Component{
           </div>
           <br />
           <input type="file" onChange={this.updateText('imageUrl')} multiple />
-          <input type="submit" value="Create Place" onClick={this.handleSubmit}/>
+          <input className={this.state.loading ? "hidden" : ""} type="submit" value="Create Place" onClick={this.handleSubmit}/>
+          <div className={this.state.loading ? "loading" : ""}></div>
         </div>
 
       </div>
