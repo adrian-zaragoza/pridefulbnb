@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import moment from 'moment';
+import { BsTypeH1 } from 'react-icons/bs';
 
 class BookingIndex extends React.Component{
   constructor(props){
@@ -42,9 +43,8 @@ class BookingIndex extends React.Component{
   render(){
     let upcomingTravels;
     let pastTravels;
-
     if(this.props.bookings && Object.values(this.props.bookings).length === 0){
-      upcomingTravels = (<h1>No upcoming travel... yet</h1>)
+      
     }else if(this.props.bookings && Object.values(this.props.bookings).length > 0){
       let bookingsArr = Object.values(this.props.bookings.bookings);
       let upcomingTravelsArr = [];
@@ -66,7 +66,7 @@ class BookingIndex extends React.Component{
           </div>
           <div className="places-listings">
             {
-              upcomingTravelsArr.map((booking) => {
+              upcomingTravelsArr = upcomingTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];
               return(
                 <ul key={booking.id} className="place">

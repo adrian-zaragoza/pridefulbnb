@@ -65,8 +65,8 @@ class Booking extends React.Component{
         placeId: this.props.place.id
       };
 
-      this.props.createBooking(booking);
-
+      this.props.createBooking(booking).then(()=> {this.props.fetchUserBookings(this.props.currentUser.id)
+        this.props.history.push(`/users/${this.props.currentUser.id}/travels`)});
 
     }
   }

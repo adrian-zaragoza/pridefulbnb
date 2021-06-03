@@ -20,7 +20,8 @@ class PlaceEdit extends React.Component{
       checkOutBefore: this.props.place.checkOutBefore,
       imageUrl: "",
       nearbyAttractions: this.props.place.nearbyAttractions,
-      pricePerDay: this.props.place.pricePerDay
+      pricePerDay: this.props.place.pricePerDay,
+      loading: false
     }
 
     this.updateText = this.updateText.bind(this);
@@ -42,6 +43,7 @@ class PlaceEdit extends React.Component{
 
   handleCloseClick(e){
    e.preventDefault()
+    
     this.props.clearErrors();
     this.props.togglePlaceEdit(e);        
     this.setState({
@@ -61,12 +63,14 @@ class PlaceEdit extends React.Component{
       checkOutBefore: this.props.place.checkOutBefore,
       imageUrl: "",
       nearbyAttractions: this.props.place.nearbyAttractions,
-      pricePerDay: this.props.place.pricePerDay
+      pricePerDay: this.props.place.pricePerDay,
+      loading: false
     });
   }
 
   handleSubmit(e){
     e.preventDefault()
+    e.persist()
     this.props.clearErrors();
     
     const {id, ownerId, title, about, location, typeOfPlace, maxGuests, numOfBedrooms, numOfBathrooms, numOfBeds, cancellationPolicy, rules, checkInFrom, checkOutBefore, imageUrl, nearbyAttractions, pricePerDay} = this.state;
@@ -93,7 +97,9 @@ class PlaceEdit extends React.Component{
       placeData.append("place[images][]", imageUrl[i]);
     }
     console.log(placeData.get("place[ownerId]"))
-    this.props.updatePlace(placeData);
+
+
+    this.props.updatePlace(placeData).then(()=>this.handleCloseClick(e), errors=>this.setState({loading: false}))
   }
 
   showErrors(){

@@ -26,6 +26,7 @@ class NavigationBar extends React.Component{
     e.preventDefault();
     sessionStorage.setItem('searchPlaceLocation', this.state.searchPlaceLocation);
     this.props.history.replace({pathname: '/search', state: {searchPlaceLocation: this.state.searchPlaceLocation}});
+    this.setState({searchPlaceLocation: ""});
   }
 
 

@@ -25,8 +25,7 @@ class PlaceShow extends React.Component {
 
   handlePlaceDelete(e){
     e.preventDefault();
-    this.props.deletePlaceThunk(this.props.placeId);
-    this.props.history.push(`/places`);
+    this.props.deletePlaceThunk(this.props.placeId).then(()=>this.props.history.push(`/places`));
   }
 
 

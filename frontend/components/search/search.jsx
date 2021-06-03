@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 class Search extends React.Component{
   constructor(props){
     super(props)
-    console.log("props in search component", props)
   }
 
   componentDidMount(){
