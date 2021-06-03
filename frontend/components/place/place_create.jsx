@@ -100,18 +100,10 @@ class PlaceCreate extends React.Component{
 
     this.setState({loading: true});
 
-    console.log(this.props.createPlace(placeData))
-    this.props.createPlace(placeData).then(()=> {this.setState({loading: false})
-                                      this.props.togglePlaceCreate(e)})
     
-
-  //   try{
-  //     this.props.createPlace(placeData).then(()=> {this.setState({loading: false})
-  //                                                 this.props.togglePlaceCreate(e)})
-  //   }
-  //   catch(e){
-  //     this.setState({loading: false})
-  //   }
+    this.props.createPlace(placeData).then(()=>{this.setState({loading: false})
+    this.props.togglePlaceCreate(e)}, errors=>this.setState({loading: false}))
+    
 
   }
 
