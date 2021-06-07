@@ -110,3 +110,19 @@
 .dropdown:hover .dropbtn {
   background-color: rgb(240, 239, 239);
 }
+
+#nav-search{
+  input[type=text]{
+    outline: none;
+    border: 1px solid rgb(192, 189, 189);
+    border-radius: 3px;
+    width: 350px;
+    height: 35px;
+    bottom: 0;
+    top: 3px;
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #006f85;
+  }
+}

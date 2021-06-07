@@ -40,7 +40,7 @@ class NavigationBar extends React.Component{
     )
 
     searchBar = (
-          <form onSubmit={this.handleSearchSubmit}>
+          <form onSubmit={this.handleSearchSubmit} id="nav-search">
             <label>
               <input type="text" value={this.state.searchPlaceLocation} onChange={this.handleSearchInput} placeholder="Where do you want to go?"/>
             </label>
