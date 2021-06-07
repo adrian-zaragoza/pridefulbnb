@@ -9,6 +9,7 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 Place.delete_all
+Booking.delete_all
 user1 = User.create!(email: "demouser@demo.com",
             password: "thisisfordemo123", 
             first_name: "Demo",
@@ -17,7 +18,7 @@ user1 = User.create!(email: "demouser@demo.com",
             current_location: "San Francisco, CA",
             gender: "trans",
             identity: "lgbtq+",
-            phone_number: "555-555-5555"
+            phone_number: "5555555555"
           )
 
 user2 = User.create!(email: "imawizard@hogwarts.com",
@@ -28,7 +29,7 @@ user2 = User.create!(email: "imawizard@hogwarts.com",
             current_location: "New York, NY",
             gender: "male",
             identity: "lgbtq+ ally",
-            phone_number: "555-555-5555"
+            phone_number: "5555555555"
           )
 
 user3 = User.create!(email: "lisa@yahoo.com",
@@ -39,7 +40,7 @@ user3 = User.create!(email: "lisa@yahoo.com",
             current_location: "Springfield, NY",
             gender: "female",
             identity: "lgbtq+ ally",
-            phone_number: "555-555-5555"
+            phone_number: "5555555555"
           )
 
 place1 = Place.create!(title: "Sunny Apartment Near Beach",

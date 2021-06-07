@@ -3,6 +3,8 @@ class User < ApplicationRecord
     :birth_date, :current_location, :phone_number, :gender, :identity, presence: true
   validates :email, :session_token, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :phone_number, numericality: true
+  validates :phone_number, length: { is: 10}
   validates :password, length: {minimum: 6, allow_nil: true}
 
   attr_reader :password
