@@ -91,7 +91,7 @@ class Signup extends React.Component{
             </label>
             <label>Phone number
               <br/>
-              <input type="text" value={this.state.phoneNumber} onChange={this.update('phoneNumber')} />
+              <input type="text" value={this.state.phoneNumber} onChange={this.update('phoneNumber')} placeholder="e.g. 8053239585" />
             </label>
             <br/>
             <label>Please select your gender
