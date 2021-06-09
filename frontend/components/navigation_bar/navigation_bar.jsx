@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { AiOutlineDown } from 'react-icons/all';
 import SignUpContainer from '../session/signup_container';
+import LogInContainer from '../session/login_container';
 
 class NavigationBar extends React.Component{
   constructor(props){
@@ -89,6 +90,7 @@ class NavigationBar extends React.Component{
       {/* <Link className="nav-button" to="/signup">Sign Up</Link>
       <Link className="nav-button" to="/login">Log In</Link> */}
       <button onClick={(e) => this.handleLoginSignupForms("signup", e)}>Sign Up</button>
+      <button onClick={(e) => this.handleLoginSignupForms("login", e)}>Log In</button>
       <button onClick={this.props.demoUser} className="nav-button">Demo Log In</button>
     </div>
   )
@@ -118,6 +120,7 @@ class NavigationBar extends React.Component{
       </div>
       {display}
       {this.state.signupModalForm ? <SignUpContainer signupModalForm={this.state.signupModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
+      {this.state.loginModalForm ? <LogInContainer loginModalForm={this.state.loginModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
     </div>
 
   )};

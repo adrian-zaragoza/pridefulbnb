@@ -4,9 +4,11 @@ import { login, clearErrors } from '../../actions/session';
 import LogIn from './login';
 import sessionErrorsReducer from '../../reducers/session_errors_reducer';
 
-const mapStateToProps = ({errors}) => {
+const mapStateToProps = ({errors}, ownProps) => {
   return {
-    errors: errors.session
+    errors: errors.session,
+    handleLoginSignupForms: ownProps.handleLoginSignupForms,
+    loginModalForm: ownProps.loginModalForm
   }
 }
 

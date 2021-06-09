@@ -18,15 +18,14 @@ class Signup extends React.Component{
     };
     this.componentWillUnmount = this.componentWillUnmount.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
-    console.log(props)
+    this.handleLoginClick = this.handleLoginClick.bind(this);
   }
 
   componentDidMount(){
-    document.body.classList.add('signup-page')
+
   }
 
   componentWillUnmount(){
-    document.body.classList.remove('signup-page')
     this.props.clearErrors()
   }
 
@@ -39,7 +38,7 @@ class Signup extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
+    this.props.createNewUser(this.state).then(()=> this.props.handleLoginSignupForms("signup", e))
   };
 
   showErrors() {
@@ -52,7 +51,11 @@ class Signup extends React.Component{
     )
   }
 
-
+  handleLoginClick(e){
+    e.preventDefault();
+    this.props.handleLoginSignupForms("signup", e);
+    this.props.handleLoginSignupForms("login", e);
+  }
 
 
   render(){
@@ -113,7 +116,7 @@ class Signup extends React.Component{
             </form>
             <div className="log-in-redirec-data">
               <p>Already have an account?</p>
-              <Link className="log-in-redirect" to="/login">Log in</Link>
+              <a className="log-in-redirect" onClick={this.handleLoginClick}>Log in</a>
             </div>
           </div>
         </div>
