@@ -2,15 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { AiOutlineDown } from 'react-icons/all';
+import SignUpContainer from '../session/signup_container';
 
 class NavigationBar extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      searchPlaceLocation: ""
+      searchPlaceLocation: "",
+      signupModalForm: false,
+      loginModalForm: false
     }
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleLoginSignupForms = this.handleLoginSignupForms.bind(this);
   }
 
   handleSearchInput(e){
@@ -20,6 +24,29 @@ class NavigationBar extends React.Component{
 
   componentWillUnmount(){
     this.setState({searchPlaceLocation: ""});
+  }
+
+  handleLoginSignupForms(type){
+
+    if(type === "login"){
+      this.setState({loginModalForm: !this.state.loginModalForm}, ()=>{
+        if(this.state.loginModalForm){
+          return document.querySelector("body").style.overflow = 'hidden';
+        }else{
+          return document.querySelector("body").style.overflow = 'auto';
+        }
+      })
+    }else{
+      this.setState({signupModalForm: !this.state.signupModalForm}, ()=>{
+        if(this.state.signupModalForm){
+          return document.querySelector("body").style.overflow = 'hidden';
+        }else{
+          return document.querySelector("body").style.overflow = 'auto';
+        }
+      })
+    }
+    
+
   }
 
   handleSearchSubmit(e){
@@ -59,8 +86,9 @@ class NavigationBar extends React.Component{
     <div className="nav-bar-links">
       {homeButton}
       {placesButton}
-      <Link className="nav-button" to="/signup">Sign Up</Link>
-      <Link className="nav-button" to="/login">Log In</Link>
+      {/* <Link className="nav-button" to="/signup">Sign Up</Link>
+      <Link className="nav-button" to="/login">Log In</Link> */}
+      <button onClick={(e) => this.handleLoginSignupForms("signup", e)}>Sign Up</button>
       <button onClick={this.props.demoUser} className="nav-button">Demo Log In</button>
     </div>
   )
@@ -89,6 +117,7 @@ class NavigationBar extends React.Component{
         {searchBar}
       </div>
       {display}
+      {this.state.signupModalForm ? <SignUpContainer signupModalForm={this.state.signupModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
     </div>
 
   )};

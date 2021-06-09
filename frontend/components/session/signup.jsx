@@ -18,6 +18,7 @@ class Signup extends React.Component{
     };
     this.componentWillUnmount = this.componentWillUnmount.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(props)
   }
 
   componentDidMount(){
@@ -43,7 +44,7 @@ class Signup extends React.Component{
 
   showErrors() {
     return (
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={i}>{error}</li>
         ))}
@@ -56,64 +57,65 @@ class Signup extends React.Component{
 
   render(){
     return(
-        <div className="signup-form">
-          <h1>Enjoy the full experience of LGBTQ hospitality</h1>
-        <img src={prideBannerIcon} alt="pride banner icon"/>
-        <br/>
-          <p>1 million LGBTQ-friendly accommodations in 200 countries.</p>
-           {this.showErrors()}
-          <form className="signup-form">
-            <label>First name
-              <br/>
-              <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
-            </label>
-            <label>Last name
-              <br/>
-              <input type="text" value={this.state.lastName} onChange={this.update('lastName')} />
-            </label>
-            <label>Your city
-              <br/>
-              <input type="text" value={this.state.currentLocation} onChange={this.update('currentLocation')} />
-            </label>
+        <div className={this.props.signupModalForm ? "signup-form-container" : "hidden"}>
+          <button className="close" onClick={(e) => this.props.handleLoginSignupForms("signup", e)} >X</button>
+          <div className="modal-content-signup">
+            <h1>Enjoy the full experience of LGBTQ hospitality</h1>
             <br/>
-            <label>Your e-mail
+            <p><img src={prideBannerIcon} alt="pride banner icon"/>1 million LGBTQ-friendly accommodations in 200 countries.</p>
+            {this.showErrors()}
+            <form className="signup-form">
+              <label>First name
+                <br/>
+                <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
+              </label>
+              <label>Last name
+                <br/>
+                <input type="text" value={this.state.lastName} onChange={this.update('lastName')} />
+              </label>
+              <label>Your city
+                <br/>
+                <input type="text" value={this.state.currentLocation} onChange={this.update('currentLocation')} />
+              </label>
               <br/>
-              <input type="email" value={this.state.email} onChange={this.update('email')} />
-            </label>
-            <label>Password
+              <label>Your e-mail
+                <br/>
+                <input type="text" value={this.state.email} onChange={this.update('email')} />
+              </label>
+              <label>Password
+                <br/>
+                <input type="password" value={this.state.password} onChange={this.update('password')} />
+              </label>
               <br/>
-              <input type="password" value={this.state.password} onChange={this.update('password')} />
-            </label>
-            <br/>
-            <label>Date of birth
+              <label>Date of birth
+                <br/>
+                <input type="date" value={this.state.birthDate} onChange={this.update('birthDate')} />
+              </label>
+              <label>Phone number
+                <br/>
+                <input type="text" value={this.state.phoneNumber} onChange={this.update('phoneNumber')} placeholder="e.g. 8053239585" />
+              </label>
               <br/>
-              <input type="date" value={this.state.birthDate} onChange={this.update('birthDate')} />
-            </label>
-            <label>Phone number
+              <label>Please select your gender
+                <input type="radio" name="gender" value="male" onChange={this.update('gender')} />Male
+                <input type="radio" name="gender" value="female" onChange={this.update('gender')} />Female
+                <input type="radio" name="gender" value="trans" onChange={this.update('gender')} />Trans
+                <input type="radio" name="gender" value="other" onChange={this.update('gender')} />Other
+              </label>
               <br/>
-              <input type="text" value={this.state.phoneNumber} onChange={this.update('phoneNumber')} placeholder="e.g. 8053239585" />
-            </label>
-            <br/>
-            <label>Please select your gender
-              <input type="radio" name="gender" value="male" onChange={this.update('gender')} />Male
-              <input type="radio" name="gender" value="female" onChange={this.update('gender')} />Female
-              <input type="radio" name="gender" value="trans" onChange={this.update('gender')} />Trans
-              <input type="radio" name="gender" value="other" onChange={this.update('gender')} />Other
-            </label>
-            <br/>
-            <label>What do you identify as?
-              <input type="radio" name="identity" value="lgbtq+" onChange={this.update('identity')} />LGBTQ+
-              <input type="radio" name="identity" value="lgbtq+ Ally" onChange={this.update('identity')} />LGBTQ+ Ally
-            </label>
-            <br/>
-            <br/>
-            <button onClick={this.handleSubmit}>Sign Up</button>
-          </form>
-          <div className="log-in-redirec-data">
-            <p>Already have an account?</p>
-            <Link className="log-in-redirect" to="/login">Log in</Link>
+              <label>What do you identify as?
+                <input type="radio" name="identity" value="lgbtq+" onChange={this.update('identity')} />LGBTQ+
+                <input type="radio" name="identity" value="lgbtq+ Ally" onChange={this.update('identity')} />LGBTQ+ Ally
+              </label>
+              <br/>
+              <br/>
+              <button onClick={this.handleSubmit}>Sign Up</button>
+            </form>
+            <div className="log-in-redirec-data">
+              <p>Already have an account?</p>
+              <Link className="log-in-redirect" to="/login">Log in</Link>
+            </div>
           </div>
-
         </div>
     );
   }

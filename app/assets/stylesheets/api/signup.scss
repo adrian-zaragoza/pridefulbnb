@@ -1,3 +1,54 @@
+.signup-form-container{
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    position: fixed; /* Stay in place */
+    z-index: 11; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,111,133,0.8); /* Black w/ opacity */
+
+    img{
+      width: 32px;
+      height: 32px;
+    }
+
+    h1{
+      font-size: 27px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    p{
+      color: black;
+      text-align: center;
+      margin-left: 15px;
+      margin-bottom: 5px;
+
+    }
+}
+
+.modal-content-signup{
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  color: #006f85;
+  // position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 650px; /* Could be more or less, depending on screen size */
+  border-radius: 4px;
+  // top: 20px;
+  // left: 33%;
+}
+
 .signup-form{
   background-color: white;
   height: auto;
@@ -67,13 +118,12 @@
   .log-in-redirec-data > p, .log-in-redirec-data > a{
     margin-right: 10px;
   }
-
-  ul > li{
-    color: red;
-  }
 }
 
-
-.signup-page{
-  background-color: #006f85;
+.errors{
+  display: flex;
+  flex-direction: column;
+  color: red;
+  align-items: center;
 }
+
