@@ -1,6 +1,6 @@
 footer{
   background-color: #006f85;
-  height: 300px;
+  height: 225px;
   font-family: "Work Sans", Arial, Helvetica, sans-serif;
 }
 
@@ -14,6 +14,10 @@ footer{
 .footer-item{
   align-self: center;
   margin-top: 20px;
+
+  ul{
+    display: flex;
+  }
 
   h1{
     font-size: 30px;
@@ -33,7 +37,8 @@ footer{
   }
 
   li{
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
   }
 
 
