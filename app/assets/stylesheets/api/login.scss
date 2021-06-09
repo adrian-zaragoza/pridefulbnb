@@ -59,11 +59,7 @@
     color: white;
   }
 
-    .signup-redirec-data{
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
+
 
   .signup-redirec-data > p, .signup-redirec-data > a{
     margin-right: 10px;
@@ -102,4 +98,11 @@
 .form-button:hover{
   background-color: rgb(49, 223, 223);
   color: white;
+}
+
+.signup-redirec-data{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

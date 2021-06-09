@@ -89,8 +89,8 @@ class NavigationBar extends React.Component{
       {placesButton}
       {/* <Link className="nav-button" to="/signup">Sign Up</Link>
       <Link className="nav-button" to="/login">Log In</Link> */}
-      <button onClick={(e) => this.handleLoginSignupForms("signup", e)}>Sign Up</button>
-      <button onClick={(e) => this.handleLoginSignupForms("login", e)}>Log In</button>
+      <button className="nav-button" onClick={(e) => this.handleLoginSignupForms("signup", e)}>Sign Up</button>
+      <button className="nav-button" onClick={(e) => this.handleLoginSignupForms("login", e)}>Log In</button>
       <button onClick={this.props.demoUser} className="nav-button">Demo Log In</button>
     </div>
   )

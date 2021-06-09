@@ -4,6 +4,9 @@ import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import './booking_calendar_styling.css';
 import { withRouter } from 'react-router-dom';
+import SignUpContainer from '../session/signup_container';
+import LogInContainer from '../session/login_container';
+
 
 class Booking extends React.Component{
   constructor(props){
@@ -13,12 +16,15 @@ class Booking extends React.Component{
       endStay: null,
       numGuests: 1,
       totalCost: 0,
-      displayTotal: false
+      displayTotal: false,
+      loginModalForm: false,
+      signupModalForm: false
     }
 
     this.updateTotalCost = this.updateTotalCost.bind(this);
     this.updateGuests = this.updateGuests.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLoginSignupForms = this.handleLoginSignupForms.bind(this);
   }
 
   componentWillUnmount(){
@@ -50,11 +56,34 @@ class Booking extends React.Component{
     this.setState({numGuests: e.currentTarget.value})
   }
 
+  handleLoginSignupForms(type){
+
+    if(type === "login"){
+      this.setState({loginModalForm: !this.state.loginModalForm}, ()=>{
+        if(this.state.loginModalForm){
+          return document.querySelector("body").style.overflow = 'hidden';
+        }else{
+          return document.querySelector("body").style.overflow = 'auto';
+        }
+      })
+    }else{
+      this.setState({signupModalForm: !this.state.signupModalForm}, ()=>{
+        if(this.state.signupModalForm){
+          return document.querySelector("body").style.overflow = 'hidden';
+        }else{
+          return document.querySelector("body").style.overflow = 'auto';
+        }
+      })
+    }
+    
+
+  }
+
   handleSubmit(e){
     e.preventDefault();
     this.props.clearErrors()
     if(!this.props.currentUser){
-      return this.props.history.push(`/login`)
+      this.handleLoginSignupForms("login", e);
     }else{
       let booking = {
         startStay: !this.state.startStay ? null : this.state.startStay.format('YYYY-MM-DD'),
@@ -144,6 +173,8 @@ class Booking extends React.Component{
           {total}
           <button className="booking-button" onClick={this.handleSubmit}>SEND REQUEST</button>
         </div>
+        {this.state.signupModalForm ? <SignUpContainer signupModalForm={this.state.signupModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
+        {this.state.loginModalForm ? <LogInContainer loginModalForm={this.state.loginModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
       </div>
     )
   }

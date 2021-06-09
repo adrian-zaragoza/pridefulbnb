@@ -1,14 +1,22 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PlaceCreateContainer from './place_create_container';
+import SignUpContainer from '../session/signup_container';
+import LogInContainer from '../session/login_container';
 
 class PlaceShowings extends React.Component{
   constructor(props){
     super(props)
-    this.state = { createPlaceForm: false}
+    this.state = { 
+      createPlaceForm: false,
+      loginModalForm: false,
+      signupModalForm: false
+    }
+
     this.handleClickShow = this.handleClickShow.bind(this);
     this.handleAddPlace = this.handleAddPlace.bind(this);
     this.togglePlaceCreate = this.togglePlaceCreate.bind(this);
+    this.handleLoginSignupForms = this.handleLoginSignupForms.bind(this);
   }
 
   componentDidMount(){
@@ -21,13 +29,36 @@ class PlaceShowings extends React.Component{
     this.props.history.push(`/places/${placeId}`)
   }
 
+  handleLoginSignupForms(type){
+
+    if(type === "login"){
+      this.setState({loginModalForm: !this.state.loginModalForm}, ()=>{
+        if(this.state.loginModalForm){
+          return document.querySelector("body").style.overflow = 'hidden';
+        }else{
+          return document.querySelector("body").style.overflow = 'auto';
+        }
+      })
+    }else{
+      this.setState({signupModalForm: !this.state.signupModalForm}, ()=>{
+        if(this.state.signupModalForm){
+          return document.querySelector("body").style.overflow = 'hidden';
+        }else{
+          return document.querySelector("body").style.overflow = 'auto';
+        }
+      })
+    }
+    
+
+  }
+
   handleAddPlace(e){
     e.preventDefault();
 
     if(this.props.currentUser){
       this.togglePlaceCreate();
     }else{
-      return this.props.history.push(`/login`)
+      this.handleLoginSignupForms("login", e);
     }
   }
 
@@ -60,7 +91,9 @@ class PlaceShowings extends React.Component{
             } )
           }
         </div>
-    </div>
+        {this.state.signupModalForm ? <SignUpContainer signupModalForm={this.state.signupModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
+        {this.state.loginModalForm ? <LogInContainer loginModalForm={this.state.loginModalForm} handleLoginSignupForms={this.handleLoginSignupForms}  /> : ""}
+      </div>
     )
   }
   
