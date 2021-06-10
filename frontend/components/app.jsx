@@ -23,8 +23,8 @@ const App = withRouter(({location}) =>{
     }
 
     <Switch>
-      <AuthRoute path="/signup" component={SignupContainer} />
-      <AuthRoute path="/login" component={LoginContainer} />
+      {/* <AuthRoute path="/signup" component={SignupContainer} />
+      <AuthRoute path="/login" component={LoginContainer} /> */}
       <Route path="/search" component={SearchContainer} />
       <ProtectedRoute path="/users/:userId/travels" component={BookingIndexContainer} />
       <Route path="/places/:placeId" component={PlaceShowContainer} />

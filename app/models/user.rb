@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, :first_name, :last_name, 
     :birth_date, :current_location, :phone_number, :gender, :identity, presence: true
   validates :email, :session_token, uniqueness: true
-  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :phone_number, numericality: true
   validates :phone_number, length: { is: 10}
