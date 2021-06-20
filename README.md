@@ -27,7 +27,7 @@
 
 ### Bookings
 1. **Challenge:** Verifying the booking request dates are available and not booked previously.
-  * **Solution:** Create a validation in the backend to chekc for any overlap for the place and give an error if there is an overlap.
+  * **Solution:** Create a validation in the backend to check for any overlap for the place and give an error if there is an overlap.
 2. **Challenge:** Adding a dual calendar when the user clicks in the form to add the dates.
  * **Solution:** Utilize react-dates to import a date range picker component and become learn how to implement the calendar in project by refering to the readme.
 ![pridefulbnb-bookings](https://github.com/adrian-zaragoza/pridefulbnb/blob/main/app/assets/images/pridefulbnb_booking.gif)
