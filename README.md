@@ -1,6 +1,6 @@
 ![favicon](https://user-images.githubusercontent.com/77212035/115052950-68c42c00-9e93-11eb-96d4-24f761d8fc18.PNG)
 
-[pridefulb&b](https://pridefulbnb.herokuapp.com/#/) is a clone to the hospitality app, misterb&b, where travelers can find LGBTQ+ friendly accommodations to stay while traveling.
+[pridefulb&b](https://pridefulbnb.herokuapp.com/#/) is a clone to the hospitality app, misterb&b, where travelers can find LGBTQ+ friendly accommodations to stay while traveling. Users can book a place to stay and view their reservations. Users can also create, update, and delete places.
 ![pridefulbnb-homepage](https://github.com/adrian-zaragoza/pridefulbnb/blob/main/app/assets/images/pridefulbnb_homepage.gif)
 
 ## Technologies Used
