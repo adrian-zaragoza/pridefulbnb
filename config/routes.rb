@@ -11,10 +11,14 @@ Rails.application.routes.draw do
 
     resources :places, only: [:index, :show] do 
       resources :bookings, only: [:create]
+      resources :reviews, only: [:create, :index]
     end
 
     resources :places, only: [:new, :create, :edit, :update, :destroy]
 
     resources :bookings, only: [:destroy]
+
+    resources :reviews, only: [:destroy]
+
   end
 end
