@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   validates :body, :author_id, :place_id, presence: true
-
+  validate :valid_review?
+  
   belongs_to :place,
     foreign_key: :place_id,
     class_name: "Place"
@@ -15,7 +16,6 @@ class Review < ApplicationRecord
     
     if place_bookings_count == 0
       self.errors.add(:base, "You first need to stay at this place to leave a review")
-      return false
     end
     
     guest_place_reviews_count = Review.where("author_id = ?", self.author_id).count
@@ -24,10 +24,7 @@ class Review < ApplicationRecord
     #the guest has booked this place, the guest cannot leave another review.
     if guest_place_reviews_count >= place_bookings_count
       self.errors.add(:base, "You already left a review for this place")
-      return false
     end
-
-    return true
   end
 
 end
