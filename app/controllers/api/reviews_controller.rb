@@ -1,4 +1,5 @@
 class Api::ReviewsController < ApplicationController
+  before_action :underscore_params!
 
   def index
     @reviews = Review.where(place_id: params[:place_id])
@@ -6,11 +7,20 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
+  def show
+      @review = Review.find_by(id: params[:id])
+    if @review
+      render :show
+    else
+      render json: ["This review does not exist."], status: 404
+    end
+  end
+
   def create
     @review = Review.new(review_params)
 
     if @review.save
-      render json: ["Your review has been added"]
+      render :show
     else
       render json: @review.errors.full_messages, status: 404
     end
