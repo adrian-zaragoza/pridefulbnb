@@ -5,6 +5,7 @@ import { IoPersonOutline } from 'react-icons/io5';
 import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all';
 import PlaceEditContainer from '../place/place_edit_container';
 import BookingContainer from '../booking/booking_container';
+import ReviewIndexContainer from '../review/review_index_container';
 
 class PlaceShow extends React.Component {
   constructor(props){
@@ -135,6 +136,7 @@ class PlaceShow extends React.Component {
             </div>
             {about}
             {propertyRules}
+            <ReviewIndexContainer/>
             {nearbyAttractions}
           </div>
           {bookingContainer}
