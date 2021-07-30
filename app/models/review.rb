@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
-  validates :body, :author_id, :place_id, presence: true
+  validates :body, :author_id, :place_id, :booking_id, presence: true
+  validates :booking_id, uniqueness: true
   validate :valid_review?
   
   belongs_to :place,
@@ -9,6 +10,10 @@ class Review < ApplicationRecord
   belongs_to :author,
     foreign_key: :author_id,
     class_name: "User"
+
+  belongs_to :booking,
+    foreign_key: :booking_id,
+    class_name: "Booking"
 
   def valid_review?
     guest = self.author

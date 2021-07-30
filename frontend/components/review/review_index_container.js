@@ -3,6 +3,7 @@ import {fetchAllReviews} from '../../actions/review_actions';
 import ReviewIndex from './review_index';
 
 const mapStateToProps = (state) => {
+  
   return {
     reviews: state.reviews
   }

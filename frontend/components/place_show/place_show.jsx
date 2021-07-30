@@ -136,7 +136,7 @@ class PlaceShow extends React.Component {
             </div>
             {about}
             {propertyRules}
-            <ReviewIndexContainer/>
+            <ReviewIndexContainer placeId={this.props.placeId}/>
             {nearbyAttractions}
           </div>
           {bookingContainer}

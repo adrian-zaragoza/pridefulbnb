@@ -5,6 +5,12 @@ class ReviewIndex extends React.Component{
     super(props)
   }
 
+  componentDidMount(){
+    this.props.fetchAllReviews(this.props.placeId)
+  }
+
+  
+
   render(){
 
     return(

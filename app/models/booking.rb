@@ -10,6 +10,10 @@ class Booking < ApplicationRecord
     foreign_key: :place_id,
     class_name: "Place"
 
+  has_one :review,
+    foreign_key: :booking_id,
+    class_name: "Review"
+
   def overlap?
     this_place = Booking.where(place_id: self.place_id)
     return if this_place.count == 0
