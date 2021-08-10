@@ -5,7 +5,7 @@ class Api::BookingsController < ApplicationController
     @bookings = Booking.where(traveler_id: current_user.id)
     ids = @bookings.pluck(:place_id)
     @places = Place.with_attached_images.where('id IN (?)', ids)
-
+    @reviews = Review.where(author_id: current_user.id)
   end
 
   def create

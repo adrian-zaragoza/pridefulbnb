@@ -15,3 +15,11 @@ json.places do
   end
 end
 
+json.reviews do
+  @reviews.each do |review|
+    json.set! review.booking_id do
+      json.extract! review, :id, :body
+    end
+  end
+end
+
