@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import moment from 'moment';
 import { BsTypeH1 } from 'react-icons/bs';
+import BookingItem from './booking_item';
 
 class BookingIndex extends React.Component{
   constructor(props){
@@ -59,59 +60,22 @@ class BookingIndex extends React.Component{
       }
       
       upcomingTravels = (
-        <div className="place-index">
-          <div className="travels-buttons">
-            <button id="upcoming-button" onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
-            <button id="past-button" onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
-          </div>
-          <div className="places-listings">
-            {
               upcomingTravelsArr = upcomingTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];
               return(
-                <ul key={booking.id} className="place">
-                  <img src={this.props.bookings.places[booking.placeId].imageUrl} onClick={(e)=>{ this.handleClickShow(booking.placeId, e)}} />
-                  <li id="title" onClick={(e)=>{ this.handleClickShow(booking.placeId, e)}}>{place.title}</li>
-                  <div className="place-details">
-                    <li>{`${place.typeOfPlace} •`}</li>
-                    <li>{`${place.location}`}</li>
-                  </div>
-                  <li className="place-details">{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
-                  <li id="cancel-button-container">{moment(booking.startStay) > moment() ? <button className="cancel-reservation-button" onClick={()=>this.props.deleteBookingThunk(booking.id)}>Cancel Reservation</button> : ""}</li>
-                </ul>
+                <BookingItem key={booking.id} upcomingTravel={true} place={place} bookingImageUrl={this.props.bookings.places[booking.placeId].imageUrl} booking={booking} deleteBooking={this.props.deleteBookingThunk} />
               )
               } )
-            }
-          </div>
-        </div>
       )
 
       
       pastTravels = (
-        <div className="place-index">
-          <div className="travels-buttons">
-            <button id="upcoming-button" onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
-            <button id="past-button" onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
-          </div>
-          <div className="places-listings">
-            {
               pastTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];
               return(
-                <ul key={booking.id} className="place">
-                  <img src={this.props.bookings.places[booking.placeId].imageUrl} onClick={(e)=>{ this.handleClickShow(booking.placeId, e)}} />
-                  <li id="title" onClick={(e)=>{ this.handleClickShow(booking.placeId, e)}}>{place.title}</li>
-                  <div className="place-details">
-                    <li>{`${place.typeOfPlace} •`}</li>
-                    <li>{`${place.location}`}</li>
-                  </div>
-                  <li className="place-details">{`Trip ${moment(booking.startStay).format('L')} to ${moment(booking.endStay).format('L')}`}</li>
-                </ul>
+                <BookingItem key={booking.id} upcomingTravel={true} place={place} bookingImageUrl={this.props.bookings.places[booking.placeId].imageUrl} booking={booking} deleteBooking={this.props.deleteBookingThunk} />
               )
               } )
-            }
-          </div>
-        </div>
       )
 
 
@@ -119,7 +83,15 @@ class BookingIndex extends React.Component{
 
     return(
       <div>
-        {this.state.upcomingTravels ? upcomingTravels : pastTravels}
+         <div className="place-index">
+          <div className="travels-buttons">
+            <button id="upcoming-button" onClick={(e)=>this.handleTravelsToggle("upcoming", e)}>Upcoming travels</button>
+            <button id="past-button" onClick={(e)=>this.handleTravelsToggle("past", e)}>Past travels</button>
+          </div>
+          <div className="places-listings">
+            {this.state.upcomingTravels ? upcomingTravels : pastTravels}
+          </div>
+         </div>
       </div>
     )
   }
