@@ -2,9 +2,15 @@ class Api::ReviewsController < ApplicationController
   before_action :underscore_params!
 
   def index
-    @reviews = Review.where(place_id: params[:place_id])
+    
+    if params[:place_id]
+      @reviews = Review.where(place_id: params[:place_id])
+      render :index
+    elsif params[:author_id]
+      @reviews = Review.where(author_id: params[:author_id])
+      render :user_reviews
+    end
 
-    render :index
   end
 
   def show
@@ -18,7 +24,7 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-
+  
     if @review.save
       render :show
     else

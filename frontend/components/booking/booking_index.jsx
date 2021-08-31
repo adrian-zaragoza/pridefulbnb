@@ -17,7 +17,9 @@ class BookingIndex extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchUserBookings(this.props.currentUser.id)
+    this.props.fetchUserBookings(this.props.currentUser.id);
+    this.props.fetchUserReviews({authorId: this.props.currentUser.id}).then(()=>console.log("user reviews fetched"))
+
   }
 
   handleClickShow(placeId, e){
@@ -73,7 +75,7 @@ class BookingIndex extends React.Component{
               pastTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];
               return(
-                <BookingItem key={booking.id} upcomingTravel={true} place={place} bookingImageUrl={this.props.bookings.places[booking.placeId].imageUrl} booking={booking} deleteBooking={this.props.deleteBookingThunk} />
+                <BookingItem key={booking.id} review={this.props.userReviews[booking.id]} upcomingTravel={false} place={place} bookingImageUrl={this.props.bookings.places[booking.placeId].imageUrl} booking={booking} deleteBooking={this.props.deleteBookingThunk} />
               )
               } )
       )

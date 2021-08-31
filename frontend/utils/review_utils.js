@@ -1,18 +1,20 @@
-export const fetchReviews = (placeId) => {
+export const fetchReviews = (id) => {
   return (
     $.ajax({
       method: 'GET',
-      url: `/api/places/${placeId}/reviews`
+      url: `/api/reviews`,
+      data: id
     })
   );
 };
 
-export const createReview = (reviewData) => {
+export const createReview = (review) => {
+  console.log(review)
   return (
     $.ajax({
       method: 'POST',
-      url: `/api/places/${reviewData.placeId}/reviews`,
-      data: {reviewData}
+      url: `/api/reviews`,
+      data: {review}
     })
   );
 };
