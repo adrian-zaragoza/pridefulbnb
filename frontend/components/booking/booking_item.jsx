@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 import ReviewCreateContainer from '../review/review_create_container';
+import ReviewDeleteContainer from '../review/review_delete_container';
 
 class BookingItem extends React.Component{
   constructor(props){
@@ -9,7 +10,8 @@ class BookingItem extends React.Component{
     this.state = {
       createReviewModal: false
     }
-
+    
+    this.toggleReviewModal = this.toggleReviewModal.bind(this);
     this.handleClickShow = this.handleClickShow.bind(this);
   }
 
@@ -30,12 +32,17 @@ class BookingItem extends React.Component{
   )
 
   let reviewLink = ""
+  let reviewContainer = ""
   if(!this.props.review && !this.props.upcomingTravel){
      reviewLink = (
       <li id="booking-review" onClick={(e)=>{ this.toggleReviewModal(e)}}>Leave Review</li>
     )
-  }else{
-    reviewLink = ""
+    reviewContainer = <ReviewCreateContainer bookingId={this.props.booking.id}  authorId={this.props.booking.travelerId} placeId={this.props.booking.placeId} toggleReviewModal={this.toggleReviewModal}/>
+  }else if(!this.props.upcomingTravel){
+    reviewLink = (
+      <li id="booking-review" onClick={(e)=>{ this.toggleReviewModal(e)}}>Delete Review</li>
+    )
+    reviewContainer = <ReviewDeleteContainer review={this.props.review} toggleReviewModal={this.toggleReviewModal} />
   }
 
     return(
@@ -49,7 +56,8 @@ class BookingItem extends React.Component{
         <li className="place-details">{`Trip ${moment(this.props.booking.startStay).format('L')} to ${moment(this.props.booking.endStay).format('L')}`}</li>
         {this.props.upcomingTravel ? cancelReservationButton : ""}
         {reviewLink}
-        {this.state.createReviewModal ? <ReviewCreateContainer bookingId={this.props.booking.id}  authorId={this.props.booking.travelerId} placeId={this.props.booking.placeId} toggleReviewModal={this.toggleReviewModal}/> : ""}
+        {/* {this.state.createReviewModal ? <ReviewCreateContainer bookingId={this.props.booking.id}  authorId={this.props.booking.travelerId} placeId={this.props.booking.placeId} toggleReviewModal={this.toggleReviewModal}/> : ""} */}
+        {this.state.createReviewModal ? reviewContainer : ""}
       </ul>
     )
   }

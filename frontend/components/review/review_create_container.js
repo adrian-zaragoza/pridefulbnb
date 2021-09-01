@@ -3,7 +3,6 @@ import { createReview } from '../../actions/review_actions';
 import ReviewCreate from './review_create';
 
 const mapStateToProps = (state, ownProps) => {
- console.log("ownProps",ownProps)
   return ({
     authorId: ownProps.authorId,
     placeId: ownProps.placeId,

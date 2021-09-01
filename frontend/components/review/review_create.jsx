@@ -25,7 +25,6 @@ class ReviewCreate extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    console.log("props", this.props)
     let review = {
       body: this.state.body,
       authorId: this.props.authorId,

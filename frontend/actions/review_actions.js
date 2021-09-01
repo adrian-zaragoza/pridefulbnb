@@ -21,9 +21,9 @@ const receiveReview = (review) => ({
   review
 });
 
-const deleteReview = (reviewId) => ({
+const deleteReview = (review) => ({
   type: DELETE_REVIEW,
-  reviewId
+  review
 });
 
 const receiveErrors = (errors) => ({
@@ -43,6 +43,6 @@ export const createReview = (review) => (dispatch) =>(
   APIUtil.createReview(review).then(review => (dispatch(receiveReview(review))), errors => (dispatch(receiveErrors(errors.responseJSON))))
 );
 
-export const deleteReviewThunk = (reviewId) => (dispatch) =>(
-  APIUtil.deleteReview(reviewId).then(() => (dispatch(deleteReview(reviewId))), errors => (dispatch(receiveErrors(errors.responseJSON))))
+export const deleteReviewThunk = (review) => (dispatch) =>(
+  APIUtil.deleteReview(review).then(() => (dispatch(deleteReview(review))), errors => (dispatch(receiveErrors(errors.responseJSON))))
 )

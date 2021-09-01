@@ -7,10 +7,11 @@ const reviewsReducer = (oldState = {}, action) => {
   switch(action.type){
     case RECEIVE_ALL_REVIEWS:
       return Object.assign({}, action.reviews, oldState);
-    case RECEIVE_REVIEW:
-      return 
-    case DELETE_REVIEW:
-      return delete nextState[action.reviewId]
+    // case RECEIVE_REVIEW:
+    //   return 
+    // case DELETE_REVIEW:
+    //   console.log("this is the next state",nextState)
+    //   return delete nextState[action.reviewId]
     default:
       return oldState;
   }
