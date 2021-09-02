@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import { fetchUserBookings, deleteBookingThunk } from '../../actions/booking_actions';
 import BookingIndex from './booking_index';
-import { createReview, deleteReviewThunk} from '../../actions/review_actions';
 import { fetchUserReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state) => {
- 
+ console.log("state in booking index container", state)
   return ({
     bookings: state.entities.bookings,
     currentUser: state.session.currentUser,

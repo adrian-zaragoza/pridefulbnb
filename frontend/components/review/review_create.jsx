@@ -13,10 +13,10 @@ class ReviewCreate extends React.Component{
 
   handleClose(e){
     e.preventDefault();
-
-    this.props.toggleReviewModal(e);
+    this.props.toggleReviewModal();
     this.setState({body: ""});
   }
+
   updateText(field){
     return((e) => {
       this.setState({[field]: e.target.value})

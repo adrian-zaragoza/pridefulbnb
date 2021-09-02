@@ -9,7 +9,6 @@ export const fetchReviews = (id) => {
 };
 
 export const createReview = (review) => {
-  console.log(review)
   return (
     $.ajax({
       method: 'POST',

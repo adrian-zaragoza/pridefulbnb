@@ -15,8 +15,8 @@ class BookingItem extends React.Component{
     this.handleClickShow = this.handleClickShow.bind(this);
   }
 
-  toggleReviewModal(e){
-    e.preventDefault();
+  toggleReviewModal(){
+    // e.preventDefault();
     this.setState({createReviewModal: !this.state.createReviewModal})
   }
 

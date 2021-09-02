@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from '../actions/session';
-import { DELETE_REVIEW, RECEIVE_USER_REVIEWS } from '../actions/review_actions';
+import { DELETE_REVIEW, RECEIVE_USER_REVIEWS, RECEIVE_REVIEW } from '../actions/review_actions';
 
 
 const _nullSession = {
@@ -16,9 +16,10 @@ const sessionReducer = (state = _nullSession, action) => {
     case LOGOUT_CURRENT_USER:
       return _nullSession;
     case DELETE_REVIEW:
-      console.log("this is the state",nextState)
       delete nextState.userReviews[action.review.bookingId]
       return nextState
+    case RECEIVE_REVIEW:
+      return Object.assign({}, state, { userReviews: action.review});
     case RECEIVE_USER_REVIEWS:
       return Object.assign({}, state, { userReviews: action.reviews});
     default:

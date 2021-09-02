@@ -9,7 +9,7 @@ const ReviewDelete = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.deleteReviewThunk(props.review).then(()=> handleClose)
+    props.deleteReviewThunk(props.review).then(()=> props.toggleReviewModal(e))
   }
 
   return (
