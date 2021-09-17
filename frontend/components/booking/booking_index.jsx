@@ -18,16 +18,16 @@ class BookingIndex extends React.Component{
 
   componentDidMount(){
     this.props.fetchUserBookings(this.props.currentUser.id);
-    this.props.fetchUserReviews({authorId: this.props.currentUser.id}).then(()=>console.log("user reviews fetched"))
+    this.props.fetchUserReviews({authorId: this.props.currentUser.id})
 
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("componentdidupdate prevProps", prevProps)
-    console.log("componentdidupdate prevState", prevState)
+    // console.log("componentdidupdate prevProps", prevProps)
+    // console.log("componentdidupdate prevState", prevState)
     // if(this.props.userReviews != prevProps.userReviews){
-    //   this.props.fetchUserReviews({authorId: this.props.currentUser.id}).then(()=>console.log("user reviews fetched"))
-    
+      // this.props.fetchUserReviews({authorId: this.props.currentUser.id}).then(()=>console.log("user reviews fetched"))
+    // }
 
   }
 
@@ -69,7 +69,7 @@ class BookingIndex extends React.Component{
           pastTravelsArr.push(bookingsArr[i]);
         }
       }
-      
+      {console.log("this is the userreviews prop in booking index", this.props.userReviews)}
       upcomingTravels = (
               upcomingTravelsArr = upcomingTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];
@@ -78,8 +78,7 @@ class BookingIndex extends React.Component{
               )
               } )
       )
-
-      console.log("rerender in the booking index")
+         
       pastTravels = (
               pastTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];
@@ -89,9 +88,8 @@ class BookingIndex extends React.Component{
               } )
       )
 
-
     }
-
+    
     return(
       <div>
          <div className="place-index">

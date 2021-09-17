@@ -31,7 +31,8 @@ class ReviewCreate extends React.Component{
       placeId: this.props.placeId,
       bookingId: this.props.bookingId
     }
-    this.props.createReview(review).then(()=>this.props.toggleReviewModal(e))
+    this.props.createReview(review).then(()=>this.props.toggleReviewModal(e),
+    this.props.toggleSetReview(e))
   }
   
 

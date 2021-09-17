@@ -9,7 +9,9 @@ const _nullSession = {
 const sessionReducer = (state = _nullSession, action) => {
   Object.freeze(state);
   const nextState = Object.assign({}, state);
-
+  console.log("state inside the session reducer",state)
+  console.log("nextState inside the session reducer",nextState)
+  
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, { currentUser: action.user});
@@ -19,7 +21,8 @@ const sessionReducer = (state = _nullSession, action) => {
       delete nextState.userReviews[action.review.bookingId]
       return nextState
     case RECEIVE_REVIEW:
-      return Object.assign({}, state, { userReviews: action.review});
+      // return Object.assign({}, state, { userReviews: action.review});
+      return {...state, userReviews: Object.assign({}, state.userReviews, action.review)}
     case RECEIVE_USER_REVIEWS:
       return Object.assign({}, state, { userReviews: action.reviews});
     default:

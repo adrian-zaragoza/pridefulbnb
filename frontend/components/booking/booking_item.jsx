@@ -8,16 +8,23 @@ class BookingItem extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      createReviewModal: false
+      createReviewModal: false,
+      hasReview: this.props.review ? true : false
     }
     
     this.toggleReviewModal = this.toggleReviewModal.bind(this);
     this.handleClickShow = this.handleClickShow.bind(this);
+    this.toggleSetReview = this.toggleSetReview.bind(this);
   }
 
   toggleReviewModal(){
     // e.preventDefault();
     this.setState({createReviewModal: !this.state.createReviewModal})
+    // this.setState({hasReview: !this.state.hasReview})
+  }
+
+  toggleSetReview(){
+    this.setState({hasReview: !this.state.hasReview})
   }
 
   handleClickShow(placeId, e){
@@ -33,16 +40,16 @@ class BookingItem extends React.Component{
 
   let reviewLink = ""
   let reviewContainer = ""
-  if(!this.props.review && !this.props.upcomingTravel){
+  if(!this.state.hasReview && !this.props.upcomingTravel){
      reviewLink = (
       <li id="booking-review" onClick={(e)=>{ this.toggleReviewModal(e)}}>Leave Review</li>
     )
-    reviewContainer = <ReviewCreateContainer bookingId={this.props.booking.id}  authorId={this.props.booking.travelerId} placeId={this.props.booking.placeId} toggleReviewModal={this.toggleReviewModal}/>
+    reviewContainer = <ReviewCreateContainer toggleSetReview={(e)=>{this.toggleSetReview(e)}}  bookingId={this.props.booking.id}  authorId={this.props.booking.travelerId} placeId={this.props.booking.placeId} toggleReviewModal={this.toggleReviewModal}/>
   }else if(!this.props.upcomingTravel){
     reviewLink = (
       <li id="booking-review" onClick={(e)=>{ this.toggleReviewModal(e)}}>Delete Review</li>
     )
-    reviewContainer = <ReviewDeleteContainer review={this.props.review} toggleReviewModal={this.toggleReviewModal} />
+    reviewContainer = <ReviewDeleteContainer toggleSetReview={(e)=>{this.toggleSetReview(e)}} review={this.props.review} toggleReviewModal={this.toggleReviewModal} />
   }
 
     return(
@@ -56,7 +63,6 @@ class BookingItem extends React.Component{
         <li className="place-details">{`Trip ${moment(this.props.booking.startStay).format('L')} to ${moment(this.props.booking.endStay).format('L')}`}</li>
         {this.props.upcomingTravel ? cancelReservationButton : ""}
         {reviewLink}
-        {/* {this.state.createReviewModal ? <ReviewCreateContainer bookingId={this.props.booking.id}  authorId={this.props.booking.travelerId} placeId={this.props.booking.placeId} toggleReviewModal={this.toggleReviewModal}/> : ""} */}
         {this.state.createReviewModal ? reviewContainer : ""}
       </ul>
     )
