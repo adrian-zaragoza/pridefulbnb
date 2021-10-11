@@ -11,6 +11,10 @@ class Place < ApplicationRecord
     foreign_key: :place_id,
     class_name: "Place"
   
+  has_many :reviews,
+    foreign_key: :place_id,
+    class_name: "Review"
+    
   has_many_attached :images
   
 end

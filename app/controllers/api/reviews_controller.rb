@@ -2,9 +2,9 @@ class Api::ReviewsController < ApplicationController
   before_action :underscore_params!
 
   def index
-    
     if params[:place_id]
       @reviews = Review.where(place_id: params[:place_id])
+      @place_id = params[:place_id]
       render :index
     elsif params[:author_id]
       @reviews = Review.where(author_id: params[:author_id])

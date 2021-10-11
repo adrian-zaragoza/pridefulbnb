@@ -3,10 +3,9 @@ import { RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW, DELETE_REVIEW } from '../actions/r
 const reviewsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   const nextState = Object.assign({}, oldState);
-
   switch(action.type){
-    case RECEIVE_ALL_REVIEWS:
-      return Object.assign({}, action.reviews, oldState);
+    // case RECEIVE_ALL_REVIEWS:
+    //   return Object.assign({}, oldState, action.reviews);
     // case RECEIVE_REVIEW:
     //   return 
     // case DELETE_REVIEW:

@@ -4,7 +4,6 @@ import BookingIndex from './booking_index';
 import { fetchUserReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state) => {
- console.log("state in booking index container", state)
   return ({
     bookings: state.entities.bookings,
     currentUser: state.session.currentUser,

@@ -22,15 +22,6 @@ class BookingIndex extends React.Component{
 
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // console.log("componentdidupdate prevProps", prevProps)
-    // console.log("componentdidupdate prevState", prevState)
-    // if(this.props.userReviews != prevProps.userReviews){
-      // this.props.fetchUserReviews({authorId: this.props.currentUser.id}).then(()=>console.log("user reviews fetched"))
-    // }
-
-  }
-
   handleClickShow(placeId, e){
     e.preventDefault();
     // this.props.fetchPlace(placeId)
@@ -69,7 +60,7 @@ class BookingIndex extends React.Component{
           pastTravelsArr.push(bookingsArr[i]);
         }
       }
-      {console.log("this is the userreviews prop in booking index", this.props.userReviews)}
+
       upcomingTravels = (
               upcomingTravelsArr = upcomingTravelsArr.map((booking) => {
                 let place = this.props.bookings.places[booking.placeId];

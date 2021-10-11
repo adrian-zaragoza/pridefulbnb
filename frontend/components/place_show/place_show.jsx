@@ -5,7 +5,8 @@ import { IoPersonOutline } from 'react-icons/io5';
 import {BiDoorOpen, BiBath, IoBedOutline, GoLocation} from 'react-icons/all';
 import PlaceEditContainer from '../place/place_edit_container';
 import BookingContainer from '../booking/booking_container';
-import ReviewIndexContainer from '../review/review_index_container';
+// import ReviewIndexContainer from '../review/review_index_container';
+import ReviewIndex from '../review/review_index';
 
 class PlaceShow extends React.Component {
   constructor(props){
@@ -40,6 +41,7 @@ class PlaceShow extends React.Component {
     let nearbyAttractions;
     let editPlaceForm;
     let bookingContainer;
+    let reviews;
 
     if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
       let placeObj = place[this.props.placeId];
@@ -53,6 +55,10 @@ class PlaceShow extends React.Component {
           </div>
         )
       }
+
+      reviews = (
+        <ReviewIndex reviews={place[this.props.placeId]?.reviews}/>
+      )
 
       bookingContainer = (
         <BookingContainer place={placeObj} />
@@ -136,7 +142,7 @@ class PlaceShow extends React.Component {
             </div>
             {about}
             {propertyRules}
-            <ReviewIndexContainer placeId={this.props.placeId}/>
+            {reviews}
             {nearbyAttractions}
           </div>
           {bookingContainer}
