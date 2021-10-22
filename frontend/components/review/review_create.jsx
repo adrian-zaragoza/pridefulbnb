@@ -39,13 +39,16 @@ class ReviewCreate extends React.Component{
   render(){
     return(
       <div className="booking-review">
-        <button className="close" onClick={this.handleClose}>X</button>
-        <form className="review-form">
-          <label>Your Review
-            <textarea value={this.state.body} onChange={this.updateText("body")} />
-          </label>
-          <input type="submit" value="Submit Review" onClick={this.handleSubmit}/>
-        </form>
+        <div className="review-content">
+          <button className="close" onClick={this.handleClose}>X</button>
+          <h1>How was your stay?</h1>
+          <form className="review-form">
+            <label>Share your experience with other gay travelers below
+              <textarea value={this.state.body} onChange={this.updateText("body")}  rows="8" />
+            </label>
+            <input className="cancel-reservation-button" type="submit" value="Submit Review" onClick={this.handleSubmit}/>
+          </form>
+        </div>
       </div>
     )
   }

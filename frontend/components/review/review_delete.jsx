@@ -15,13 +15,16 @@ const ReviewDelete = (props) => {
 
   return (
     <div className="booking-review">
-      <button className="close" onClick={handleClose}>X</button>
-      <form className="review-form">
-        <label>Your Review
-          <textarea  cols="30" rows="10" value={props.review ? props.review.body : ""} readOnly></textarea>
-        </label>
-        <input type="submit" value="Delete Review" onClick={handleSubmit} />
-      </form>
+      <div className="review-content">
+        <button className="close" onClick={handleClose}>X</button>
+        <h1>Your review for this place</h1>
+        <form className="review-form">
+          <label>Your review below will be deleted
+            <textarea  rows="8" value={props.review ? props.review.body : ""} readOnly></textarea>
+          </label>
+          <input className="cancel-reservation-button" type="submit" value="Delete Review" onClick={handleSubmit} />
+        </form>
+      </div>
     </div>
   )
 }
