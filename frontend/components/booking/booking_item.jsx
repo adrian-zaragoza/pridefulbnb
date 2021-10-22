@@ -53,18 +53,21 @@ class BookingItem extends React.Component{
   }
 
     return(
-      <ul className="place">
-        <img src={this.props.bookingImageUrl} onClick={(e)=>{ handleClickShow(this.props.booking.placeId, e)}} />
-        <li id="title" onClick={(e)=>{ handleClickShow(this.props.booking.placeId, e)}}>{this.props.place.title}</li>
-        <div className="place-details">
-          <li>{`${this.props.place.typeOfPlace} •`}</li>
-          <li>{`${this.props.place.location}`}</li>
-        </div>
-        <li className="place-details">{`Trip ${moment(this.props.booking.startStay).format('L')} to ${moment(this.props.booking.endStay).format('L')}`}</li>
-        {this.props.upcomingTravel ? cancelReservationButton : ""}
-        <li id="booking-review-link">{reviewLink}</li>
+      <div>
+        <ul className="place booking-container">
+          <img src={this.props.bookingImageUrl} onClick={(e)=>{ this.handleClickShow(this.props.booking.placeId, e)}} />
+          <li id="title" onClick={(e)=>{ this.handleClickShow(this.props.booking.placeId, e)}}>{this.props.place.title}</li>
+          <div className="place-details">
+            <li>{`${this.props.place.typeOfPlace} •`}</li>
+            <li>{`${this.props.place.location}`}</li>
+          </div>
+          <li className="place-details">{`Trip ${moment(this.props.booking.startStay).format('L')} to ${moment(this.props.booking.endStay).format('L')}`}</li>
+          {this.props.upcomingTravel ? cancelReservationButton : ""}
+          <li id="booking-review-link">{reviewLink}</li>
+        </ul>
         {this.state.createReviewModal ? reviewContainer : ""}
-      </ul>
+      </div>
+
     )
   }
 }

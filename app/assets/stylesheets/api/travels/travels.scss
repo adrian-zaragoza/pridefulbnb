@@ -1,3 +1,11 @@
+.booking-container:hover{
+  transform: scale(1.05);
+}
+
+.booking-container{
+  transition: all 0.3s ease-in-out;
+}
+
 .travels-buttons{
   margin-top: 10px;
   padding-top: 7px;

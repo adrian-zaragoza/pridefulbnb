@@ -43,7 +43,7 @@ class PlaceShow extends React.Component {
     let bookingContainer;
     let reviews;
 
-    if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId].imageUrl)){
+    if(Object.keys(place).length !== 0 && Array.isArray(place[this.props.placeId]?.imageUrl)){
       let placeObj = place[this.props.placeId];
 
       if(this.props.currentUser && this.props.currentUser.id === placeObj.ownerId){
